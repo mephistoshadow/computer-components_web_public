@@ -2,15 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="signup.css"/>
-
-
 </head>
 <body>
 	<section>
 		<header>
-			<button id="back"> Back </button><h1> User Signup Page </h1>
+			<h1> Signup Page </h1>
 		</header>
 
 		<form action="/signup" method="post">
@@ -18,19 +15,20 @@
 			<ul>
 				<li class="ss-item-required">
 	            	<span class="label"> Email : </span>
-	            	<input class="text-input" type="text" id="email" placeholder="Email" title="Type in email" name="email" required="true"/>
+	            	<input class="text" type="text" id="email" placeholder="Email" title="Type in email" name="email" required="true"/>
 				</li>
 				<li class="ss-item-required">
 					<span class="label"> Username : </span>
-					<input class="text-input" type="text" id="username" name="username" required="true"/>
+					<input class="text" type="text" id="username" name="username" placeholder="username" required="true"/>
 				</li>
 				<li class="ss-item-required">
 					<span class="label"> Password :  </span>
-					<input class="text-input" type="password" id="password" name="password" required="true"/>
+					<input class="text" type="password" id="password" name="password" placeholder="password" required="true"/>
 				</li>
 			</ul>
 
-			<input id="signup-button" type="submit" value="Signup"/>
+			<button id="signup"> Sign Up </button>
+			<button id="back"> Back </button>
 	
 		</form>
 	</section>	
