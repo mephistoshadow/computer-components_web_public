@@ -14,7 +14,6 @@
 	<form id='login'>
  		<input id='username' type="text" placeholder="Username">
  		<input id='password' type="text"  placeholder="Password">
- 		<!-- <input id='bookGenre' type="text" name="bookGenre" placeholder="Genre"> -->
  		<input type="submit" value="Login">
 		<input type="submit" value="Sign-in">
  	</form>
@@ -51,16 +50,47 @@
 
 	<!-- The Profile Info Section -->
  	<div id="category">
-		<p> Monitors</p>
-		<ul>
- 			<li><a href="">Monitor</a></li>
-			<li><a href="">CPU</a></li>
-			<li><form id='search'>
-					<input id='searchName' type="text" placeholder="Product Name">
-					<input type="submit" value="Search">
-				</form>
-			</li>
- 		</ul>
+		<div>
+			<a class = "category"> Monitors</p>
+			<ul>
+				<li><a href="">Samsung</a></li>
+				<li><a href="">Dell</a></li>
+				<li>	
+					<input type="submit" value="more">
+				</li>
+			</ul>
+		</div>
+		
+		<div>
+			<a class = "category"> CPU</p>
+			<ul>
+				<li><a href="">Intel</a></li>
+				<li>	
+					<input type="submit" value="more">
+				</li>
+			</ul>
+		</div>
+		
+		<div>
+			<a class = "category"> GPU</p>
+			<ul>
+				<li><a href="">Nvida</a></li>
+				<li>	
+					<input type="submit" value="more">
+				</li>
+			</ul>
+		</div>
+		
+		<div>
+			<a class = "category"> Acessories</p>
+			<ul>
+				<li><a href="">Mouse</a></li>
+				<li><a href="">Keyboard</a></li>
+				<li>	
+					<input type="submit" value="more">
+				</li>
+			</ul>
+		</div>
 		
  		
  	</div>
@@ -100,6 +130,6 @@
 	</div>
 
 
-
+	<script type="text/javascript" src="./src/index.js"></script>
  </body>
 </html>

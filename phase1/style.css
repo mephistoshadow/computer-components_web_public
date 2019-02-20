@@ -132,7 +132,7 @@ a {
 
 /*** Profile info box styles below ***/
 
-#profileInfo {
+#category {
 	background-color: white;
 	padding: 10px;
 	
@@ -140,8 +140,29 @@ a {
 	width: 300px;
 	margin-left: 30px;
 	margin-top: 20px;
-	min-height: 300px;
 	float: left;
+}
+
+#category div{
+	
+}
+
+#category ul li{
+	margin-right: 20px;
+	list-style: none; /* Gets rid of list bullet points */
+	text-align: center;
+	
+	/* Add a proper display property: We want the stats to have 
+	a height, but also appear side-by-side */
+	height: 10px;
+
+	/*display: ;*/
+	display: inline-block;
+	
+}
+
+.category{
+	font-weight: bold;
 }
 
 /*** Timeline styles below ***/
