@@ -1,4 +1,3 @@
-
 let numberOfUser = 0;
 
 
@@ -65,3 +64,22 @@ function loginFunction(e){
 	}
 	
 }
+
+
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+
+// Declare a loop variable
+var i;
+
+// Four images side by side
+function four() {
+	console.log(elements.length);
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "15%";  // IE10
+    elements[i].style.flex = "15%";
+  }
+}
+four()
+
