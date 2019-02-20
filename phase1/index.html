@@ -16,6 +16,7 @@
  		<input id='password' type="text"  placeholder="Password">
  		<!-- <input id='bookGenre' type="text" name="bookGenre" placeholder="Genre"> -->
  		<input type="submit" value="Login">
+		<input type="submit" value="Sign-in">
  	</form>
 	
 
@@ -33,23 +34,35 @@
 	<div id="profileStats">
  		<ul>
  			<!-- Style the list element: Label and number -->
- 			<li>Tweets<br><span class="profileStatsNumber">478</span></li>
- 			<!-- Add the rest of the stats below -->
-			<li>Followers<br><span class="profileStatsNumber">23k</span></li>
-			<li>Following<br><span class="profileStatsNumber">12</span></li>
-			<li>Likes<br><span class="profileStatsNumber">10.3k</span></li>
-
+ 			<li><a href="">Monitor</a></li>
+			<li><a href="">CPU</a></li>
+			<li><a href="">CPU</a></li>
+			<li><a href="">Accessories</a></li>
+			<li><form id='search'>
+					<input id='searchName' type="text" placeholder="Product Name">
+					<input type="submit" value="Search">
+				</form>
+			</li>
  		</ul>
+		
+		
 
  	</div>
 
 	<!-- The Profile Info Section -->
- 	<div id="profileInfo">
- 		<h2>University of Toronto</h2>
- 		<p class="grey">@UofT</p>
- 		<p>
- 			Connect with Canada's top university and one of the world’s strongest academic and research powerhouses. Find the latest news & events @uoftnews. #UofT
-		</p>
+ 	<div id="category">
+		<p> Monitors</p>
+		<ul>
+ 			<li><a href="">Monitor</a></li>
+			<li><a href="">CPU</a></li>
+			<li><form id='search'>
+					<input id='searchName' type="text" placeholder="Product Name">
+					<input type="submit" value="Search">
+				</form>
+			</li>
+ 		</ul>
+		
+ 		
  	</div>
 
 
@@ -58,92 +71,31 @@
 
  		<div class='timelineHeader'>
  			<ul>
-	 			<li><a href="">Tweets</a></li>
-	 			<li><a href="">Tweets & Replies</a></li>
+	 			<li><a href="">Most Popular Products</a></li>
  			</ul>
  		</div>
 
  		<!-- First tweet -->
  		<div class='tweet'>
- 			<!-- Put the tweet icon and content in this div.
- 			You should have two divs inside this div: one that is a container for the tweet icon,
- 			and one that has the content of the tweet.
- 			Remember to look in the starter CSS for appropriate class names that 
- 			match these descriptions. -->
-			<div class='tweetIconContainer'>
-				<img src="uoft.jpg"  class="tweetIcon">
+		
+			<div class='productIconContainer'>
+				<img src="uoft.jpg"  class="userIcon">
 
 			</div>
 
-			<div class='tweetContent'>
-				<b>University of Toronto</b>
-				<a class="grey">@UofT</a>
+			<div class='productContent'>
+				<b>product name 1</b>
 			</div>
-			<div class='tweetContent'>
-				<a>Another great day at UofT.</a>
-				<a class='hashtag'>#UofT #GreatDay</a>
-
+			<div class='productContent'>
+				<a>product description</a>
 			</div>
+			
+			<div class='productContent'>
+				<input type="submit" value="view more">
+			</div>
+			
 		</div>
 
-
-
- 		<!-- Second tweet -->
- 		<div class='tweet'>
- 			<!-- Reuse all of the tweet classes from the one above, 
- 			and just change the content of the tweet. -->
-			<div class='tweetIconContainer'>
-				<img src="uoft.jpg"  class="tweetIcon">
-
-			</div>
-
-			<div class='tweetContent'>
-				<b>Humane society</b>
-				<a class="grey">@Humane society</a>
-			</div>
-
-			<div class='tweetContent'>
-				<a>
-					Check out some books at <a class='hashtag'>#robart</a><br>
-				</a>
-
-
-
-			</div>
-			<div class='tweetContent'>
-				<img src="robarts.jpg"  class="tweetContentPicture">
-			</div>
-
-
- 		</div>
-
-		<!-- Add your own tweet below -->
-
-		<!-- Third tweet -->
-		<div class='tweet'>
-			<!-- Reuse all of the tweet classes from the one above,
-            and just change the content of the tweet. -->
-			<div class='tweetIconContainer'>
-				<img src="icon.png"  class="tweetIcon">
-
-			</div>
-
-			<div class='tweetContent'>
-				<b>Humane society</b>
-				<a class="grey">@Humane society</a>
-			</div>
-			<div class='tweetContent'>
-				<span>
-					Bring your lovely cat back home <span class='hashtag'>#adopt#cat</span>
-				</span>
-
-			</div>
-			<div class='tweetContent'>
-				<img src="cat.png"  class="tweetContentPicture">
-
-			</div>
-
-		</div>
 
 	</div>
 

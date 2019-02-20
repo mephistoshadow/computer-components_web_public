@@ -196,7 +196,7 @@ a {
 }
 
 
-.tweetIcon {
+.productIcon {
 
 	/* Add properties below */
 	border-radius: 50%;
@@ -206,7 +206,7 @@ a {
 	width: 50px;
 }
 
-.tweetContent {
+.productContent {
 	margin: 0px;
 
 	/* Add properties below */
@@ -219,7 +219,7 @@ a {
 
 
 /* For pictures inside tweets (like the Robarts pic) */
-.tweetContentPicture {
+.productContentPicture {
 	/* Add properties below */
 	max-width:500px;
 	
