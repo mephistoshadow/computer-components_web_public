@@ -28,6 +28,12 @@ userDB.push(new user('user', 'user', 'user'));
 userDB.push(new user('admin', 'admin', 'admin'));
 
 
+
+function signup(){
+	window.open('signup.html');
+}
+
+
 function loginFunction(e){
 	e.preventDefault();
 	
