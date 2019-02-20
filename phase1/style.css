@@ -268,3 +268,25 @@ a {
 	color: #5088e9;
 
 }
+
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+  border: 1px solid grey;
+  border-style: dotted;
+}
+
+.column img {
+	width: 100%
+}
+
