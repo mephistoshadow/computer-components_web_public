@@ -12,7 +12,7 @@
 #navigation ul li{
   display:inline;  
   list-style:none;
-  margin-left: 50%;
+  margin-left: 45%;
   width: 100px;
 }
 
@@ -46,11 +46,11 @@ li {
     text-shadow:#f3f3f3 1px 1px 0px, #b2b2b2 1px 2px 0
 }
 
-.text-input {
+.text {
      margin-top :20%;
      margin-left: 45%;
-	border: 1px solid #000;
-    margin-top: 10px;
+	 border: 1px solid #000;
+     margin-top: 10px;
 }
 
 #signup {
@@ -59,7 +59,7 @@ li {
 }
 
 #back {
-    margin-left: 50px;
+    margin-left: 30px;
     float: left;
 }
 
