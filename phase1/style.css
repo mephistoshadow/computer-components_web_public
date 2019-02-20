@@ -31,12 +31,19 @@ a {
 	background-color: white;
 }
 
-.birdLogo {
-	/* Add properties below */
+#login {
+	position: absloute;
+	margin-top: 10px;
+	margin-right: 10px;
+	float:right;
 	height: 30px;
-	margin-left: 40px;
+	
+}
 
-}#header ul {
+
+
+
+#header ul {
 	 height: 0px;
 	 margin-right: 50px;
 	 list-style: none; /* Gets rid of list bullet points */
