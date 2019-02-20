@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Team 6">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="../css/profile.css" media="screen" />
+	<title>Student - Profile</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/js/instructor-profile.js"></script>
+</head>
+<body>
+<header class='topbar'>
+	<h1>Welcome <span id="header-user-name">Name</span></h1>
+	<nav id="menu">
+		<ul>
+			<li>
+				<a href="">Change Your Password</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<main>
+	<div id = "profileInfo">
+		<img class='img-circle' src="uoft.jpg"/>
+		<p>Nick Name: <span>student1 </span></p>
+		<p>School Name: <span>School1</span></p>
+		<p>School Location: <span>Toronto</span></p>
+
+	</div>
+
+	<div id='timeline'>
+		<div class='timelineHeader'>
+			<ul>
+				<li><a href="">Posts</a></li>
+				<li><a href="">Post & Replies</a></li>
+			</ul>
+		</div>
+		<div id='post'>
+			<!-- Reuse all of the tweet classes from the one above,
+            and just change the content of the tweet. -->
+			<div class='postIconContainer'>
+				<img class='postIcon' src="uoft.jpg"/>
+			</div>
+
+			<div class='postContent'><b>Student1</b>
+			</div>
+			<div class='postContent'>
+				<a>My apple!</a>
+			</div>
+			<img class='postContentPicture' src="apple.jpg"/>
+
+		</div>
+	</div>
+</main>
+
+</body>
+</html>

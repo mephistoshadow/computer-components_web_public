@@ -1,0 +1,120 @@
+body{
+    -webkit-animation-name: color_change; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 9s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-delay: 3s;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: color_change;
+    animation-duration: 9s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes color_change {
+    0%   {background-color: #ADFF2F;}
+    25%  {background-color: #F08080;}
+    50%  {background-color: #FFB6C1;}
+    100% {background-color: #F08080;}
+}
+
+/* Standard syntax */
+@keyframes color_change {
+    0%   {background-color: #ADFF2F;}
+    25%  {background-color: #F08080;}
+    50%  {background-color: #FFB6C1;}
+    100% {background-color: #F08080;}
+}
+
+/*
+.signup {
+	position: absolute;
+	min-width: 200px;
+	width: 30%;
+	z-index: 15;
+	top: 25%;
+	margin-left: 35%;
+	padding: 25px 0px;
+	border: 1px;	
+}
+*/
+
+
+h1 {
+	font-size: 3em;
+	font-family: Impact, sans-serif;
+	width: 100%;
+	color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+	clear: both;
+}
+
+/*
+.signup input, .signup button {
+	float: left;
+	clear: both;
+	margin: 10px;
+}
+*/
+
+body {
+	top: 25%;
+	text-align: center;
+}
+
+ul {
+
+	list-style:none;
+    padding-left:0;
+}
+
+li {
+
+	list-style-type: none;
+}
+
+.signup {
+
+	padding: 0;
+}
+
+.label {
+
+	font-family: Georgia, "Times New Roman", Times, serif;
+    margin-top: 10px;
+    margin-right:15px;
+    text-align: right;
+    clear: both;
+    width: 100px;
+    display: inline-block;
+}
+.text-input {
+
+	border: 1px solid #000;
+    margin-top: 10px;
+}
+
+#signup-button {
+
+	border-radius: 15%;
+	background: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5%;
+    cursor: pointer;
+
+}
+
+/** Larger Screens **/ 
+@media screen and (min-width: 420px)  {
+	body {
+
+		margin: 5% 0;
+		padding: 2% 0;
+	}
+}
+
