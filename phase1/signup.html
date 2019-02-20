@@ -6,12 +6,15 @@
 </head>
 <body>
 	<section>
+		<div id = 'navigation'>
+			<ul>
+				<li><a href="#home">Main page</a></li>
+			</ul>
+		</div>
 		<header>
-			<h1> Signup Page </h1>
+			<h1 id = 'header'> Sign up Page </h1>
 		</header>
-
-		<form action="/signup" method="post">
-			
+		<form action="/signup" method="post">	
 			<ul>
 				<li class="ss-item-required">
 	            	<span class="label"> Email : </span>
@@ -27,8 +30,8 @@
 				</li>
 			</ul>
 
-			<button id="signup"> Sign Up </button>
-			<button id="back"> Back </button>
+			<button id="signup" class = 'button'> <a href="#home">Sign Up  </a> </button>
+			<button id="back" class = 'button'>  <a href="#home">Back  </a></button>
 	
 		</form>
 	</section>	
