@@ -7,8 +7,19 @@ class user {
 		this.password = password;
 		this.type = type;
 		// set user ID
-		this.bookId = numberOfUser;
+		this.userId = numberOfUser;
+		this.liked = [];
 		numberOfUser++;
+	}
+}
+
+
+class product{
+	
+	constructor(name, img, description){
+		this.name = name;
+		this.img = img;
+		this.description = description;
 	}
 }
 
@@ -56,13 +67,53 @@ function loginFunction(e){
 		return false;
 	}
 	else if(user.type == 'admin'){
+		var status = document.getElementById('userstatus');
+		var node = document.createElement("a");                 // Create a <li> node
+		var textnode = document.createTextNode(user.name);         // Create a text node
+		node.appendChild(textnode);
+		status.replaceChild(node, status.childNodes[0]);
 		window.open("admin.html");
 	}
 	
 	else{
+		var status = document.getElementById('userstatus');
+		var node = document.createElement("a");                 // Create a <li> node
+		var textnode = document.createTextNode(user.name);         // Create a text node
+		node.appendChild(textnode);
+		status.replaceChild(node, status.childNodes[0]);
 		window.open('user.html');
 		
 	}
+	
+}
+
+function like(e){
+	
+}
+
+function delete_product(e){
+	e.preventDefault();
+	
+	name = document.getElementById('deleteName').value;
+	var product = productDB.find(function(element){
+		if(element.name = name){
+			return element;
+		}
+	});
+	
+	if(name == ''){
+		alert("please give product name");
+		return false;
+	}
+	
+	if(product == null){
+		alert("no such product");
+		return false;
+	}
+	
+	productDB = productDB.filter(function(item) { 
+		return item !== product;
+	})
 	
 }
 
