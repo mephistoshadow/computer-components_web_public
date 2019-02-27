@@ -249,13 +249,17 @@ a {
 /* Style the big profile picture circle here. */
 #bigProfilePicCircle {
 	/* Add properties below */
-	border-radius: 50%;
-	border: 2px solid white;
-	top: 230px;
+	top: 100px;
 	left: 100px;
-	width: 200px;
 	position: absolute;
 
+}
+
+.bigIcon {
+	border-radius: 50%;
+	width: 200px;
+	border: 2px solid white;
+	
 }
 
 

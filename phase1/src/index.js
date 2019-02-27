@@ -19,16 +19,17 @@ login.addEventListener('submit', loginFunction);
 
 
 
-//
-var userDB = [];
+// hardcode database
+var userDB = []
+var productDB = []
 
-
+// hardcode database
 userDB.push(new user('user', 'user', 'user'));
 userDB.push(new user('admin', 'admin', 'admin'));
 
 
 
-function signup(){
+function signup_open(){
 	window.open('signup.html');
 }
 
