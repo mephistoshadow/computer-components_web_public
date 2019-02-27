@@ -72,6 +72,7 @@ function loginFunction(e){
 		var textnode = document.createTextNode(user.name);         // Create a text node
 		node.appendChild(textnode);
 		status.replaceChild(node, status.childNodes[0]);
+		status.childNodes[1].style.visibility='hidden' 
 		window.open("admin.html");
 	}
 	
@@ -81,6 +82,7 @@ function loginFunction(e){
 		var textnode = document.createTextNode(user.name);         // Create a text node
 		node.appendChild(textnode);
 		status.replaceChild(node, status.childNodes[0]);
+		status.childNodes[1].style.visibility='hidden' 
 		window.open('user.html');
 		
 	}
