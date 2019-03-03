@@ -6,7 +6,7 @@
 
 /*** Completed body style below ***/
 body {
-	background-image: url("user.jpg");s
+	background-image: url("user.jpg");
 	background-position: center;
 	background-color: #e6ecf0;
 	margin: 0;
@@ -89,82 +89,6 @@ a {
 	/* Add properties below */
 	height: 300px;
 	
-}
-
-
-/*** Profile Statistics Bar styles below ***/
-
-#profileStats {
-	padding: 5px;
-	background-color: white;
-
-}
-
-#profileStats ul {
-	margin: 0px;
-	padding: 3px;
-	
-	/* Add properties below */
-	margin-left: 390px;
-
-}
-
-#profileStats ul li {
-	margin-right: 20px;
-	font-weight: bold;
-	list-style: none; /* Gets rid of list bullet points */
-	text-align: center;
-	
-	/* Add a proper display property: We want the stats to have 
-	a height, but also appear side-by-side */
-	height: 40px;
-
-	/*display: ;*/
-	display: inline-block;
-}
-
-.profileStatsNumber {
-	display: block;
-	
-	/* Add properties below */
-	font-size: 150%;
-
-}
-
-
-/*** Profile info box styles below ***/
-
-#category {
-	background-color: white;
-	padding: 10px;
-	
-	/* Add properties below */
-	width: 300px;
-	margin-left: 30px;
-	margin-top: 20px;
-	float: left;
-}
-
-#category div{
-	
-}
-
-#category ul li{
-	margin-right: 20px;
-	list-style: none; /* Gets rid of list bullet points */
-	text-align: center;
-	
-	/* Add a proper display property: We want the stats to have 
-	a height, but also appear side-by-side */
-	height: 10px;
-
-	/*display: ;*/
-	display: inline-block;
-	
-}
-
-.category{
-	font-weight: bold;
 }
 
 /*** Timeline styles below ***/
@@ -271,28 +195,21 @@ a {
 }
 
 .hashtag{
-	color: #5088e9;
-
+	color: #5088e9
 }
 
-
-.row {
-  display: -ms-flexbox; /* IE 10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE 10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-.column {
-  -ms-flex: 50%; /* IE 10 */
-  flex: 50%;
-  padding: 0 4px;
-  border: 1px solid grey;
-  border-style: dotted;
-}
 
 .column img {
 	width: 100%
 }
+
+table, td, th {
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+td, th {
+	min-width: 200px;
+}
+
 
