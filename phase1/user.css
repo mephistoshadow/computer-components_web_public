@@ -1,0 +1,298 @@
+/*** Exercise 1: Twitter CSS ***/
+
+/*
+#### You should not have to change the given property values. ###
+*/
+
+/*** Completed body style below ***/
+body {
+	background-image: url("user.jpg");
+	background-position: center;
+	background-color: #e6ecf0;
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/*** Removes default style from links ***/
+a {
+ 	text-decoration: none;
+ 	color: black;
+}
+
+/***********************************************
+********** Add to the selectors below **********
+************************************************/
+
+/* You only need to add where it says "Add properties below" */
+
+
+/*** Header and banner styles below ***/
+
+#header {
+	padding: 5px;
+	background-color: white;
+}
+
+#userstatus {
+	position: absloute;
+	margin-top: 10px;
+	margin-right: 10px;
+	float:right;
+	height: 30px;
+	
+}
+
+
+
+
+#header ul {
+	 height: 0px;
+	 margin-right: 50px;
+	 list-style: none; /* Gets rid of list bullet points */
+	 float: right;
+
+ }
+
+#header ul li{
+	list-style: none; /* Gets rid of list bullet points */
+	margin-right: 20px;
+	display: inline-block;
+	text-align: center;
+
+}
+
+#header ul li a{
+	font-size: 120%;
+	color: slategrey;
+
+}
+/* Style the hover of navigator */
+#header ul li a:hover {
+	color: steelblue;
+
+}
+
+/* Style the search box inside the navigation bar */
+#header input[type=text] {
+	padding: 6px;
+	float: right;
+	margin-right: 430px;
+	border-radius: 10px;
+	width: 200px;
+
+}
+
+.bannerPic {
+	display: block;
+	width: 100%;
+
+	/* Add properties below */
+	height: 300px;
+	
+}
+
+
+/*** Profile Statistics Bar styles below ***/
+
+#profileStats {
+	padding: 5px;
+	background-color: white;
+
+}
+
+#profileStats ul {
+	margin: 0px;
+	padding: 3px;
+	
+	/* Add properties below */
+	margin-left: 390px;
+
+}
+
+#profileStats ul li {
+	margin-right: 20px;
+	font-weight: bold;
+	list-style: none; /* Gets rid of list bullet points */
+	text-align: center;
+	
+	/* Add a proper display property: We want the stats to have 
+	a height, but also appear side-by-side */
+	height: 40px;
+
+	/*display: ;*/
+	display: inline-block;
+}
+
+.profileStatsNumber {
+	display: block;
+	
+	/* Add properties below */
+	font-size: 150%;
+
+}
+
+
+/*** Profile info box styles below ***/
+
+#category {
+	background-color: white;
+	padding: 10px;
+	
+	/* Add properties below */
+	width: 300px;
+	margin-left: 30px;
+	margin-top: 20px;
+	float: left;
+}
+
+#category div{
+	
+}
+
+#category ul li{
+	margin-right: 20px;
+	list-style: none; /* Gets rid of list bullet points */
+	text-align: center;
+	
+	/* Add a proper display property: We want the stats to have 
+	a height, but also appear side-by-side */
+	height: 10px;
+
+	/*display: ;*/
+	display: inline-block;
+	
+}
+
+.category{
+	font-weight: bold;
+}
+
+/*** Timeline styles below ***/
+
+#timeline {
+	border-radius: 10px;
+	background-color: white;
+
+	/* Add properties below */
+	margin-top: 20px;
+	width: 600px;
+	margin-left: 390px;
+}
+
+.timelineHeader {
+	border-bottom: 1px solid grey;
+}
+
+.timelineHeader ul {
+	margin: 0px;
+}
+
+.timelineHeader ul li {
+	padding: 10px;
+	margin-right: 20px;
+	font-size: 150%;
+	font-weight: bold;
+
+	/* Add properties below */
+	display: inline-block;
+}
+
+
+/*** Tweet styles below ***/
+
+.tweet {
+	background-color: white;
+	
+	/* Add properties below */
+	border-bottom: 1px solid grey;
+	min-height: 100px;
+	overflow: auto;
+}
+
+/* For the div that holds the tweet icon */
+.tweetIconContainer {
+
+	/* Add properties below */
+	width: 80px;
+	float: left;
+
+}
+
+
+.productIcon {
+
+	/* Add properties below */
+	border-radius: 50%;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 50px;
+}
+
+.productContent {
+	margin: 0px;
+
+	/* Add properties below */
+	width: 520px;
+	float: right;
+	margin-top: 20px;
+	display:table;
+
+}
+
+
+/* For pictures inside tweets (like the Robarts pic) */
+.productContentPicture {
+	/* Add properties below */
+	max-width:500px;
+	
+}
+
+/* Style the big profile picture circle here. */
+#bigProfilePicCircle {
+	/* Add properties below */
+	top: 100px;
+	left: 100px;
+	position: absolute;
+
+}
+
+.bigIcon {
+	border-radius: 50%;
+	width: 200px;
+	border: 2px solid white;
+	
+}
+
+
+/** Some font color classes for you to use. **/
+.grey {
+	color: grey;
+}
+
+.hashtag{
+	color: #5088e9;
+
+}
+
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+  border: 1px solid grey;
+  border-style: dotted;
+}
+
+.column img {
+	width: 100%
+}
+
