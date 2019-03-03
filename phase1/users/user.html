@@ -1,100 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
- 
- <head>
- 	<meta charset="utf-8">
+
+<head>
+    <meta charset="utf-8">
     <title>User pages</title>
+    <!-- <link rel="stylesheet" type="text/css" href="user.css"> -->
     <link rel="stylesheet" type="text/css" href="user.css">
- </head>
- 
- <body>
-	
-	<form id='userstatus'>
- 		<input id='username' type="text" placeholder="Username">
- 		<input id='password' type="text"  placeholder="Password">
- 		<input type="submit" value="Login">
-		<input type="button" value="Sign-Up" onclick="signup_open()">
- 	</form>
-	
-	<div id="banner" class = img> 
-		<img src="Userimage/Userbanner.jpg"  class="bannerPic">
+</head>
 
- 	
-	
-	<form id="profileStats">
-		<input id='oldpw' type="text" placeholder="Old Password">
-		<input id='newpw' type="text" placeholder="New Password">
-		<input id='newpw1' type="text" placeholder="Re New Password">
-		<input type="submit" value="Change Password">			
-	</form>
-		
+<body>
 
- 	
-	
-	<div id="profileInfo">
- 		<h2>Username</h2>
- 		<p class="grey">User</p>
- 		<p>
- 			bio
-		</p>
- 	</div>
-	
-	<div id="bigProfilePicCircle">
-		<img class="bigIcon" src="./images/profilepic.png">
-	
-	</div>
-	
-	 	<!-- The Timeline Section -->
- 	<div id='timeline'>
+    <div class="navbar">
+        <a href="#Home">Home</a>
+        <a href="#Profile">profile</a>
+        <form id = search_box>
+            <input id='product' type="text" placeholder="type the product you want to search">
+            <input class="creach" type="submit" value="search">
+        </form>
+    </div>
+    <div id="banner" class=i mg>
+        <img src="Userimage/Userbanner.jpg" class="bannerPic">
 
- 		<div class='timelineHeader'>
- 			<ul>
-	 			<li><a href="">Wish List</a></li>
- 			</ul>
- 		</div>
+        <form id="profileStats">
+            <input id='oldpw' type="text" placeholder="Old Password">
+            <input id='newpw' type="text" placeholder="New Password">
+            <input id='newpw1' type="text" placeholder="Re New Password">
+            <input class="change" type="submit" value="Change Password">
+        </form>
 
- 		<table id='bookTable' bgcolor="#ffecd2">
- 			<tbody>
-	 			<tr>
-	 				<th>
-	 					Wish product
-	 				</th>
-	 				<th>
-	 					detail
-	 				</th>
-	 			</tr>
-	 			<tr>
-			 		<td>
-			 			 <img src="./image/image2.jpg" alt="" border=3 height=100 width=100>
-			 		</td>
-			 		<td>
-		 				<button class='return'>Check</button>
-		 			</td>
-			 	</tr>
-			 	<tr>
-			 		<td>
-			 			 <img src="./image/image3.jpg" alt="" border=3 height=100 width=100>
-			 		</td>
-			 		<td>
-		 				<button class='return'>Check</button>
-		 			</td>
-			 	</tr>
-			 	<tr>
-			 		<td>
-			 			 <img src="./image/image1.jpg" alt="" border=3 height=100 width=100>
-			 		</td>
-			 		<td>
-		 				<button class='return'>Check</button>
-		 			</td>
-			 	</tr>
-	 		
- 			</tbody>
- 		</table>
-	</div>
+        <div id="profileInfo">
+            <img class='img-circle' src="icon.jpg" />
+            <p><strong>Nick Name: <span>Pikachu</span></strong></p>
+            <p><strong>Description: <span>Want to build a gaming computer!</span></strong></p>
+            <form id="profile_name">
+                <input id='Nickname' type="text" placeholder="Type new Nickname">
+                <input id='Description' type="text" placeholder="Type the description">
+                <input class="change" type="submit" value="Change information">
+            </form>
+        </div>
 
- 
- </body>
- 
- 
- 
- </html>
+        <div id='Wishlist'>
+            <table id='Wishtable' bgcolor="#ffecd2">
+                <h4><Strong>Wish List</Strong></h4>
+                <tbody>
+                    <tr>
+                        <th>
+                            Wish product
+                        </th>
+                        <th>
+                            detail
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./image/image2.jpg" alt="" border=3 height=100 width=100>
+                        </td>
+                        <td>
+                            <button class="check_button">Check</button>
+                            <button class="delete_button ">delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./image/image3.jpg" alt="" border=3 height=100 width=100>
+                        </td>
+                        <td>
+                            <button class="check_button">Check</button>
+                            <button class="delete_button ">delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./image/image1.jpg" alt="" border=3 height=100 width=100>
+                        </td>
+                        <td>
+                            <button class="check_button">Check</button>
+                            <button class="delete_button ">delete</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id='Comment'>
+            <table id='comment_history' bgcolor="#ffecd2">
+                <h4><Strong>Comment history</Strong></h4>
+                <tbody>
+                    <tr>
+                        <th>
+                            Product
+                        </th>
+                        <th>
+                            comment
+                        </th>
+                        <th>
+                            Junp to that page
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./image/image2.jpg" alt="" border=3 height=100 width=100>
+                        </td>
+                        <td>
+                            <a>This product is what i want</a>
+                        </td>
+                        <td>
+                            <button class="jump_button">Jump</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./image/image3.jpg" alt="" border=3 height=100 width=100>
+                        </td>
+                        <td>
+                            <a>This product is what i want,his product is what i want,his product is what i want</a>
+                        </td>
+                        <td>
+                            <button class="jump_button">Jump</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./image/image1.jpg" alt="" border=3 height=100 width=100>
+                        </td>
+                        <td>
+                            <a>This product is what i want,his product is what i want,his product is what i want</a>
+                        </td>
+                        <td>
+                            <button class="jump_button">Jump</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+</body>
+
+</html>
