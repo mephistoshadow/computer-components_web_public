@@ -98,14 +98,12 @@ a {
 	
 }
 
-#Wishlist {
-	position: relative;
-	border-radius: 10px;
-	padding: 10px;
-	width: 600px;
-	height: auto;
-	margin-top: 20px;
-	margin-left: 550px;
+
+
+#Wishtable {
+	margin-top: 10px;
+	margin-left: 690px;
+	float:left;
 }
 
 
@@ -133,10 +131,10 @@ td, th {
 
 #profileInfo {
 	float:left;
-	padding: 10px;
+	/*padding: 10px;*/
 	margin-left:50px;
 	margin-top:10px;
-	width: 410px;
+	/*width: 410px;*/
 	min-height: 300px;
 }
 
@@ -206,11 +204,17 @@ td, th {
 
 #Comment{
 	padding: 10px;
-	margin-left:50px;
 	width: 410px;
 	min-height: 300px;
-	margin-left: 400px;
+	margin-left: 10px;
+	position: absolute;
 
+}
+
+#video {
+	margin-left: 160px;
+	height: 300px;
+	width: 500px;
 }
 
 
