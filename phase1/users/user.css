@@ -85,6 +85,7 @@ a {
 .bannerPic {
 	display: block;
 	width: 100%;
+	flex-shrink: 0;
 
 	/* Add properties below */
 	height: 300px;
@@ -208,6 +209,7 @@ td, th {
 	min-height: 300px;
 	margin-left: 10px;
 	position: absolute;
+/*	margin-top: 310px;*/
 
 }
 
@@ -255,4 +257,20 @@ td, th {
 }
 
 
+.slider {
+
+  width: 300px;
+  height: 300px;
+  display: flex;
+  overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+}
+.slide {
+  width: 300px;
+  flex-shrink: 0;
+  height: 100%;
+   
+  bottom: 0% ;
+  width: 100% ;
+}
 
