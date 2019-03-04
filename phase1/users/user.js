@@ -41,7 +41,7 @@ function stratSearch(e) {
 	let name = "";
 	name = name + information;
 	name = name + ".html"
-	hardcode ="../product/product.html"
+	hardcode ="../product/nonlogin/product.html"
 	window.open(hardcode);
 }
 
@@ -59,7 +59,7 @@ function generaClick(e) {
 	e.preventDefault();
 	let index = e.target.parentElement.parentElement.rowIndex;
 	if (e.target.className == 'check_button') {
-		Checkpage();
+		Checkpage(index);
     }
     else if (e.target.className == 'delete_button'){
     	Deleterow(index);
@@ -69,8 +69,9 @@ function generaClick(e) {
 
 function commentClick(e) {
 	e.preventDefault();
+	let index = e.target.parentElement.parentElement.rowIndex;
 	if (e.target.className == 'jump_button') {
-		Checkpage();
+		Checkpage(index);
     }
 }
 
@@ -100,9 +101,9 @@ function Deleterow(index) {
 	wishList.deleteRow(index);
 }
 
-
-function Checkpage() {
-	hardcode ="../product/product.html";
+function Checkpage(index) {
+	let hardcode ="../product/nonlogin/product_";
+	hardcode = hardcode + index + ".html"
 	window.open(hardcode);
 }
 
