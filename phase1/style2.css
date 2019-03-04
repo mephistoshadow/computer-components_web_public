@@ -1,0 +1,57 @@
+/*** Exercise 1: Twitter CSS ***/
+
+/*
+#### You should not have to change the given property values. ###
+*/
+
+/*** Completed body style below ***/
+body {
+	background-color: #e6ecf0;
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/*** Removes default style from links ***/
+a {
+ 	text-decoration: none;
+ 	color: black;
+}
+
+/***********************************************
+********** Add to the selectors below **********
+************************************************/
+
+.box{
+
+	height:200px;
+	width:200px;
+	overflow:hidden;
+}
+
+#userstatus {
+	font-size: 10px;
+	margin-left:60%;
+
+}
+.navbar {
+	float: left;
+	max-width: 600px;
+}
+.dropdown-menu {
+	max-width: 100px;
+}
+.container {
+	float: right;
+}
+
+.animated {
+	-webkit-transition: height 0.2s;
+	-moz-transition: height 0.2s;
+	transition: height 0.2s;
+}
+
+.stars {
+	margin: 20px 0;
+	font-size: 24px;
+	color: #d17581;
+}
