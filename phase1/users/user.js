@@ -102,7 +102,7 @@ function Deleterow(index) {
 }
 
 function Checkpage(index) {
-	let hardcode ="../product/nonlogin/product_";
+	let hardcode ="../product/login/product_";
 	hardcode = hardcode + index + ".html"
 	window.open(hardcode);
 }
