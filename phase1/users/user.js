@@ -41,7 +41,7 @@ function stratSearch(e) {
 	let name = "";
 	name = name + information;
 	name = name + ".html"
-	hardcode ="../product/nonlogin/product.html"
+	hardcode ="../product/nonlogin/product_1.html"
 	window.open(hardcode);
 }
 
