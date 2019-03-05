@@ -1,13 +1,16 @@
 Index page: 
 on top left of page, there is a home button and a profile button, in this state profile button will alert a please login message
 on top right of page, there is a login button and a sign up button, which will lead to corresponding page.
-on left side, there is a navigation bar as gategory, which represent categories of our products in database, each item can link to corresponding page. there are some products we did not have a page for it yet, so clicking on those links will lead to 404 not found.
-also there is a search bar on right side of page, there are two products hard coded in js file: 'rtx2070' and 'lenovom710s'. so searching those two item will lead to corresponging page, otherwise will lead to 404 not found.
+on left side, there is a navigation bar as gategory, which represent categories of our products in database, each item can link to corresponding page. 
+there are some products we did not have a page for it yet, so clicking on those links will lead to 404 not found.
+also there is a search bar on right side of page, there are two products hard coded in js file: 'rtx2070' and 'lenovom710s'. 
+so searching those two item will lead to corresponging page, otherwise will lead to 404 not found.
 also on the left side bar, we have a short description about our website, with share like follow icon buttons for user interration with this web
 on the middle of page, we have 3 tables for showing products by different sorting orders.
 
 Login page:
-there are two types of user: normal user(username: user   password:   user  ) and admin(username:  admin   password:  admin  ) profile page will open with right combination of user input
+there are two types of user: normal user(username: user   password:   user  ) and admin(username:  admin   password:  admin  ) 
+profile page will open with right combination of user input
 
 User profile Page:
 
@@ -16,7 +19,9 @@ Admin profile Page:
 on top left, we have a navi-button to go home page.
 there are two tables in admin page. one for managing users and one for managing products.
 admin can reset password for users and also can disable user from website
-admin can also add or delete item in database. to add a new item, there is a form on the top right side, by giving product name, image url and shot description, then this item will show in product table. to delete item just click on delete button in the table.
+admin can also add or delete item in database. to add a new item, there is a form on the top right side, by giving product name, image url and shot description, 
+for example: name: i7   url: ../image/i7.jpeg    and description:  cpu  then this item will show in product table.
+to delete item just click on delete button in the table.
 also admin can reset password for them as well.
 
 
