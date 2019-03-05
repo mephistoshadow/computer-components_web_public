@@ -138,9 +138,15 @@ a {
 	margin-left:30px;
 }
 
+.navbar-brand {
+	color: white;
+}
+
+.nav-link{
+	color: white;
+}
 .navbar {
-	float: left;
-	height: 350px;
+	
 	width: 210px;
 	background-color: #333;
 }
