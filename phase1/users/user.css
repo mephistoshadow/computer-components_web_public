@@ -221,7 +221,7 @@ td, th {
 
 
 #search_box{
-	margin-left: 200px;
+	margin-left: 40%;
 	margin-top: 15px;
 	position:  absolute;
 }
@@ -272,5 +272,10 @@ td, th {
    
   bottom: 0% ;
   width: 100% ;
+}
+
+#profile{
+	margin-left: 90%;
+	position:  absolute;
 }
 
