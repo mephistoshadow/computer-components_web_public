@@ -22,9 +22,12 @@ class Review {
 function ReviewLogin(e) {
     e.preventDefault();
     if (e.target.classList.contains('btn')) {
-        console.log("=save=")
-        addPost()
-        loginReminder()
+        if(e.target.id==="save"){
+            addPost()
+            loginReminder()
+
+        }
+
     }
 
 }
