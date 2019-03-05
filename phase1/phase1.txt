@@ -1,11 +1,11 @@
 Index page: 
 on top left of page, there is a home button and a profile button, in this state profile button will alert a please login message
 on top right of page, there is a login button and a sign up button, which will lead to corresponding page.
-on left side, there is a navigation bar as gategory, which represent categories of our products in database, each item can link to corresponding page. 
+on left side, there is a navigation bar as category, which represent categories of our products in database, each item can link to corresponding page. 
 there are some products we did not have a page for it yet, so clicking on those links will lead to 404 not found.
 also there is a search bar on right side of page, there are two products hard coded in js file: 'rtx2070' and 'lenovom710s'. 
-so searching those two item will lead to corresponging page, otherwise will lead to 404 not found.
-also on the left side bar, we have a short description about our website, with share like follow icon buttons for user interration with this web
+so searching those two item will lead to corresponding page, otherwise will lead to 404 not found.
+also on the left side bar, we have a short description about our website, with share like follow icon buttons for user interaction with this web
 on the middle of page, we have 3 tables for showing products by different sorting orders.
 
 Login page:
@@ -26,17 +26,22 @@ also admin can reset password for them as well.
 
 
 product page: 
-directory:phase1/product/
-This page includes the (product image, product description, product configuration)(hard coded) and review product section. Product description include the star rating of the product. (hard coded) The review section allows user to wirte reviews and rating(only logined user and assume there are maximum of 5 stars) and read review from users(There is a hard coded review). The page can go back to the main page from home
+-directory:phase1/product/
+This page includes the (product image, product description, product configuration)(hard coded) and review product section. Product description include the star rating of the product. (hard coded) The review section allows user to write reviews and rating(only logined user and assume there are maximum of 5 stars) and read review from users(There is a hard coded review). The page can go back to the main page from home
 
-different type of product page:
+
+-different type of product page:
 directory:phase1/product/nonlogin/
 non login product page: 
-Admin login will redirect to admin logined product page 
+Non-login user can only view product description and reviews.
+login/sign in: the top navigation can provide user a quick login way to review products and it will redirect to logined product page(user or admin depend on the input). The sign in button allows user to redirect to sign in page.
 
-directory:phase1/product/login/
+
+-directory:phase1/product/login/
 logined product page:
 filename that end with "a" like product_1a.html is a admin login in product page, o.w. it is a user login product page
 admin: profile will link to admin profile
 user: profile will link to user profile
+
+-review section:
 The rating of the stars will be updated as sum of rating divided by number of rating(integer round down).And able to write reviews.
