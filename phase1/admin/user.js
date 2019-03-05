@@ -101,8 +101,7 @@ function insertRow(){
 	// Add some text to the new cells:
 	
 	cell1.innerHTML = "<img src='" +img+ "' alt='' border=3 height=100 width=100><a>" + name + "</a>";
-	cell2.innerHTML = "<button class='check_button'>Reviews</button>"+
-						"</br><button class='delete_button'>Delete</button>";
+	cell2.innerHTML = "<button class='check_button'>Reviews</button> <button class='delete_button'>Delete</button>";
 }
 
 
