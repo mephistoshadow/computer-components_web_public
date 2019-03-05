@@ -5,8 +5,9 @@
 */
 
 /*** Completed body style below ***/
+
 body {
-	background-color: #e6ecf0;
+	background-color: #333;
 	margin: 0;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
@@ -17,9 +18,23 @@ a {
  	color: black;
 }
 
-/***********************************************
-********** Add to the selectors below **********
-************************************************/
+.nav-bar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; 
+  top: 0;
+  width: 100%;
+}
+
+.nav-bar a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
 
 .box{
 
@@ -28,14 +43,77 @@ a {
 	overflow:hidden;
 }
 
-#userstatus {
-	font-size: 10px;
-	margin-left:60%;
-
+#login {
+	position:absolute;
+	top:0px;
+	right: 0px;
+	background-color: #333;
+	margin-right: 30px;
 }
+
+#login a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#banner {
+	margin-top: 50px;
+	height:300px;
+	
+}
+#searchbar {
+	float:right;
+	height: 50px;
+}
+
+#searchform{
+	left:100px;
+}
+
+#searchform input{
+	margin-left:10px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.bannerPic{
+	height:300px;
+	width:100%;
+}
+
+.share_like{ 
+}  
+  
+.share_like ul{  
+    color: white;  
+    padding: 2px;
+}  
+  
+.share_like ul li{  
+    padding: 10px;  
+    list-style:none;  
+    font-style: header;  
+    display: inline-block;  
+    font-weight: bold;  
+    text-align: center;  
+    margin-left: 10px;  
+}  
+  
+.sflicon{  
+    width: 35px;  
+    height: 30px;  
+} 
+
+
+
 .navbar {
 	float: left;
-	max-width: 600px;
+	height: 350px;
+	width: 210px;
+	background-color: #333;
 }
 .dropdown-menu {
 	max-width: 100px;

@@ -42,7 +42,24 @@ a {
 	height: 30px;
 }
 
+#addnewproduct{
+	margin-left: 160px;
+	height: 300px;
+	width: 500px;
+}
 
+#newpform {
+	margin-left: 800px;
+	margin-top:20px;
+	margin-bottom: 20px;
+	height: 240px;
+	width: 220px;
+	padding: 2em 4em 2em;
+	box-shadow: 0 0 1em #222;
+	border-radius: 2px;
+	
+	
+}
 
 
 #header ul {
@@ -94,7 +111,12 @@ a {
 
 /*** Timeline styles below ***/
 #profileStats {
-	
+	position: absolute;
+	top: 550px;
+	left: 20px;
+	padding: 2em 2em 1em;
+	box-shadow: 0 0 1em #222;
+	border-radius: 2px;
 	
 	
 }
@@ -102,7 +124,7 @@ a {
 
 
 #Wishtable {
-	margin-top: 10px;
+	margin-top: 27px;
 	margin-left: 690px;
 	float:left;
 }
@@ -202,6 +224,9 @@ td, th {
 
 }
 
+#comment_history{
+	margin-top: 20px;
+}
 
 #Comment{
 	padding: 10px;
@@ -214,7 +239,7 @@ td, th {
 }
 
 #video {
-	margin-left: 160px;
+	margin-left: 220px;
 	height: 300px;
 	width: 500px;
 }

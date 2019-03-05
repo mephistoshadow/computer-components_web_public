@@ -24,10 +24,6 @@ class product{
 }
 
 
-const login = document.querySelector('#login');
-
-login.addEventListener('submit', loginFunction);
-
 
 
 // hardcode database
@@ -41,15 +37,21 @@ userDB.push(new user('admin', 'admin', 'admin'));
 
 
 function signup_open(){
-	window.open('signup.html');
+	window.open('./signup/signup.html');
 }
 
+function login_open(){
+	window.open('login.html');
+}
 
-function loginFunction(e){
-	e.preventDefault();
+function loginFunction(){
+
 	
 	name = document.getElementById('username').value;
 	password = document.getElementById('password').value;
+	
+	console.log(name);
+	
 	
 	var user = userDB.find(function(element){
 		if(element.name == name){
@@ -66,34 +68,74 @@ function loginFunction(e){
 		alert("no such user/wrong password");
 		return false;
 	}
-	else if(user.type == 'admin'){
-		var status = document.getElementById('userstatus');
-		var node = document.createElement("a");                 // Create a <li> node
-		var textnode = document.createTextNode(user.name);         // Create a text node
-		node.appendChild(textnode);
-		status.replaceChild(node, status.childNodes[0]);
-		status.childNodes[1].style.visibility='hidden' 
-		window.open("admin.html");
+	else if(user.type == 'admin'){ 
+		window.open("./users/admin.html");
 	}
 	
 	else{
-		var status = document.getElementById('userstatus');
-		var node = document.createElement("a");                 // Create a <li> node
-		var textnode = document.createTextNode(user.name);         // Create a text node
-		node.appendChild(textnode);
-		status.replaceChild(node, status.childNodes[0]);
-		status.childNodes[1].style.visibility='hidden' 
-		window.open('user.html');
+		window.open('./users/user.html');
 		
 	}
 	
 }
 
-function like(e){
+function showlogin(){
+	alert("Please Login!");
+	return false;
+}
+
+function swappic(){
+	var ranl = 0;
+    var useRand = 0;
+    images = new Array;
+	images[1] = new Image();
+	images[1].src = "./banners/pic0.jpg";
+	images[2] = new Image();
+	images[2].src = "./banners/pic1.jpg";
+	images[3] = new Image();
+	images[3].src = "./banners/pic3.jpg";
+	images[4] = new Image();
+	images[4].src = "./banners/pic4.jpg";
+	function swapPic(){
+	   var imgnum = images.length-1;
+       do{
+	    var randnum = Math.random();
+		randl = Math.round((imgnum-1)*randnum)+1;
+	   }while(randl==useRand);
+        useRand = randl;
+        document.randimg.src = images[useRand].src		
+		setTimeout('swapPic()',2000);
+	}
+
+}
+
+function search(){
+	
+	item = document.getElementById("searchname").value;
+	
+	console.log(item);
+	
+	var product = productDB.find(function(element){
+		if(element.name == item){
+			return element;
+		}
+	});
+	
+	if(item == ''){
+		alert("please give product names");
+		return false;
+	}
+	else if(product == null){
+		alert("no such item in database");
+		return false;
+	}
+	else{
+		window.open(item + ".html")
+	}
 	
 }
 
-function delete_product(e){
+function delete_product(){
 	e.preventDefault();
 	
 	name = document.getElementById('deleteName').value;
