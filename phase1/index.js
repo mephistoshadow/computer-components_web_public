@@ -69,7 +69,7 @@ function loginFunction(){
 		return false;
 	}
 	else if(user.type == 'admin'){ 
-		window.open("./users/admin.html");
+		window.open("./admin/admin.html");
 	}
 	
 	else{
