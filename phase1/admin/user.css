@@ -191,6 +191,19 @@ td, th {
 	font-size: 17px; 
 }
 
+.submit_button{
+  width: 100px; 
+	height: 40px; 
+	border-width: 5px; 
+	border-radius: 3px; 
+	background: #9CECFB;
+	cursor: pointer; 
+	outline: none; 
+	font-family: Microsoft YaHei; 
+	color: white; 
+	font-size: 17px; 
+}
+
 .delete_button{
 	 width: 100px; 
 	height: 40px; 

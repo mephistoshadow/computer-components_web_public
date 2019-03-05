@@ -5,13 +5,14 @@ const search = document.querySelector('#search_box');
 const information = document.querySelector('#profile_name');
 const wishList = document.querySelector('#Wishtable');
 const comment = document.querySelector('#comment_history');
+const submit = document.querySelector('#newpform');
 
 
 
 
 
 search.addEventListener('submit', stratSearch);
-
+submit.addEventListener('submit',createNew);
 wishList.addEventListener('click',generaClick);
 comment.addEventListener('click',commentClick);
 
@@ -29,10 +30,10 @@ class personinfo {
 
 
 
-
-
-
-
+function createNew(e){
+	e.preventDefault;
+	insertRow();
+}
 
 
 function stratSearch(e) {
@@ -89,7 +90,20 @@ function deleterow(btn) {
 }
 
 
+function insertRow(){
+	var table=document.getElementById("Wishtable");
+	var row = table.insertRow(-1);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var img=document.getElementById('productimg').value;
+	var name=document.getElementById("productname").value;
 
+	// Add some text to the new cells:
+	
+	cell1.innerHTML = "<img src='" +img+ "' alt='' border=3 height=100 width=100><a>" + name + "</a>";
+	cell2.innerHTML = "<button class='check_button'>Reviews</button>"+
+						"</br><button class='delete_button'>Delete</button>";
+}
 
 
 function changeIt(personinfo) {
