@@ -25,16 +25,6 @@ class personinfo {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 function stratSearch(e) {
 	e.preventDefault();
 	const information = document.querySelector("#product").value;
@@ -77,18 +67,7 @@ function commentClick(e) {
 
 
 
-
-
-
-
-/////////////////DOM
-
-
-
-
-
-
-
+/////////////////below is the function that modify the DOM elements.
 function changeIt(personinfo) {
 	const info = document.querySelector("#profileInfo");
 	info.children[1].children[0].children[0].innerText = personinfo.Nickname;
