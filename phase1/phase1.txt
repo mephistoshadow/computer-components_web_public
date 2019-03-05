@@ -1,11 +1,16 @@
 product page: 
+phase1/product
 This page includes the (product image, product description, product configuration)(hard coded) and review product section. Product description include the star rating of the product. (hard coded) The review section allows user to wirte reviews and rating(only logined user and assume there are maximum of 5 stars) and read review from users(There is a hard coded review). The page can go back to the main page from home
 
 different type of product page:
+
+phase1/product/nonlogin
 non login product page: 
 Admin login will redirect to admin logined product page 
 
+phase1/product/login
 logined product page:
+filename that end with "a" like product_1a.html is a admin login in product page, o.w. it is a user login product page
 admin: profile will link to admin profile
 user: profile will link to user profile
 The rating of the stars will be updated as sum of rating devided by number of rating(integer round down).
