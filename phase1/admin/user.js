@@ -11,7 +11,7 @@ const comment = document.querySelector('#comment_history');
 
 
 search.addEventListener('submit', stratSearch);
-information.addEventListener('submit',chaneInfo);
+
 wishList.addEventListener('click',generaClick);
 comment.addEventListener('click',commentClick);
 
@@ -71,7 +71,7 @@ function commentClick(e) {
 	e.preventDefault();
 	let index = e.target.parentElement.parentElement.rowIndex;
 	if (e.target.className == 'jump_button') {
-		Checkpage(index);
+		comment.deleteRow(index);
     }
 }
 
@@ -83,7 +83,10 @@ function commentClick(e) {
 
 /////////////////DOM
 
-
+function deleterow(btn) {
+  var row = btn.parentNode.parentNode;
+  row.parentNode.removeChild(row);
+}
 
 
 
@@ -94,7 +97,6 @@ function changeIt(personinfo) {
 	info.children[1].children[0].children[0].innerText = personinfo.Nickname;
 	info.children[2].children[0].children[0].innerText = personinfo.description;
 }
-
 
 
 function Deleterow(index) {
