@@ -42,14 +42,13 @@
  
 	<div class="nav-bar">
         <a href="">Home</a>
-        <a href= "users/user.html">Profile</a>
+        <a href= "" onclick="showlogin()">Profile</a>
     </div>
  	
  	<!-- login section-->
 	<div id='login'>
-		<a href="">Welcome Back!</a>
-		<a href="">user</a>
-        
+		<a href="">Welcome！</a>
+    
 	</div>
 		
 	
@@ -58,6 +57,8 @@
  	<div id="banner"> <!-- Just holds the banner image, don't need to style this div. -->
 		<img class ="bannerPic" name ="randimg" src="banners/pic0.jpg">
  	</div>
+	
+	<div id=bigbody>
 	
 	<div id='searchbar'>
 		<form id="searchform" class="form-inline my-2 my-lg-0" onsubmit="search()">
@@ -68,7 +69,7 @@
 	
 	
 	
-
+	<div id="sidenavi">
 	<nav class="navbar flex-column" >
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">Category</a>
@@ -90,7 +91,7 @@
 					<div class="collapse" id="submenu2" aria-expanded="false">
 						<ul class="flex-column pl-2 nav">
 							<li class="nav-item">
-								<a class="nav-link py-0" href="product/login/product_2.html">RTX2070</a>
+								<a class="nav-link py-0" href="product/login/product_1.html">RTX2070</a>
 								<a class="nav-link py-0" href="working.html">RTX2080</a>
 								<a class="nav-link py-0" href="working.html">GTX1080</a>
 							</li>
@@ -116,8 +117,8 @@
 					<div class="collapse" id="submenu4" aria-expanded="false">
 						<ul class="flex-column pl-2 nav">
 							<li class="nav-item">
-								<a class="nav-link py-0" href="product/login/product_3.html">Lenovo M710s</a>
-								<a class="nav-link py-0" href="product/login/product_1.html">APC BR1500MS</a>
+								<a class="nav-link py-0" href="product/login/product_2.html">Lenovo M710s</a>
+								<a class="nav-link py-0" href="product/login/product_3.html">APC BR1500MS</a>
 								<a class="nav-link py-0" href="working.html">Razer Cynosa Chroma</a>
 							</li>
 						</ul>
@@ -125,17 +126,21 @@
 				</li>
 			</ul>
 	</nav>
+	</div>
+	
 	
 	<div class="profiledesc">
-		<h4>About Us</h4>
-		<p>One Of The Best Computer Components Review Website!</p>
+		<img id = "profilepic" src="users/icon.jpg"></img>
+		<h4>user</h4>
 	</div>
+	
+	
 	
          <div class='share_like'>  
             <ul>  
-                <li><a href="ex1.html">like<br><img class= "sflicon" src = "like.png"></a></li>  
-                <li><a href="ex1.html">follow<br><img class= "sflicon" src = "follow.png"></a></li>  
-                <li><a href="ex1.html">share<br><img class= "sflicon" src = "share.png"></a></li>  
+                <li><a href="">like<br><img class= "sflicon" src = "like.png"></a></li>  
+                <li><a href="">follow<br><img class= "sflicon" src = "follow.png"></a></li>  
+                <li><a href="">share<br><img class= "sflicon" src = "share.png"></a></li>  
                   
             </ul>  
         </div>
@@ -145,22 +150,23 @@
 
 
  	<!-- The Timeline Section -->
+	<div id ="bigcontainer">
 	<div class="container">
 		<div class='timelineHeader'>
 			<h4>Most Popular Products</h4>
 		</div>
 
 		<!-- Photo Grid -->
-		<div class="row">
-			<div class="clearfix visiable-sm" ></div>
-			<div class="col-md-14 d-flex justify-content-center mb-5">
-				<table class="table table-bordered table-striped table-hover">
+		<div class="">
+			<div class="" ></div>
+			<div class="">
+				<table class="">
 					<tr>
-						<th><a href="product/login/product_1.html"><div class='box'><img class="img-fluid" src="image/image1.jpg" ></div></a></th>
-						<th><a href="product/login/product_2.html"><div class='box'><img class="img-fluid" src="image/image2.jpg" ></div> </a></th>
-						<th><a href="product/login/product_3.html"><div class='box'><img class="img-fluid" src="image/image3.jpg" ></div></a></th>
-						<th><a href="working.html"><div class='box'><img class="img-fluid" src="image/gtx1080.jpg" ></div></a></th>
-						<th><a href=""><div class='box'><img class="img-fluid" src="image/i7.jpeg" ></div></a></th>
+						<th><a href="product/login/product_3.html"><div class='smallcontainer'><img class="img-fluid" src="image/image1.jpg" ></div></a></th>
+						<th><a href="product/login/product_1.html"><div class='smallcontainer'><img class="img-fluid" src="image/image2.jpg" ></div> </a></th>
+						<th><a href="product/login/product_2.html"><div class='smallcontainer'><img class="img-fluid" src="image/image3.jpg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/gtx1080.jpg" ></div></a></th>
+						<th><a href=""><div class='smallcontainer'><img class="img-fluid" src="image/i7.jpeg" ></div></a></th>
 					</tr>
 				</table>
 			</div>
@@ -173,15 +179,15 @@
 		</div>
 
 		<!-- Photo Grid -->
-		<div class="row">
-			<div class="clearfix visiable-sm" ></div>
-			<div class="col-md-14 d-flex justify-content-center mb-5">
-				<table class="table table-bordered table-striped table-hover">
+		<div class="">
+			<div class="" ></div>
+			<div class="">
+				<table class="">
 					<tr>
-						<th><a href="working.html"><div class='box'><img class="img-fluid" src="image/rtx2080.jpg" ></div></a></th>
-						<th><a href="working.html"><div class='box'><img class="img-fluid" src="image/samsung.jpg" ></div></a></th>
-						<th><a href="working.html"><div class='box'><img class="img-fluid" src="image/razer.jpg" ></div> </a></th>
-						<th><a href="product/login/product_3.html"><div class='box'><img class="img-fluid" src="image/image3.jpg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/rtx2080.jpg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/samsung.jpg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/razer.jpg" ></div> </a></th>
+						<th><a href="product/login/product_2.html"><div class='smallcontainer'><img class="img-fluid" src="image/image3.jpg" ></div></a></th>
 					</tr>
 				</table>
 			</div>
@@ -194,20 +200,39 @@
 		</div>
 
 		<!-- Photo Grid -->
-		<div class="row">
-			<div class="clearfix visiable-sm" ></div>
-			<div class="col-md-14 d-flex justify-content-center mb-5">
-				<table class="table table-bordered table-striped table-hover">
+		<div class="">
+			<div class="" ></div>
+			<div class="">
+				<table class="">
 					<tr>
-						<th><a href=""><div class='box'><img class="img-fluid" src="image/i7.jpeg" ></div></a></th>
-						<th><a href="working.html"><div class='box'><img class="img-fluid" src="image/dell.jpg" ></div> </a></th>
-						<th><a href="working.html"><div class='box'><img class="img-fluid" src="image/asus.jpg" ></div></a></th>
+						<th><a href=""><div class='smallcontainer'><img class="img-fluid" src="image/i7.jpeg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/dell.jpg" ></div> </a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/asus.jpg" ></div></a></th>
 					</tr>
 				</table>
 			</div>
 		</div>
 	</div>
 	
+	</div>
+	
+	<div class="profiledesc">
+		<h4>About Us</h4>
+		<p>One Of The Best Computer Components Review Website!</p>
+	</div>
+	
+	<img id = "ads" src ="ads.jpg">
+	
+	<iframe id = "video" video src="https://www.youtube.com/embed/CRfZYJ_sk5E"></iframe>
+	
+	<div id="news">
+		<p>Recent News</p>
+		<ul>
+			<li><a href="">How to Buy the Right CPU: A Guide for 2019</a></li>  
+            <li><a href="">How to Buy the Right GPU: A Guide for 2019</a></li>  
+            <li><a href="">How to Buy the Right Monitor: A Guide for 2019</a></li>  
+		</ul>
+	</div>
 
 	
 	

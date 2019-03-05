@@ -7,12 +7,10 @@
 /*** Completed body style below ***/
 
 body {
-	background-color: #333;
-	margin: 0;
-	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	 background: #555;
 }
 
-/*** Removes default style from links ***/
+
 a {
  	text-decoration: none;
  	color: black;
@@ -43,6 +41,14 @@ a {
 	overflow:hidden;
 }
 
+#bigbody {
+	max-width: 1080px;
+	margin: auto;
+	background: white;
+	padding: 10px;
+	height:100%；
+}
+
 #login {
 	position:absolute;
 	top:0px;
@@ -61,8 +67,12 @@ a {
 }
 
 #banner {
-	margin-top: 50px;
-	height:300px;
+	margin-top: 0px;
+	height:500px;
+	max-width: 1080px;
+	margin: auto;
+	background: white;
+	padding: 10px;
 	
 }
 #searchbar {
@@ -83,14 +93,14 @@ a {
 	margin-bottom:5px;
 }
 .bannerPic{
-	height:300px;
+	height:100%;
 	width:100%;
 }
 
 .share_like{ 
-	position:absolute;
-	top: 1000px;
 	height: 100%;
+	float:left;
+	marign-top: 50px;
 	background-color:#333;
 }  
   
@@ -115,7 +125,18 @@ a {
     height: 30px;  
 } 
 
+#sidenavi {
+	float:right;
+	height:680px;
+	background-color:#333;
+}
 
+#profilepic{
+	width: 150px;
+	border-radius: 50%;
+	margin-top: 15px;
+	margin-left:30px;
+}
 
 .navbar {
 	float: left;
@@ -126,19 +147,44 @@ a {
 .dropdown-menu {
 	max-width: 100px;
 }
+
+#bigcontainer {
+	float:right;
+	margin-right:5px;
+	width: 630px;
+	
+	
+}
+
+.smallcontainer{
+	width:100px;
+	height:100px;
+}
 .container {
-	float: right;
+	
+	
+	
+	padding: 10px;
 
 	background-image: url("1.jpg");
 	
 }
 
+#video {
+	position:relative;
+	width: 620px;
+	height: 292px;
+	top: -885px;
+	left: 10px;
+	margin: auto;
+}
+
 .profiledesc{
 	background-color: #333;
-	position:absolute;
-	top:750px;
 	width:210px;
-	height:300px;
+	height: 300px;
+
+	
 }
 
 .profiledesc p{
@@ -150,6 +196,37 @@ a {
   text-decoration: none;
 
 }
+#news {
+	float:left;
+	background-color:#333;
+	width: 210px;
+}
+
+#news p{
+  
+  display: block;
+  color: white;
+  
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+#news ul li a{
+  
+  color: yellow;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+#ads {
+	position: relative;
+	width:210px;
+	height: 210px;
+	
+}
+
 .profiledesc h4{
 	color:white;
 	margin-top: 80px;
@@ -162,6 +239,7 @@ a {
 
 .timelineHeader h4{
 	margin-top: 20px;
+	color: white;
 }
 
 .animated {
