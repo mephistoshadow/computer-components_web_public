@@ -5,26 +5,35 @@ const ratingForm=document.querySelector('#ratingForm')
 review.addEventListener('click', ReviewLogin)
 
 let numberOfReviews=0
-const user=[]
+const reviewList=[]
+
 // Review 'class'
 class Review {
-    constructor(title, author) {
+    constructor(title, rate,review) {
         this.title = title;
-        this.author = author;
+        this.rate=rate
+        this.review=review
         // set review ID
         this.reviewId = numberOfReviews;
         numberOfReviews++;
     }
 }
 
-
+const review1=new Review("GPU review",4,"It is good.")
+reviewList.push(review1)
 
 function ReviewLogin(e) {
     e.preventDefault();
     if (e.target.classList.contains('btn')) {
         if(e.target.id==="save"){
-            addPost()
+            const review=reviewForm[1].value
+            const title=titleForm[0].value
+            const rate= parseInt(ratingForm[0].value)
+            const rev=new Review(title,rate,review)
+            reviewList.push(rev)
+            addPost(rev.title,rev.review,rev.rate)
             loginReminder()
+            changeRating()
 
         }
 
@@ -33,6 +42,7 @@ function ReviewLogin(e) {
 }
 
 function loginReminder(){
+
     const message="Review product here"
     reviewForm[1].placeholder=message
     titleForm[0].placeholder="Title"
@@ -45,11 +55,10 @@ function loginReminder(){
 
 
 }
-function addPost() {
-    const review=reviewForm[1].value
-    const title=titleForm[0].value
-    const rate= ratingForm[0].value
+function addPost(review,title,rate) {
+
     const int=parseInt(rate)
+    console.log(int)
     console.log(review)
     console.log(title)
     const review_post=document.createElement("div")
@@ -123,6 +132,36 @@ function addPost() {
     review_con.appendChild(card)
     console.log(review_con)
 
-    
+}
+function changeRating(){
+    let rating =document.getElementsByClassName("rating")[0]
+    console.log(rating)
+    let rate=0
+    for(let i =0; i<reviewList.length;i++){
+        rate+=reviewList[i].rate
+        console.log(rate)
+    }
+
+    const rate_int=parseInt(rate/reviewList.length)
+    console.log(rate_int)
+    while (rating.firstChild) {
+        rating.removeChild(rating.firstChild);
+    }
+    for(let i =0; i<rate_int;i++){
+
+        const  star=document.createElement("i")
+        star.className="fa fa-star gold"
+
+        rating.appendChild(star)
+    }
+    for(let i =rate_int; i<5;i++){
+        const  star=document.createElement("i")
+        star.className="fa fa-star-o"
+
+        rating.appendChild(star)
+        console.log(rating.children[i])
+    }
+    console.log(rating)
+
 }
 
