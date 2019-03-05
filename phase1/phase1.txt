@@ -8,3 +8,4 @@ Admin login will redirect to admin logined product page
 logined product page:
 admin: profile will link to admin profile
 user: profile will link to user profile
+The rating of the stars will be updated as sum of rating devided by number of rating(integer round down).
