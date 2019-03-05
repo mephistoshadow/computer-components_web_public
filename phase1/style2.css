@@ -66,12 +66,15 @@ a {
 	
 }
 #searchbar {
-	float:right;
+	
 	height: 50px;
+	width:100%;
+	background-color:#300;
 }
 
 #searchform{
-	left:100px;
+	float:right;
+	margin-right: 50px;
 }
 
 #searchform input{
@@ -85,11 +88,16 @@ a {
 }
 
 .share_like{ 
+	position:absolute;
+	top: 1000px;
+	height: 100%;
+	background-color:#333;
 }  
   
 .share_like ul{  
     color: white;  
     padding: 2px;
+	margin-top: 30px;
 }  
   
 .share_like ul li{  
@@ -99,7 +107,7 @@ a {
     display: inline-block;  
     font-weight: bold;  
     text-align: center;  
-    margin-left: 10px;  
+    margin-left: 5px;  
 }  
   
 .sflicon{  
@@ -120,6 +128,40 @@ a {
 }
 .container {
 	float: right;
+
+	background-image: url("1.jpg");
+	
+}
+
+.profiledesc{
+	background-color: #333;
+	position:absolute;
+	top:750px;
+	width:210px;
+	height:300px;
+}
+
+.profiledesc p{
+  
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+.profiledesc h4{
+	color:white;
+	margin-top: 80px;
+	text-align: center;
+}
+
+.timelineHeader{
+	height:50px;
+}
+
+.timelineHeader h4{
+	margin-top: 20px;
 }
 
 .animated {
