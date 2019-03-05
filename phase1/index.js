@@ -34,6 +34,10 @@ var productDB = []
 userDB.push(new user('user', 'user', 'user'));
 userDB.push(new user('admin', 'admin', 'admin'));
 
+productDB.push(new product('rtx2070','',''));
+productDB.push(new product('lenovom710s','',''));
+
+
 
 
 function signup_open(){
@@ -126,11 +130,11 @@ function search(){
 		return false;
 	}
 	else if(product == null){
-		alert("no such item in database");
+		window.open("working.html")
 		return false;
 	}
 	else{
-		window.open(item + ".html")
+		window.open( "./temp/temp/" +item + ".html");
 	}
 	
 }
