@@ -83,3 +83,6 @@
     margin-left:30%;
 
 }
+#login ul{
+    display: inline-block;
+}
