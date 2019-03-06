@@ -162,6 +162,14 @@ a {
 	
 }
 
+.wishicon{
+	height: 40px;
+	width: 40px;
+	float:left;
+	margin-left: 40px;
+	top: 10px;
+}
+
 .smallcontainer{
 	width:100px;
 	height:100px;
@@ -178,10 +186,10 @@ a {
 
 #video {
 	position:relative;
-	width: 620px;
-	height: 292px;
-	top: -885px;
-	left: 10px;
+	width: 630px;
+	height: 300px;
+	top: -890px;
+	left: 5px;
 	margin: auto;
 }
 
@@ -190,6 +198,13 @@ a {
 	width:210px;
 	height: 300px;
 
+	
+}
+.profiledesc a{
+	margin-top: 20px;
+	color:white;
+	display: block;
+	left: 10px;
 	
 }
 
@@ -206,6 +221,7 @@ a {
 	float:left;
 	background-color:#333;
 	width: 210px;
+	top: -10px;
 }
 
 #news p{
@@ -229,18 +245,54 @@ a {
 #ads {
 	position: relative;
 	width:210px;
-	height: 210px;
+	height:250px;
+	top: 0px;
 	
+}
+
+#dashboard{
+	float:right;
+	background-color:#333;
+	position:relative;
+	width: 210px;
+	height: 500px;
+	top: -205px;
+}
+
+#dashboard p{
+	color:white;
+	margin-top: 40px;
+	text-align: center;
+}
+
+#dashboard ul li{
+	color: white;
+	margin-left:-5px;
+}
+
+#ads2{
+	position:relative;
+	width: 620px;
+	height: 300px;
+	left: 220px;
+	top: -300px;
 }
 
 .profiledesc h4{
 	color:white;
-	margin-top: 80px;
+	margin-top: 40px;
 	text-align: center;
 }
 
 .timelineHeader{
 	height:50px;
+}
+
+.hambar{
+	width: 50px;
+	height: 50px;
+	margin-top:-5px;
+	float: left;
 }
 
 .timelineHeader h4{
@@ -252,6 +304,12 @@ a {
 	-webkit-transition: height 0.2s;
 	-moz-transition: height 0.2s;
 	transition: height 0.2s;
+}
+.contentbar {
+	background-color: #521;
+	height: 50px;
+	position: relative;
+	top: -250px;
 }
 
 .stars {

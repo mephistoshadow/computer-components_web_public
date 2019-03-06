@@ -112,7 +112,7 @@ a {
 /*** Timeline styles below ***/
 #profileStats {
 	position: relative;
-	display: inline-block;
+	
 	width: 650px;
 	top: -120px;
 	left: 0px;
@@ -152,6 +152,12 @@ table, td, th {
 
 td, th {
 	min-width: 200px;
+}
+
+.hambar{
+	width: 30px;
+	height: 30px;
+	float: left;
 }
 
 #profileInfo {
