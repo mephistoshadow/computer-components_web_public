@@ -1,5 +1,7 @@
 let numberOfUser = 0;
 
+const functions = require('./index_fs');
+
 
 class user {
 	constructor(name, password, type) {
@@ -16,10 +18,11 @@ class user {
 
 class product{
 	
-	constructor(name, img, description){
+	constructor(name, img, description, comments){
 		this.name = name;
 		this.img = img;
 		this.description = description;
+		this.comments = comments;
 	}
 }
 

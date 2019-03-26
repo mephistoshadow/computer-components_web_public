@@ -8,6 +8,12 @@
 
 body {
 	 background: #555;
+	 background-image: url("./users/image/user.jpg");
+	background-position: center;
+	background-color: #e6ecf0;
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+
 }
 
 
@@ -23,6 +29,14 @@ a {
   top: 0;
   width: 100%;
 }
+
+.img-fluid{
+	width: 100px;
+	height: 100px;
+
+}
+
+
 
 .nav-bar a{
   float: left;
@@ -85,7 +99,14 @@ a {
 #searchform{
 	float:right;
 	margin-right: 50px;
+	margin-top: 10px;
+	
 }
+
+.navbar-brand {
+	font-size: 30px;
+	margin-top: 10px;
+	}
 
 #searchform input{
 	margin-left:10px;
