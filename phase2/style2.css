@@ -1,0 +1,319 @@
+/*** Exercise 1: Twitter CSS ***/
+
+/*
+#### You should not have to change the given property values. ###
+*/
+
+/*** Completed body style below ***/
+
+body {
+	 background: #555;
+}
+
+
+a {
+ 	text-decoration: none;
+ 	color: black;
+}
+
+.nav-bar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; 
+  top: 0;
+  width: 100%;
+}
+
+.nav-bar a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.box{
+
+	height:200px;
+	width:200px;
+	overflow:hidden;
+}
+
+#bigbody {
+	max-width: 1080px;
+	margin: auto;
+	background: white;
+	padding: 10px;
+	height:100%；
+}
+
+#login {
+	position:absolute;
+	top:0px;
+	right: 0px;
+	background-color: #333;
+	margin-right: 30px;
+}
+
+#login a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#banner {
+	margin-top: 0px;
+	height:500px;
+	max-width: 1080px;
+	margin: auto;
+	background: white;
+	padding: 10px;
+	
+}
+#searchbar {
+	
+	height: 50px;
+	width:100%;
+	background-color:#300;
+}
+
+#searchform{
+	float:right;
+	margin-right: 50px;
+}
+
+#searchform input{
+	margin-left:10px;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.bannerPic{
+	height:100%;
+	width:100%;
+}
+
+.share_like{ 
+	height: 100%;
+	float:left;
+	marign-top: 50px;
+	background-color:#333;
+}  
+  
+.share_like ul{  
+    color: white;  
+    padding: 2px;
+	margin-top: 30px;
+}  
+  
+.share_like ul li{  
+    padding: 10px;  
+    list-style:none;  
+    font-style: header;  
+    display: inline-block;  
+    font-weight: bold;  
+    text-align: center;  
+    margin-left: 5px;  
+}  
+  
+.sflicon{  
+    width: 35px;  
+    height: 30px;  
+} 
+
+#sidenavi {
+	float:right;
+	height:680px;
+	background-color:#333;
+}
+
+#profilepic{
+	width: 150px;
+	border-radius: 50%;
+	margin-top: 15px;
+	margin-left:30px;
+}
+
+.navbar-brand {
+	color: white;
+}
+
+.nav-link{
+	color: white;
+}
+.navbar {
+	
+	width: 210px;
+	background-color: #333;
+}
+.dropdown-menu {
+	max-width: 100px;
+}
+
+#bigcontainer {
+	float:right;
+	margin-right:5px;
+	width: 630px;
+	
+	
+}
+
+.wishicon{
+	height: 40px;
+	width: 40px;
+	float:left;
+	margin-left: 40px;
+	top: 10px;
+}
+
+.smallcontainer{
+	width:100px;
+	height:100px;
+}
+.container {
+	
+	
+	
+	padding: 10px;
+
+	background-image: url("1.jpg");
+	
+}
+
+#video {
+	position:relative;
+	width: 630px;
+	height: 300px;
+	top: -890px;
+	left: 5px;
+	margin: auto;
+}
+
+.profiledesc{
+	background-color: #333;
+	width:210px;
+	height: 300px;
+
+	
+}
+.profiledesc a{
+	margin-top: 20px;
+	color:white;
+	display: block;
+	left: 10px;
+	
+}
+
+.profiledesc p{
+  
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+#news {
+	float:left;
+	background-color:#333;
+	width: 210px;
+	top: -10px;
+}
+
+#news p{
+  
+  display: block;
+  color: white;
+  
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+#news ul li a{
+  
+  color: yellow;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+#ads {
+	position: relative;
+	width:210px;
+	height:250px;
+	top: 0px;
+	
+}
+
+#dashboard{
+	float:right;
+	background-color:#333;
+	position:relative;
+	width: 210px;
+	height: 500px;
+	top: -205px;
+}
+
+#dashboard p{
+	color:white;
+	margin-top: 40px;
+	text-align: center;
+}
+
+#dashboard ul li{
+	color: white;
+	margin-left:-5px;
+}
+
+#ads2{
+	position:relative;
+	width: 620px;
+	height: 300px;
+	left: 220px;
+	top: -300px;
+}
+
+.profiledesc h4{
+	color:white;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.timelineHeader{
+	height:50px;
+}
+
+.hambar{
+	width: 50px;
+	height: 50px;
+	margin-top:-5px;
+	float: left;
+}
+
+.timelineHeader h4{
+	margin-top: 20px;
+	color: white;
+}
+
+.animated {
+	-webkit-transition: height 0.2s;
+	-moz-transition: height 0.2s;
+	transition: height 0.2s;
+}
+.contentbar {
+	background-color: #521;
+	height: 50px;
+	position: relative;
+	top: -250px;
+}
+
+.stars {
+	margin: 20px 0;
+	font-size: 24px;
+	color: #d17581;
+}

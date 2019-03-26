@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+ <head>
+ 	<meta charset="utf-8">
+    <title>Exercise 1: Twitter Layout</title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" type="text/css" href="style2.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	 <script src="index.js"></script>
+ </head>
+
+
+ <body onload= "swapPic()">
+	<script language="javascript" type="text/javascript">
+    var ranl = 0;
+    var useRand = 0;
+    images = new Array;
+	images[1] = new Image();
+	images[1].src = "banners/pic0.jpg";
+	images[2] = new Image();
+	images[2].src = "banners/pic1.jpg";
+	images[3] = new Image();
+	images[3].src = "banners/pic2.jpg";
+	images[4] = new Image();
+	images[4].src = "banners/pic3.jpg";
+	function swapPic(){
+	   var imgnum = images.length-1;
+       do{
+	    var randnum = Math.random();
+		randl = Math.round((imgnum-1)*randnum)+1;
+	   }while(randl==useRand);
+        useRand = randl;
+        document.randimg.src = images[useRand].src		
+		setTimeout('swapPic()',2000);
+	}
+	</script>
+ 
+	<div class="nav-bar">
+        <a href="">Home</a>
+        <a href= "" onclick="showlogin()">Profile</a>
+		<div id='login'>
+		<a href="" onclick="login_open()">Login</a>
+        <a href= "" onclick="signup_open()">Sign Up</a>
+	</div>
+    </div>
+ 	
+ 	<!-- login section-->
+	
+		
+	
+
+	<!-- The big banner image -->
+ 	<div id="banner"> <!-- Just holds the banner image, don't need to style this div. -->
+		<img class ="bannerPic" name ="randimg" src="banners/pic0.jpg">
+ 	</div>
+	
+	<div id=bigbody>
+	
+	<div id='searchbar'>
+
+		<form id="searchform" class="form-inline my-2 my-lg-0" onsubmit="search()">
+			<input id ="searchname" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="search">
+		</form>
+	</div>
+	
+	
+	
+	<div id="sidenavi">
+	<nav class="navbar flex-column" >
+			<div class="navbar-header">
+				<img class="hambar" src="hambar.png">
+				<a class="navbar-brand" href="#">Category</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="nav-item dropdown">
+					<a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">CPU</a>
+					<div class="collapse" id="submenu1" aria-expanded="false">
+						<ul class="flex-column pl-2 nav">
+							<li class="nav-item">
+								<a class="nav-link py-0" href="working.html">Intel i3</a>
+								<a class="nav-link py-0" href="working.html">Intel i5</a>
+								<a class="nav-link py-0" href="">Intel i7</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+					<a class="nav-link collapsed" href="#submenu2" data-toggle="collapse" data-target="#submenu2">GPU</a>
+					<div class="collapse" id="submenu2" aria-expanded="false">
+						<ul class="flex-column pl-2 nav">
+							<li class="nav-item">
+								<a class="nav-link py-0" href="product/nonlogin/product_1.html">RTX2070</a>
+								<a class="nav-link py-0" href="working.html">RTX2080</a>
+								<a class="nav-link py-0" href="working.html">GTX1080</a>
+							</li>
+						</ul>
+					</div>
+
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link collapsed" href="#submenu3" data-toggle="collapse" data-target="#submenu3">Monitor</a>
+					<div class="collapse" id="submenu3" aria-expanded="false">
+						<ul class="flex-column pl-2 nav">
+							<li class="nav-item">
+								<a class="nav-link py-0" href="working.html">Samsung C49J890DKN</a>
+								<a class="nav-link py-0" href="product/nonlogin/product_3.html">DELL S2716DG</a>
+								<a class="nav-link py-0" href="working.html">ASUS PG279Q</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link collapsed" href="#submenu4" data-toggle="collapse" data-target="#submenu4">Accessory</a>
+					<div class="collapse" id="submenu4" aria-expanded="false">
+						<ul class="flex-column pl-2 nav">
+							<li class="nav-item">
+								<a class="nav-link py-0" href="product/nonlogin/product_2.html">Lenovo M710s</a>
+								<a class="nav-link py-0" href="product/nonlogin/product_3.html">APC BR1500MS</a>
+								<a class="nav-link py-0" href="working.html">Razer Cynosa Chroma</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+	</nav>
+	</div>
+	
+	
+	<div class="profiledesc">
+		<img id = "profilepic" src="images/profilepic.png"></img>
+		<h4>Please Login</h4>
+		<img class="wishicon" src="wishilist.png">
+		
+		<a href="" onclick="showlogin()"> Wish List <a>
+	</div>
+	
+	
+	
+         <div class='share_like'>  
+            <ul>  
+                <li><a href="">like<br><img class= "sflicon" src = "like.png"></a></li>  
+                <li><a href="">follow<br><img class= "sflicon" src = "follow.png"></a></li>  
+                <li><a href="">share<br><img class= "sflicon" src = "share.png"></a></li>  
+                  
+            </ul>  
+        </div>
+			
+
+      
+
+
+ 	<!-- The Timeline Section -->
+	<div id ="bigcontainer">
+	<div class="container">
+		<div class='timelineHeader'>
+			<h4>Most Popular Products</h4>
+		</div>
+
+		<!-- Photo Grid -->
+		<div class="">
+			<div class="" ></div>
+			<div class="">
+				<table class="">
+					<tr>
+						<th><a href="product/nonlogin/product_3.html"><div class='smallcontainer'><img class="img-fluid" src="image/image1.jpg" ></div></a></th>
+						<th><a href="product/nonlogin/product_1.html"><div class='smallcontainer'><img class="img-fluid" src="image/image2.jpg" ></div> </a></th>
+						<th><a href="product/nonlogin/product_2.html"><div class='smallcontainer'><img class="img-fluid" src="image/image3.jpg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/gtx1080.jpg" ></div></a></th>
+						<th><a href=""><div class='smallcontainer'><img class="img-fluid" src="image/i7.jpeg" ></div></a></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class='timelineHeader'>
+			<h4>Newest Products</h4>
+		</div>
+
+		<!-- Photo Grid -->
+		<div class="">
+			<div class="" ></div>
+			<div class="">
+				<table class="">
+					<tr>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/rtx2080.jpg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/samsung.jpg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/razer.jpg" ></div> </a></th>
+						<th><a href="product/nonlogin/product_2.html"><div class='smallcontainer'><img class="img-fluid" src="image/image3.jpg" ></div></a></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class='timelineHeader'>
+			<h4>Up-Comming Products</h4>
+		</div>
+
+		<!-- Photo Grid -->
+		<div class="">
+			<div class="" ></div>
+			<div class="">
+				<table class="">
+					<tr>
+						<th><a href=""><div class='smallcontainer'><img class="img-fluid" src="image/i7.jpeg" ></div></a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/dell.jpg" ></div> </a></th>
+						<th><a href="working.html"><div class='smallcontainer'><img class="img-fluid" src="image/asus.jpg" ></div></a></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	</div>
+	
+	<div class="profiledesc">
+		<h4>About Us</h4>
+		<p>One Of The Best Computer Components Review Website!</p>
+	</div>
+	
+	<img id = "ads" src ="ads.jpg">
+	
+	<iframe id = "video" video src="https://www.youtube.com/embed/CRfZYJ_sk5E"></iframe>
+	
+	<div id="news">
+		<p>Recent News</p>
+		<ul>
+			<li><a href="">How to Buy the Right CPU: A Guide for 2019</a></li>  
+            <li><a href="">How to Buy the Right GPU: A Guide for 2019</a></li>  
+            <li><a href="">How to Buy the Right Monitor: A Guide for 2019</a></li>  
+		</ul>
+	</div>
+	
+	<div id="dashboard">
+		<p>Dashboard</p>
+		
+		<ul>
+			<li><a href="">Intel i7 is on sale now!!</a></li>  
+            <li><a href="">Get Your 15% off on Monitors</a></li>   
+		</ul>
+		
+	</div>
+	
+	<img id="ads2" src = "ads2.jpg">
+	
+	<div class='contentbar'>
+		
+	</div>
+
+	
+	
+
+ </body>
+</html>

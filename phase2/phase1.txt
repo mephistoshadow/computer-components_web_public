@@ -1,0 +1,50 @@
+Index page: 
+on top left of page, there is a home button and a profile button, in this state profile button will alert a please login message
+on top right of page, there is a login button and a sign up button, which will lead to corresponding page.
+on left side, there is a navigation bar as category, which represent categories of our products in database, each item can link to corresponding page. 
+there are some products we did not have a page for it yet, so clicking on those links will lead to 404 not found.
+also there is a search bar on right side of page, there are two products hard coded in js file: 'rtx2070' and 'lenovom710s'. 
+so searching those two item will lead to corresponding page, otherwise will lead to 404 not found.
+also on the left side bar, we have a short description about our website, with share like follow icon buttons for user interaction with this web
+on the middle of page, we have 3 tables for showing products by different sorting orders.
+
+Login page:
+there are two types of user: normal user(username: user   password:   user  ) and admin(username:  admin   password:  admin  ) 
+profile page will open with right combination of user input
+
+User profile Page: 
+When, we login as a user, then it will lead to the user.html page. In this page, user can view their wish list of the product. They can jump to the corresponding product page to see the reviews about the product or they can delete the product from the wish list.User can add the product to the wish list on the product page. But right now, we don't have a database of the product. So we did not add this functionality on the product page, we will add it on the phase 2. User will also has a table which records their comment history. They can jump to the certain product page to see other's review on the same product. In that page, user can modify their nickname and their description as well as change the icon(this functionality will be accomplish on phase two, right now we don't have a database for the icons.). There is a video section on the user page, this section will like a advertisement or like a demo of some hottest product.
+
+Sign Up page: this page supports user to create their own account for the website.
+
+Admin profile Page:
+
+on top left, we have a navi-button to go home page.
+there are two tables in admin page. one for managing users and one for managing products.
+admin can reset password for users and also can disable user from website
+admin can also add or delete item in database. to add a new item, there is a form on the top right side, by giving product name, image url and shot description, 
+for example: name: i7   url: ../image/i7.jpeg    and description:  cpu  then this item will show in product table.
+to delete item just click on delete button in the table.
+also admin can reset password for them as well.
+
+
+product page: 
+-directory:phase1/product/
+This page includes the (product image, product description, product configuration)(hard coded) and review product section. Product description include the star rating of the product. (hard coded) The review section allows user to write reviews and rating(only logined user and assume there are maximum of 5 stars) and read review from users(There is a hard coded review). The page can go back to the main page from home
+
+
+-different type of product page:
+directory:phase1/product/nonlogin/
+non login product page: 
+Non-login user can only view product description and reviews.
+login/sign in: the top navigation can provide user a quick login way to review products and it will redirect to logined product page(user or admin depend on the input). The sign in button allows user to redirect to sign in page.
+
+
+-directory:phase1/product/login/
+logined product page:
+filename that end with "a" like product_1a.html is a admin login in product page, o.w. it is a user login product page
+admin: profile will link to admin profile
+user: profile will link to user profile
+
+-review section:
+The rating of the stars will be updated as sum of rating divided by number of rating(integer round down).And able to write reviews.
