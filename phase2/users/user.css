@@ -1,33 +1,18 @@
-/*** Exercise 1: Twitter CSS ***/
 
-/*
-#### You should not have to change the given property values. ###
-*/
-
-/*** Completed body style below ***/
 
 body {
-	background-image: url("user.jpg");
+	background-image: url("./image/user.jpg");
 	background-position: center;
 	background-color: #e6ecf0;
 	margin: 0;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
-/*** Removes default style from links ***/
 a {
  	text-decoration: none;
  	color: black;
 }
 
-/***********************************************
-********** Add to the selectors below **********
-************************************************/
-
-/* You only need to add where it says "Add properties below" */
-
-
-/*** Header and banner styles below ***/
 
 #header {
 	padding: 5px;
@@ -225,7 +210,7 @@ td, th {
 }
 
 #comment_history{
-	margin-top: 20px;
+	margin-top: 325px;
 }
 
 #Comment{
@@ -246,9 +231,8 @@ td, th {
 
 
 #search_box{
-	margin-left: 40%;
+	margin-left: 1000px;
 	margin-top: 15px;
-	position:  absolute;
 }
 
 

@@ -1,7 +1,4 @@
 const search = document.querySelector('#search_box');
-
-
-
 const information = document.querySelector('#profile_name');
 const wishList = document.querySelector('#Wishtable');
 const comment = document.querySelector('#comment_history');

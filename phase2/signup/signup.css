@@ -17,20 +17,13 @@
 }
 
 body {
-    background-image: url(picture.jpg);
-    
-   /* background-repeat: repeat-x;*/
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: -5px;
-    /*animation: flip 20s linear infinite;*/
-}
-/*@keyframes flip {
-  from { background-position: 0 0; }
-  to { background-position: 100% 0; }
-}*/
+   background-image: url("../users/image/user.jpg");
+   background-position: center;
+   background-color: #e6ecf0;
+   margin: 0;
+   font-family: "Helvetica Neue", Helvetica, sans-serif;
+   }
+
 
 ul {
     padding-left:0;
