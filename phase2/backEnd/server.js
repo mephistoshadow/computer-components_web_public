@@ -83,8 +83,7 @@ app.get('/main/admin', (req, res) => {
 		res.render('admin.hbs', {
 			email: req.session.email
 		})
-	else if()
-	} else {
+	else {
 		res.redirect('/main/login')
 	}
 })
