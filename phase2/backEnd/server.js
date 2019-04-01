@@ -86,19 +86,18 @@ app.get('/', sessionChecker, (req, res) => {
 // route for login
 app.route('/login')
 	.get(sessionChecker, (req, res) => {
-		res.sendFile(__dirname + '/FrontEnd/html/signup.html')
+		res.sendFile(__dirname + '/FrontEnd/html/login.html')
 	})
 
 
-
-// route for login
-app.route('/main/login')
+// route for main
+app.route('/login')
 	.get(sessionChecker, (req, res) => {
-		res.sendFile(__dirname + '/public/login.html')
+		res.sendFile(__dirname + '/FrontEnd/html/index.html')
 	})
 
-//
-app.get('/main/user', (req, res) => {
+
+app.get('/user', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
 		//res.sendFile(__dirname + '/public/dashboard.html')
@@ -110,26 +109,21 @@ app.get('/main/user', (req, res) => {
 	}
 })
 
-app.get('/main/admin', (req, res) => {
+app.get('/admin', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
 		//res.sendFile(__dirname + '/public/dashboard.html')
 		res.render('admin.hbs', {
 			email: req.session.email
 		})
-<<<<<<< HEAD
-	else {
-=======
 	} else {
->>>>>>> 4d06c7d8208944b16d30a5660331281a3a2bc284
-		res.redirect('/main/login')
+		res.redirect('/login')
 	}
 })
 
 
 // User login and logout routes
-
-app.post('/users/login', (req, res) => {
+app.post('/login', (req, res) => {
 	const email = req.body.email
 	const password = req.body.password
 
@@ -145,32 +139,32 @@ app.post('/users/login', (req, res) => {
 			req.session.email = user.email
 			req.session.role = user.role
 			if(user.role == "user"){
-				res.redirect('/main/user')
+				res.redirect('/user')
 			}
 			else{
-				res.redirect('/main/admin')
+				res.redirect('/admin')
 			}
 		}
 	}).catch((error) => {
-		res.status(400).redirect('main/login')
+		res.status(400).redirect('/login')
 	})
 })
 
 //user logout
 
-app.get('/main/users/logout', (req, res) => {
+app.get('/users/logout', (req, res) => {
 	req.session.destroy((error) => {
 		if (error) {
 			res.status(500).send(error)
 		} else {
-			res.redirect('/')
+			res.redirect('/main')
 		}
 	})
 })
 
 // admin logout
 
-app.get('/main/admin/logout', (req, res) => {
+app.get('/admin/logout', (req, res) => {
 	req.session.destroy((error) => {
 		if (error) {
 			res.status(500).send(error)
