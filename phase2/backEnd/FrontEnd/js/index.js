@@ -1,6 +1,6 @@
 let numberOfUser = 0;
 
-const functions = require('./index_fs');
+// const functions = require('./index_fs');
 
 
 class user {
