@@ -73,10 +73,21 @@ const sessionChecker = (req, res, next) => {
 
 
 // Route for getting the main page
-app.get('/main', (req, res) =>{
-	
-	
-	
+app.post('/users', (req, res) => {
+
+	// Create a new user
+	const user = new User({
+		email: req.body.email,
+		password: req.body.password
+	})
+
+	// save user to database
+	user.save().then((result) => {
+		res.send(user)
+	}, (error) => {
+		res.status(400).send(error) // 400 for bad request
+	})
+
 })
 
 app.get('/', sessionChecker, (req, res) => {
