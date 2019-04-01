@@ -1,14 +1,17 @@
-const search = document.querySelector('#search_box');
-const information = document.querySelector('#profile_name');
+
+
 const wishList = document.querySelector('#Wishtable');
 const comment = document.querySelector('#comment_history');
+const profile = document.querySelector('#changeprofile');
+const password = document.querySelector('#changePw');
 
 
 
 
 
-search.addEventListener('submit', stratSearch);
-information.addEventListener('submit',chaneInfo);
+
+profile.addEventListener('click',chaneInfo);
+password.addEventListener('click',changePw);
 wishList.addEventListener('click',generaClick);
 comment.addEventListener('click',commentClick);
 
@@ -21,17 +24,10 @@ class personinfo {
 	}
 }
 
-
-function stratSearch(e) {
+function changePw(e) {
 	e.preventDefault();
-	const information = document.querySelector("#product").value;
-	let name = "";
-	name = name + information;
-	name = name + ".html"
-	hardcode ="../product/nonlogin/product_1.html"
-	window.open(hardcode);
-}
 
+}
 
 function chaneInfo(e) {
 	e.preventDefault();
