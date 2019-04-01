@@ -91,7 +91,7 @@ app.route('/login')
 
 
 // route for main
-app.route('/login')
+app.route('/main')
 	.get(sessionChecker, (req, res) => {
 		res.sendFile(__dirname + '/FrontEnd/html/index.html')
 	})
@@ -175,6 +175,222 @@ app.get('/admin/logout', (req, res) => {
 })
 
 
+// get all products in wish_list for user by id
+app.get('/user/wish_list/:id', (req, res) => {
+	// Add code here
+	const id = req.params.id;
+	
+	if (!ObjectID.isValid(id)) {
+		return res.status(404).send()
+	}
+	User.findById(id).then((user) => {
+		if (!user) {
+			res.status(404).send()
+		} else {
+			res.send({ User })
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+
+})
+
+// post a product by product_id for user by id
+app.post('/user/wish_list/:id/:product_id', (req, res) => {
+	// Add code here
+	const id = req.params.id;
+	const pid = req.params.product_id;
+	
+	if (!ObjectID.isValid(pid)) {
+		return res.status(404).send()
+	}
+	
+	
+	if (!ObjectID.isValid(id)) {
+		return res.status(404).send()
+	}
+	var product = Product.findById(pid);
+	
+	User.findByIdAndUpdate(id, {$push: {wish_list: product}}, {new: true}).then((user) => {
+		if (!user) {
+			res.status(404).send()
+		} else {
+			
+			res.send({"Product" : product, "User" : user })
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+	
+
+})
+
+
+
+// get all comments for user by id
+app.get('/user/comment_history/:id', (req, res) => {
+	// Add code here
+	const id = req.params.id;
+	
+	if (!ObjectID.isValid(id)) {
+		return res.status(404).send()
+	}
+	User.findById(id).then((user) => {
+		if (!user) {
+			res.status(404).send()
+		} else {
+			res.send({ User })
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+
+})
+
+// post a comment  for user by id
+app.post('/user/comment_history/:id', (req, res) => {
+	// Add code here
+	const id = req.params.id;
+	
+	var comment = {
+		time : req.body.time,
+		review : req.body.review
+	}
+	
+	if (!ObjectID.isValid(id)) {
+		return res.status(404).send()
+	}
+	User.findByIdAndUpdate(id, {$push: {comment_history: comment}}, {new: true}).then((user) => {
+		if (!user) {
+			res.status(404).send()
+		} else {
+			
+			res.send({"Comment" : comment, "User" : user })
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+	
+
+})
+
+
+// get specific product for specific user in their wish list
+app.get('/user/wish_list/:id/:product_id', (req, res) => {
+	// Add code here
+	const id = req.params.id;
+	const pid = req.params.product_id;
+	
+	if (!ObjectID.isValid(pid)) {
+		return res.status(404).send()
+	}
+	User.findById(id).then((user) => {
+		var product = user.wish_list.id(pid);
+		if (!product) {
+			res.status(404).send()
+		} else {
+			res.send({ product })
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+	
+
+})
+
+// get specific comment by comment_id for specific user by id in their comment history
+app.get('/user/comment_history/:id/:comment_id', (req, res) => {
+	// Add code here
+	const id = req.params.id;
+	const cid = req.params.comment_id;
+	
+	if (!ObjectID.isValid(cid)) {
+		return res.status(404).send()
+	}
+	User.findById(id).then((user) => {
+		var comment = user.comment_history.id(cid);
+		if (!comment) {
+			res.status(404).send()
+		} else {
+			res.send({ comment })
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+	
+
+})
+
+//delete specifc product in for user by id
+app.delete('/user/wish_list/:id/:product_id', (req, res) => {
+	// Add code here
+	
+	const id = req.params.id;
+	const pid = req.params.product_id;
+	
+	if (!ObjectID.isValid(pid)) {
+		return res.status(404).send()
+	}
+	User.findById(id).then((user) => {
+		var product = user.wish_list.id(rid);
+		
+		User.findByIdAndUpdate(id, {$pull: {wish_list: product}}, {new: true}).then((user) => {
+		if (!user || !product) {
+			res.status(404).send()
+		} else {
+			
+			res.send({"Product" : product, "User" : user })
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+
+})
+
+
+// update comment for specific item
+app.patch('/user/comment_history/:id/:comment_id', (req, res) => {
+	// Add code here
+	
+	const { time, review } = req.body;
+	const properties = { time, review };
+	log(properties);
+	
+	const id = req.params.id;
+	const cid = req.params.comment_id;
+	
+	if (!ObjectID.isValid(cid)) {
+		return res.status(404).send()
+	}
+	User.findById(id).then((user) => {
+		var comment = user.comment_history.id(cid);
+		if (!comment || !user) {
+			res.status(404).send()
+		} else {
+			//modify and update given reservation in the restaurant
+			user.comment_history.id(cid).time = req.body.time;
+			user.comment_history.id(cid).review = req.body.review;
+			User.findByIdAndUpdate(id, {$set: user}, {new: true}).then((user) => {
+			res.send({"Comment" : comment, "User" : user })
+			})
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+
+})
 
 
 //Route for getting the specific product page info 
