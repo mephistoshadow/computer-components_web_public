@@ -23,7 +23,33 @@ const port = process.env.PORT || 3000
 const app = express();
 app.use(bodyParser.json());
 
+// Route for getting the main page
+app.get('/main', (req, res) =>{
+	
+	
+	
+})
 
+
+// route for login
+app.route('/login')
+	.get(sessionChecker, (req, res) => {
+		res.sendFile(__dirname + '/public/login.html')
+	})
+
+//
+app.get('/profile', (req, res) => {
+	// check if we have active session cookie
+	if (req.session.user) {
+		//res.sendFile(__dirname + '/public/dashboard.html')
+		res.render('user.hbs', {
+			email: req.session.email
+		})
+	else if()
+	} else {
+		res.redirect('/login')
+	}
+})
 
 
 
