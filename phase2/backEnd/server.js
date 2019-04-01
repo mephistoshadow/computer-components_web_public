@@ -1,11 +1,10 @@
 /* E4 server.js */
 
 /**	
-Restaurant: { name - String, description - String, reservationList - list of Reservations }
 
-Reservation: { time - String, people - Number }
 
 **/
+
 
 'use strict';
 const log = console.log;
