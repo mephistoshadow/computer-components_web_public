@@ -5,22 +5,19 @@
     <meta charset="utf-8">
     <title>User pages</title>
     <!-- <link rel="stylesheet" type="text/css" href="user.css"> -->
-    <link rel="stylesheet" type="text/css" href="user.css">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 
 <body>
     <div class="navbar">
         <a href="../index.html">Home</a>
         <a href="admin.html">Profile</a>
-        <form id = search_box>
-            <input id='product' type="text" placeholder="type the product you want to search">
-            <input class="creach" type="submit" value="search">
-        </form>
+        <a id = "logout" href="admin.html">Logout</a>
     </div>
 	
 	<div id= "bigdiv">
     <div id="banner">
-        <img src="Userimage/Userbanner.jpg" class="bannerPic">
+        <img src="../image/Userbanner.jpg" class="bannerPic">
        <!--  <img src="Userimage/Userbanner.jpg" class="bannerPic"> -->
     </div>
     <!-- <div class="slider">
@@ -30,11 +27,18 @@
     
 
         <div id="profileInfo">
-            <img class='img-circle' src="profilepic.png" />
+            <img class='img-circle' src="../image/icon.jpg" />
             <p><strong>Nick Name: <span>Admin</span></strong></p>
             <p><strong>Description: <span>Admin of this website</span></strong></p>
             
         </div>
+        <form id="profileStats">
+            <label><p> Change the Admin password</p>></label>
+            <input id='oldpw' type="text" placeholder="Old Password">
+            <input id='newpw' type="text" placeholder="New Password">
+            <input id='newpw1' type="text" placeholder="Re New Password">
+            <input class="change" type="submit" value="Change">
+    </form>
 
 		<form id = "newpform" onsubmit="return false">
 			<h2>Create New Product</h2>
@@ -54,14 +58,6 @@
 			</p>
 		</form>
 		
-	<form id="profileStats">
-            <input id='oldpw' type="text" placeholder="Old Password">
-            <input id='newpw' type="text" placeholder="New Password">
-            <input id='newpw1' type="text" placeholder="Re New Password">
-            <input class="change" type="submit" value="Change">
-    </form>
-	
-
 
        <!--  <div id='Wishlist'> -->
             <table id='Wishtable' bgcolor="#ffecd2">
@@ -77,7 +73,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="./image/image2.jpg" alt="" border=3 height=100 width=100>
+                            <img src="../image/image2.jpg" alt="" border=3 height=100 width=100>
 							<a>RXT 2070</a>
                         </td>
                         <td>
@@ -87,7 +83,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="./image/image3.jpg" alt="" border=3 height=100 width=100>
+                            <img src="../image/image3.jpg" alt="" border=3 height=100 width=100>
 							<a>Lenovo M710s</a>
                         </td>
                         <td>
@@ -97,7 +93,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="./image/image1.jpg" alt="" border=3 height=100 width=100>
+                            <img src="../image/image1.jpg" alt="" border=3 height=100 width=100>
 							<a>APC BR1500MS</a>
                         </td>
                         <td>
@@ -147,7 +143,7 @@
         </div>
 		</div>
 
-        <script type="text/javascript" src="user.js"></script>
+        <script type="text/javascript" src="../js/admin.js"></script>
 
 </body>
 

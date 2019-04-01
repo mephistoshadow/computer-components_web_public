@@ -1,37 +1,21 @@
-/*** Exercise 1: Twitter CSS ***/
 
-/*
-#### You should not have to change the given property values. ###
-*/
-
-/*** Completed body style below ***/
 
 body {
-	background-image: url("user.jpg");
+	background-image: url("../image/user.jpg");
 	background-position: center;
 	background-color: #e6ecf0;
 	margin: 0;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
-/*** Removes default style from links ***/
 a {
  	text-decoration: none;
  	color: black;
 }
 
-/***********************************************
-********** Add to the selectors below **********
-************************************************/
-
-/* You only need to add where it says "Add properties below" */
-
-
-/*** Header and banner styles below ***/
 
 #header {
 	padding: 5px;
-	background-color: white;
 }
 
 #userstatus {
@@ -49,7 +33,7 @@ a {
 }
 
 #newpform {
-	margin-left: 720px;
+	margin-left: 800px;
 	margin-top:20px;
 	margin-bottom: 20px;
 	height: 240px;
@@ -111,11 +95,9 @@ a {
 
 /*** Timeline styles below ***/
 #profileStats {
-	position: relative;
-	
-	width: 650px;
-	top: -120px;
-	left: 0px;
+	position: absolute;
+	top: 550px;
+	left: 20px;
 	padding: 2em 2em 1em;
 	box-shadow: 0 0 1em #222;
 	border-radius: 2px;
@@ -127,7 +109,7 @@ a {
 
 #Wishtable {
 	margin-top: 27px;
-	margin-left: 680px;
+	margin-left: 690px;
 	float:left;
 }
 
@@ -154,12 +136,6 @@ td, th {
 	min-width: 200px;
 }
 
-.hambar{
-	width: 30px;
-	height: 30px;
-	float: left;
-}
-
 #profileInfo {
 	float:left;
 	/*padding: 10px;*/
@@ -170,8 +146,7 @@ td, th {
 }
 
 #profileStats{
-	position: relative;
-
+	margin-left:10px;
 }
 
 
@@ -188,25 +163,6 @@ td, th {
 
 
 .jump_button{
-  width: 100px; 
-	height: 40px; 
-	border-width: 5px; 
-	border-radius: 3px; 
-	background: #9CECFB;
-	cursor: pointer; 
-	outline: none; 
-	font-family: Microsoft YaHei; 
-	color: white; 
-	font-size: 17px; 
-}
-
-#bigdiv{
-	width: 1080px;
-  margin: auto;
-  padding: 10px;
-}
-
-.submit_button{
   width: 100px; 
 	height: 40px; 
 	border-width: 5px; 
@@ -249,31 +205,25 @@ td, th {
 
 
 .change{
-	width: 100px; 
-	height: 40px; 
-	border-width: 5px; 
-	border-radius: 3px; 
-	background: #9CECFB;
-	cursor: pointer; 
-	outline: none; 
-	font-family: Microsoft YaHei; 
-	color: white; 
-	font-size: 17px;
 
 }
 
 #comment_history{
-	margin-top: 20px;
+	margin-top: 325px;
 }
 
 #Comment{
 	padding: 10px;
 	width: 410px;
 	min-height: 300px;
-	margin-left: 0px;
+	margin-left: 10px;
 	position: absolute;
 /*	margin-top: 310px;*/
 
+}
+
+#logout{
+	margin-left: 900px;
 }
 
 #video {
@@ -284,9 +234,8 @@ td, th {
 
 
 #search_box{
-	margin-left: 40%;
+	margin-left: 1000px;
 	margin-top: 15px;
-	position:  absolute;
 }
 
 
