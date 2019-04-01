@@ -222,6 +222,10 @@ td, th {
 
 }
 
+#logout{
+	margin-left: 900px;
+}
+
 #video {
 	margin-left: 220px;
 	height: 300px;

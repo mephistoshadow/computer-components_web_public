@@ -6,8 +6,12 @@
 
 /*** Completed body style below ***/
 
+
+#logout{
+	margin-left: 900px;
+}
 body {
-	background-image: url("user.jpg");
+	background-image: url("../image/user.jpg");
 	background-position: center;
 	background-color: #e6ecf0;
 	margin: 0;
@@ -111,10 +115,10 @@ a {
 
 /*** Timeline styles below ***/
 #profileStats {
-	position: relative;
-	
+	position: absolute;
+	margin-top: 200px;
+	margin-left: 20px;
 	width: 650px;
-	top: -120px;
 	left: 0px;
 	padding: 2em 2em 1em;
 	box-shadow: 0 0 1em #222;
@@ -169,10 +173,6 @@ td, th {
 	min-height: 300px;
 }
 
-#profileStats{
-	position: relative;
-
-}
 
 
 
@@ -284,11 +284,9 @@ td, th {
 
 
 #search_box{
-	margin-left: 40%;
+	margin-left: 1000px;
 	margin-top: 15px;
-	position:  absolute;
 }
-
 
 
 .navbar {
