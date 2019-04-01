@@ -27,6 +27,23 @@ const app = express();
 app.use(bodyParser.json());
 
 
+app.set('view engine', 'hbs')
+
+// static js directory
+app.use(express.static(__dirname + '/FrontEnd'));
+
+// Add express sesssion middleware
+app.use(session({
+	secret: 'oursecret',
+	resave: false,
+	saveUninitialized: false,
+	cookie: {
+		expires: 600000,
+		httpOnly: true
+	}
+}))
+
+
 
 // Middleware for authentication for resources
 const authenticate = (req, res, next) => {
@@ -46,6 +63,14 @@ const authenticate = (req, res, next) => {
 	}
 }
 
+const sessionChecker = (req, res, next) => {
+	if (req.session.user) {
+		res.redirect('profile')
+	} else {
+		next();
+	}
+}
+
 
 
 // Route for getting the main page
@@ -54,6 +79,17 @@ app.get('/main', (req, res) =>{
 	
 	
 })
+
+app.get('/', sessionChecker, (req, res) => {
+	res.redirect('login')
+})
+
+// route for login
+app.route('/login')
+	.get(sessionChecker, (req, res) => {
+		res.sendFile(__dirname + '/FrontEnd/html/signup.html')
+	})
+
 
 
 // route for login
@@ -70,7 +106,6 @@ app.get('/main/user', (req, res) => {
 		res.render('user.hbs', {
 			email: req.session.email
 		})
-	else if()
 	} else {
 		res.redirect('/login')
 	}
@@ -83,7 +118,11 @@ app.get('/main/admin', (req, res) => {
 		res.render('admin.hbs', {
 			email: req.session.email
 		})
+<<<<<<< HEAD
 	else {
+=======
+	} else {
+>>>>>>> 4d06c7d8208944b16d30a5660331281a3a2bc284
 		res.redirect('/main/login')
 	}
 })
