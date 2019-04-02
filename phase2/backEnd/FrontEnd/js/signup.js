@@ -21,7 +21,7 @@ function addStudent(e) {
     const request = new Request(url, {
         method: 'POST', 
         body: JSON.stringify(data),
-         followAllRedirects: true,
+        followAllRedirects: true,
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
@@ -35,7 +35,10 @@ function addStudent(e) {
            alert("the user already exist or you have type wrong information required,please try again");
         } else {
         	console.log(res)
-        	jump();
+        	window.alert("Success")
+        	// res.render(res.url);
+        	// window.open(res.url,"_self")
+        	
         }
         
         
@@ -44,23 +47,4 @@ function addStudent(e) {
     })
 
 
-}
-
-
-function jump() {
-	
-	const url_1 = '/back';
-
-    // The data we are going to send in our request
-    // Create our request constructor with all the parameters we need
-   fetch(url_1)
-    .then((res) => { 
-        if (res.status === 200) {
-         
-       } else {
-            alert('Could not get students')
-       }                
-    }).catch((error) => {
-        console.log(error)
-    })
 }
