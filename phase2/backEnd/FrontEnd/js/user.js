@@ -56,8 +56,8 @@ function generaClick(e) {
 function commentClick(e) {
 	e.preventDefault();
 	let index = e.target.parentElement.parentElement.rowIndex;
-	if (e.target.className == 'jump_button') {
-		Checkpage(index);
+	if (e.target.className == 'delete_button') {
+		DeleterowComment(index);
     }
 }
 
@@ -111,8 +111,11 @@ function addcomment(comment_1) {
 
 }
 
+
+
 function DeleterowComment(index) {
 	comment.deleteRow(index);
+	
 }
 
 
