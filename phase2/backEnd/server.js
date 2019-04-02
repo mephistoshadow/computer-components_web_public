@@ -108,6 +108,11 @@ app.route('/login')
 		res.sendFile(__dirname + '/FrontEnd/html/login.html')
 	})
 
+	// route for login
+app.route('/signup')
+	.get(sessionChecker, (req, res) => {
+		res.sendFile(__dirname + '/FrontEnd/html/signup.html')
+	})
 
 // route for main
 app.route('/main')
@@ -187,6 +192,29 @@ app.post('/login', (req, res) => {
 		}
 	}).catch((error) => {
 		res.status(400).redirect('/error')
+	})
+})
+
+// User login and logout routes
+app.post('/signup', (req, res) => {
+	const email = req.body.email
+	const password = req.body.password
+	log(email, password)
+	
+	const user = new User({
+		email: email,
+		password: password,
+		role: "user"
+	})
+	
+	user.save().then((result) => {
+		req.session.user = result._id;
+		req.session.email = result.email;
+		
+		res.redirect("/user")
+		
+	}, (error) => {
+		res.status(400).send(error)
 	})
 })
 
