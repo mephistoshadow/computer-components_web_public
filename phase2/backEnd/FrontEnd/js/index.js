@@ -51,40 +51,43 @@ function login_open(){
 	window.open('login.html');
 }
 
-function loginFunction(){
-
+// function loginFunction(){
 	
-	name = document.getElementById('username').value;
-	password = document.getElementById('password').value;
-	
-	console.log(name);
+	// const url = "/login";
 	
 	
-	var user = userDB.find(function(element){
-		if(element.name == name){
-			return element;
-		}
-	});
 	
-	if(name == ''){
-		alert("please type your name and password");
-		return false;
-	}
+	// name = document.getElementById('username').value;
+	// password = document.getElementById('password').value;
 	
-	if(user == null){
-		alert("no such user/wrong password");
-		return false;
-	}
-	else if(user.type == 'admin'){ 
-		window.open("./admin/admin.html");
-	}
+	// console.log(name);
 	
-	else{
-		window.open('./users/user.html');
+	
+	// var user = userDB.find(function(element){
+		// if(element.name == name){
+			// return element;
+		// }
+	// });
+	
+	// if(name == ''){
+		// alert("please type your name and password");
+		// return false;
+	// }
+	
+	// if(user == null){
+		// alert("no such user/wrong password");
+		// return false;
+	// }
+	// else if(user.type == 'admin'){ 
+		// window.open("./admin/admin.html");
+	// }
+	
+	// else{
+		// window.open('./users/user.html');
 		
-	}
+	// }
 	
-}
+// }
 
 function showlogin(){
 	alert("Please Login!");

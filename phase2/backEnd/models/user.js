@@ -20,7 +20,11 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		minlength: 6
-	}
+	},
+	
+	role: String,
+	wish_list : [],
+	comment_history: []
 })
 
 // Our own student finding function 

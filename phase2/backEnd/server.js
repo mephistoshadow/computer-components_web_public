@@ -13,7 +13,8 @@ const express = require('express');
 const session = require('express-session')
 const bodyParser = require('body-parser');
 const { ObjectID } = require('mongodb');
-const hbs = require('hbs')
+const hbs = require('hbs');
+var path = require('path');
 
 // Mongoose
 const { mongoose } = require('./db/mongoose');
@@ -25,8 +26,11 @@ const port = process.env.PORT || 3000
 const app = express();
 app.use(bodyParser.json());
 
+app.use(bodyParser.urlencoded({ extended:true }))
+
 
 app.set('view engine', 'hbs')
+app.set("views", path.join(__dirname, "views"));
 
 // static js directory
 app.use(express.static(__dirname + '/FrontEnd'));
@@ -95,7 +99,7 @@ app.post('/users', (req, res) => {
 })
 
 app.get('/', sessionChecker, (req, res) => {
-	res.redirect('login')
+	res.redirect('/main')
 })
 
 // route for login
@@ -108,10 +112,14 @@ app.route('/login')
 // route for main
 app.route('/main')
 	.get(sessionChecker, (req, res) => {
-		res.sendFile(__dirname + '/FrontEnd/html/index.html')
+		res.sendFile(__dirname + '/FrontEnd/html/mainpage.html')
 	})
 
+app.route("/error").get(sessionChecker, (req, res) => {
+		res.sendFile(__dirname + '/FrontEnd/html/working.html')
+	})
 
+	
 app.get('/user', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
@@ -120,22 +128,22 @@ app.get('/user', (req, res) => {
 		res.render('user.hbs', {
 			email: req.session.email
 		})
-	} else {
+	 } else {
 		res.redirect('/login')
-	}
+	 }
 })
 
 app.get('/admin', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
 		//res.sendFile(__dirname + '/public/dashboard.html')
-		// res.render('admin.hbs', {
-			// email: req.session.email
-			res.redirect('/main')
+		res.render('admin.hbs', {
+			email: req.session.email
+		})
 		
-	} else {
+	 } else {
 		res.redirect('/login')
-	}
+	 }
 })
 
 app.get('/users', (req, res) => {
@@ -153,7 +161,8 @@ app.get('/users', (req, res) => {
 app.post('/login', (req, res) => {
 	const email = req.body.email
 	const password = req.body.password
-
+	log(email, password)
+	
 	User.findByEmailPassword(email, password).then((user) => {
 		if(!user) {
 			log("no such users!")
@@ -167,17 +176,17 @@ app.post('/login', (req, res) => {
 			req.session.user = user._id;
 			req.session.email = user.email;
 			req.session.role = user.role;
-			res.redirect('/user');
+			log(user.role)
 			
-			// if(user.role == "user"){
-				// res.redirect('/user')
-			// }
-			// else{
-				// res.redirect('/admin')
-			// }
+			if(user.role == "admin"){
+				res.redirect('/admin')
+			}
+			else{
+				res.redirect('/user')
+			}
 		}
 	}).catch((error) => {
-		res.status(400).redirect('/login')
+		res.status(400).redirect('/error')
 	})
 })
 
