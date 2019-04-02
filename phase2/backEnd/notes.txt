@@ -1,0 +1,6 @@
+Points to double check with members and/or teaching staff 
+
+
+within server.js file....
+	recheck url address in app.get() argument to ensure proper location 
+	verify that all properties in the schemas are of the correct type.
