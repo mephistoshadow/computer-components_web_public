@@ -128,14 +128,15 @@ app.route("/error").get(sessionChecker, (req, res) => {
 app.get('/user', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
-		//res.sendFile(__dirname + '/public/dashboard.html')
-		
 		res.render('user.hbs', {
-			email: req.session.email
+			email: req.session.email,
+			id_new: req.session.id
+
 		})
 	 } else {
 		res.redirect('/login')
 	 }
+	 log(req.session);
 })
 
 app.get('/admin', (req, res) => {
@@ -244,18 +245,21 @@ app.get('/admin/logout', (req, res) => {
 
 
 // get all products in wish_list for user by id
-app.get('/user/wish_list/:id', (req, res) => {
+app.get('/user/wish_list/:email', (req, res) => {
 	// Add code here
-	const id = req.params.id;
+	const email = req.params.email;
 	
-	if (!ObjectID.isValid(id)) {
-		return res.status(404).send()
-	}
-	User.findById(id).then((user) => {
+	// if (!ObjectID.isValid(id)) {
+	// 	return res.status(404).send()
+	// }
+	User.find({
+        email:email
+    }).then((user) => {
 		if (!user) {
 			res.status(404).send()
 		} else {
-			res.send({ User })
+			log(user)
+			res.send({ user })
 		}
 		
 	}).catch((error) => {
@@ -309,7 +313,7 @@ app.get('/user/comment_history/:id', (req, res) => {
 		if (!user) {
 			res.status(404).send()
 		} else {
-			res.send({ User })
+			res.send({ user })
 		}
 		
 	}).catch((error) => {
@@ -394,6 +398,7 @@ app.get('/user/comment_history/:id/:comment_id', (req, res) => {
 	
 
 })
+
 
 //delete specifc product in for user by id
 app.delete('/user/wish_list/:id/:product_id', (req, res) => {
