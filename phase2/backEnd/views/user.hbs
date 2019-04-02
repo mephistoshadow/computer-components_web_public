@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/css/user.css">
 </head>
 
-<body>
+<body onload="addThings()">
 
     <div class="navbar">
         <a href="/html/index.html">Home</a>
@@ -30,7 +30,8 @@
     </form>
         <div id="profileInfo">
             <img class='img-circle' src="/image/icon.jpg" />
-            <p><strong>Nick Name: <span>{{email}}</span></strong></p>
+            <p ><strong>Nick Name: <span id = "email">{{email}}</span></strong></p>
+            <p ><strong>Id: <span id = "id">{{id_new}}</span></strong></p>
             <p><strong>Description: <span>Want to build a gaming computer!</span></strong></p>
         </div>
        <!--  <div id='Wishlist'> -->
@@ -50,7 +51,6 @@
                             <img src="/image/image2.jpg" alt="" border=3 height=100 width=100>
                         </td>
                         <td>
-                            <button class="check_button">Check</button>
                             <button class="delete_button">delete</button>
                         </td>
                     </tr>
@@ -59,17 +59,15 @@
                             <img src="/image/image3.jpg" alt="" border=3 height=100 width=100>
                         </td>
                         <td>
-                            <button class="check_button">Check</button>
                             <button class="delete_button">delete</button>
                         </td>
                     </tr>
-                    <tr>
+                    <tr id = "clone">
                         <td>
                             <img src="/image/image1.jpg" alt="" border=3 height=100 width=100>
                         </td>
                         <td>
-                            <button class="check_button">Check</button>
-                            <button class="delete_button">delete</button>
+                            <button class="delete_button">delete onclick()</button>
                         </td>
                     </tr>
 
@@ -83,46 +81,18 @@
                 <tbody>
                     <tr>
                         <th>
-                            Product
-                        </th>
-                        <th>
                             comment
                         </th>
                         <th>
-                            Junp to that page
+                            Delete the Comment
                         </th>
                     </tr>
-                    <tr>
-                        <td>
-                            <img src="../image/image2.jpg" alt="" border=3 height=100 width=100>
+                    <tr id = "clone_comment">
+                        <td >
+                            <a>Show case</a>
                         </td>
                         <td>
-                            <a>This product is what i want</a>
-                        </td>
-                        <td>
-                            <button class="jump_button">Jump</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../image/image3.jpg" alt="" border=3 height=100 width=100>
-                        </td>
-                        <td>
-                            <a>This product is what i want,his product is what i want,his product is what i want</a>
-                        </td>
-                        <td>
-                            <button class="jump_button">Jump</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../image/image1.jpg" alt="" border=3 height=100 width=100>
-                        </td>
-                        <td>
-                            <a>This product is what i want,his product is what i want,his product is what i want</a>
-                        </td>
-                        <td>
-                            <button class="jump_button">Jump</button>
+                            <button class="delete_button">delete</button>
                         </td>
                     </tr>
 

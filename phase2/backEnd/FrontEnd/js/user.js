@@ -4,6 +4,9 @@ const wishList = document.querySelector('#Wishtable');
 const comment = document.querySelector('#comment_history');
 const profile = document.querySelector('#changeprofile');
 const password = document.querySelector('#changePw');
+const email = document.getElementById('email').innerText;
+const id = document.getElementById('id').innerText;
+let information = {};
 
 
 
@@ -72,6 +75,46 @@ function changeIt(personinfo) {
 function Deleterow(index) {
 	wishList.deleteRow(index);
 }
+
+function addThings(index) {
+	const url = '/user/wish_list/' + email;
+    fetch(url)
+    	.then((res) => { 
+    		//// Do not write any code here
+	        return res.json()
+	        //// Do not write any code here
+	    })
+	    .then((jsonResult) => {
+	    	// This is where the JSON result (jsonResult) from the server can be accessed and used.
+	        console.log('Result:', jsonResult)
+	        information = jsonResult;
+	        for(let i = 0 ; i < information["user"][0]["comment_history"].length; i ++) {
+	        	let comment = information["user"][0]["comment_history"][i]["review"];
+	        	addcomment(comment);
+	        }
+	        
+	        // Use the JSON to add a script part
+	        // addScriptPart(jsonResult[0], jsonResult[1], jsonResult[2], jsonResult[3])
+	    }).catch((error) => {
+	    	// if an error occured it will be logged to the JavaScript console here.
+	        console.log("An error occured with fetch:", error)
+	    })	
+}
+
+
+function addcomment(comment_1) {
+	var el = document.querySelector('#clone_comment');
+	var addElement = el.cloneNode(true);
+	addElement.children[0].children[0].innerText = comment_1;
+	comment.appendChild(addElement);
+
+
+}
+
+function DeleterowComment(index) {
+	comment.deleteRow(index);
+}
+
 
 function Checkpage(index) {
 	let hardcode ="../product/login/product_";
