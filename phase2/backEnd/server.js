@@ -64,7 +64,7 @@ const authenticate = (req, res, next) => {
 
 const sessionChecker = (req, res, next) => {
 	if (req.session.user) {
-		res.redirect('profile')
+		res.redirect('/user')
 	} else {
 		next();
 	}
@@ -78,7 +78,11 @@ app.post('/users', (req, res) => {
 	// Create a new user
 	const user = new User({
 		email: req.body.email,
-		password: req.body.password
+		password: req.body.password,
+		role: req.body.role,
+		wish_list: [],
+		comment_history: []
+		
 	})
 
 	// save user to database
@@ -112,6 +116,7 @@ app.get('/user', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
 		//res.sendFile(__dirname + '/public/dashboard.html')
+		
 		res.render('user.hbs', {
 			email: req.session.email
 		})
@@ -124,14 +129,25 @@ app.get('/admin', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
 		//res.sendFile(__dirname + '/public/dashboard.html')
-		res.render('admin.hbs', {
-			email: req.session.email
-		})
+		// res.render('admin.hbs', {
+			// email: req.session.email
+			res.redirect('/main')
+		
 	} else {
 		res.redirect('/login')
 	}
 })
 
+app.get('/users', (req, res) => {
+	// Add code here
+	User.find({}).then((users) => {
+		res.send({ users }) 
+	}, (error) => {
+		res.status(500).send(error)
+	})
+	
+
+})
 
 // User login and logout routes
 app.post('/login', (req, res) => {
@@ -140,21 +156,25 @@ app.post('/login', (req, res) => {
 
 	User.findByEmailPassword(email, password).then((user) => {
 		if(!user) {
+			log("no such users!")
 			res.redirect('/login')
 		}
 		
 		else {
 			// Add the user to the session cookie that we will
 			// send to the client
+			log("sucessful")
 			req.session.user = user._id;
-			req.session.email = user.email
-			req.session.role = user.role
-			if(user.role == "user"){
-				res.redirect('/user')
-			}
-			else{
-				res.redirect('/admin')
-			}
+			req.session.email = user.email;
+			req.session.role = user.role;
+			res.redirect('/user');
+			
+			// if(user.role == "user"){
+				// res.redirect('/user')
+			// }
+			// else{
+				// res.redirect('/admin')
+			// }
 		}
 	}).catch((error) => {
 		res.status(400).redirect('/login')
