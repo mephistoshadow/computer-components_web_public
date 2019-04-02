@@ -24,7 +24,8 @@ const UserSchema = new mongoose.Schema({
 	
 	role: String,
 	wish_list : [],
-	comment_history: []
+	comment_history: [],
+	all_product:[]
 })
 
 // Our own student finding function 

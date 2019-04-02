@@ -1,3 +1,9 @@
+// Mongoose
+const { mongoose } = require('./../../db/mongoose');
+const { Product } = require('./../../models/product');
+const { User } = require('./../../models/user')
+
+
 const search = document.querySelector('#search_box');
 
 
@@ -91,17 +97,62 @@ function deleterow(btn) {
 
 
 function insertRow(){
-	var table=document.getElementById("Wishtable");
-	var row = table.insertRow(-1);
-	var cell1 = row.insertCell(0);
-	var cell2 = row.insertCell(1);
-	var img=document.getElementById('productimg').value;
-	var name=document.getElementById("productname").value;
-
-	// Add some text to the new cells:
 	
-	cell1.innerHTML = "<img src='" +img+ "' alt='' border=3 height=100 width=100><a>" + name + "</a>";
-	cell2.innerHTML = "<button class='check_button'>Reviews</button> <button class='delete_button'>Delete</button>";
+	var name = document.getElementById("productname").value;
+	var desc = document.getElementById("productdesc").value;
+	
+	const product = new Product({
+		name: name,
+		description: desc
+	})
+	
+	log(product);
+	
+	product.save().then((result) => {
+		var table=document.getElementById("Wishtable");
+		var row = table.insertRow(-1);
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var name= result.name;
+		var description = result.description;
+
+			// Add some text to the new cells:
+	
+		cell1.innerHTML = "<a>" +name+ "/a><a>" + description + "</a>";
+		cell2.innerHTML = "<button class='check_button'>Reviews</button> <button class='delete_button'>Delete</button>";
+		
+	}
+	)
+	
+	
+}
+
+
+
+function viewAll(){
+	
+	// var email = document.getElementById("email").value;
+	
+	// User.findOne({email: email}).then((user) => {
+		
+	Product.find({}).then((products) => {
+		
+		for(var i = 0; i < products.length; i++){
+			var table=document.getElementById("Wishtable");
+			var row = table.insertRow(-1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var name= products[i].name;
+			var description = products[i].description;
+
+			// Add some text to the new cells:
+	
+			cell1.innerHTML = "<a>" +name+ "/a><a>" + description + "</a>";
+			cell2.innerHTML = "<button class='check_button'>Reviews</button> <button class='delete_button'>Delete</button>";
+		}
+	})
+	
+	
 }
 
 

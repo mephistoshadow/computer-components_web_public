@@ -28,7 +28,7 @@
 
         <div id="profileInfo">
             <img class='img-circle' src="../image/icon.jpg" />
-            <p><strong>Nick Name: <span>{{email}}</span></strong></p>
+            <p><strong>Email: <span id = "email">{{email}}</span></strong></p>
             <p><strong>Description: <span>Admin of this website</span></strong></p>
             
         </div>
@@ -46,15 +46,11 @@
 				<input id="productname" placeholder="Product Name" type="text">
 			</p>
 			<p>
-				<input id="productimg" placeholder="Product IMG" type="text">
-				
-			</p>
-			<p>
 				<input id="productdesc" placeholder="Product Description" type="text">
 				
 			</p>
 			<p>
-				<input type="submit" class="submit_button" placeholder="Creat New Product">
+				<input type="submit" class="submit_button" placeholder="Creat New Product" onclick="insertRow()">
 			</p>
 		</form>
 		
