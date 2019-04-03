@@ -515,9 +515,55 @@ app.post('/product', (req, res) => {
 	}, (error) => {
 		res.status(400).send(error)
 	})
-
 })
 
+//Route for posting review to product 
+app.post('/product/:id', (req, res) => {
+	const id = req.params.id;
+	console.log('Product id...........')
+	if (!ObjectID.isValid(id)) {
+		res.status(404).send()
+	}
+	// if (!req.session.user) {		//if user is not logged in
+	// 	res.status(401).send();
+	// }
+	const { title, content } = req.body;
+	const revBody = { title, content };
+	// revBody.userId = req.user._id;
+	// revBody.username = req.user.username;
+	revBody.time = new Date();
+	//const { title, content, userId, time } = req.body;
+	//const revBody = { title, content, userId, time };
+	//must clarify how to send time and userId as part of the request
+
+	Product.findById(id).then((product) => {
+		if (!product) {
+			res.status(404).send();
+		} else {
+			product.reviews.push(revBody);
+			product.save();
+			res.send(product)
+			if(req.session.user){
+				res.render("product.hbs",{
+				name: product.name,
+				user: req.session.email
+			});
+			}
+			else{
+				res.render("product.hbs",{
+				name: product.name,
+				user: "Guest"
+			});
+			}
+		}
+	}).catch((error) => {
+		res.status(500).send();
+	})
+})
+
+
+
+//route for deleting a product
 app.delete('/product/:id', (req, res) => {
 	const id = req.params.id
 

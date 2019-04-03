@@ -66,7 +66,36 @@ UserSchema.pre('save', function(next) {
 
 })
 
+const ReviewSchema = new mongoose.Schema({
+	title: {
+		type: String, 
+		required: true, 
+		minLength: 1
+	},
+	time: String,
+	content: {
+		type: String,
+		required: true,
+		minLength: 1
+	},
+	userId: {
+		type: String
+	},
+	username: String
+});
+
+
+const ProductSchema = new mongoose.Schema({    
+	name: String,
+	img_url: String, 
+	title_description: String,
+	description: String, 
+	reviews: [ReviewSchema]
+});
+
+
+const Product = mongoose.model('Product', ProductSchema);
 
 const User = mongoose.model('User', UserSchema)
 
-module.exports = { User }
+module.exports = { User, Product }
