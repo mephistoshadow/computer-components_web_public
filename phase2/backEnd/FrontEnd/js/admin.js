@@ -123,6 +123,52 @@ function deleterow(btn) {
 	
 	
 // }
+
+function showusers() {
+	
+	const url = '/users';
+    fetch(url)
+    	.then((res) => { 
+    		//// Do not write any code here
+	        return res.json()
+	        //// Do not write any code here
+	    })
+	    .then((jsonResult) => {
+	    	// This is where the JSON result (jsonResult) from the server can be accessed and used.
+	        console.log('Result:', jsonResult)
+	        var information = jsonResult;
+			console.log(information["products"][0])
+	        for(var i = 0 ; i < information["users"].length; i ++) {
+	        	var user = information["users"][i];
+				
+	        	adduser(user);
+	        }
+	        
+	        // Use the JSON to add a script part
+	        // addScriptPart(jsonResult[0], jsonResult[1], jsonResult[2], jsonResult[3])
+	    }).catch((error) => {
+	    	// if an error occured it will be logged to the JavaScript console here.
+	        console.log("An error occured with fetch:", error)
+	    })	
+}
+
+function adduser(user) {
+	var table=document.getElementById("comment");
+	var row = table.insertRow(-1);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+	var name= user.name;
+	var id = user._id;
+
+			//Add some text to the new cells:
+	
+	cell1.innerHTML = "<ul><li><a>"+"Name: "+name+"</a></li><li><a>"+"ID: "+ id+"</a></li></ul>";
+	cell2.innerHTML = "<form id='reset' onsubmit=''><input class='un' type='text' placeholder='User Name'><input class='pw' type='text' placeholder='New password'><input class='change' type='submit' value='Reset Password'></form>"
+	cell3.innerHTML = "<button class='delete_button'>Delete</button>";
+}
+
+
 function addProduct() {
 	const url = '/product';
     // The data we are going to send in our request
@@ -203,11 +249,12 @@ function addproduct(product) {
 	var cell1 = row.insertCell(0);
 	var cell2 = row.insertCell(1);
 	var name= product.name;
-	var description = product.description;
+	var id = product._id;
+	var url = product.img_url;
 
 			//Add some text to the new cells:
 	
-	cell1.innerHTML = "<a>" +name+ "/a><a>" + description + "</a>";
+	cell1.innerHTML = "<ul><li><img src=" +url+ "alt='' border=3 height=100 width=100></li><li><a>"+name+"</a></li><li><a>"+id+"</a></li></ul>"
 	cell2.innerHTML = "<button class='delete_button'>Delete</button>";
 }
 
@@ -246,7 +293,40 @@ function changeIt(personinfo) {
 
 
 function Deleterow(index) {
-	wishList.deleteRow(index);
+	var id = wishList.rows[index].children[0].children[0].getElementsByTagName("li")[2].innerText;
+	
+	const url = '/product/' + id;
+    // The data we are going to send in our request
+    // Create our request constructor with all the parameters we need
+    const request = new Request(url, {
+        method: 'delete', 
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+    });
+    fetch(request)
+    .then(function(res) {
+        // Handle response we get from the API
+        // Usually check the error codes to see what happened
+        const message = document.querySelector('#message')
+        if (res.status === 200) {
+            console.log('Deleted product')
+            message.innerText = 'Success: Deleted a product.';
+            message.setAttribute("style", "color: green");
+			wishList.deleteRow(index);
+			
+           
+        } else {
+            message.innerText = 'Could not delete product'
+            message.setAttribute("style", "color: red")
+     
+        }
+        console.log(res)
+        
+    }).catch((error) => {
+        console.log(error)
+    })
 }
 
 function Checkpage(index) {

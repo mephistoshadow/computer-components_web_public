@@ -518,6 +518,26 @@ app.post('/product', (req, res) => {
 
 })
 
+app.delete('/product/:id', (req, res) => {
+	const id = req.params.id
+
+	// Good practise is to validate the id
+	if (!ObjectID.isValid(id)) {
+		return res.redirect("/error")
+	}
+
+	// Otheriwse, findByIdAndRemove
+	Product.findByIdAndRemove(id).then((product) => {
+		if (!product) {
+			res.status(404).send()
+		} else {
+			res.send({ product })
+		}
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+})
+
 
 //Route for getting the specific product page info 
 app.get('/product/:id', (req, res) => {
