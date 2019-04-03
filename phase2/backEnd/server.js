@@ -268,6 +268,29 @@ app.get('/user/wish_list/:email', (req, res) => {
 
 })
 
+app.get('/admin/product_list/:email', (req, res) => {
+	// Add code here
+	const email = req.params.email;
+	
+	// if (!ObjectID.isValid(id)) {
+	// 	return res.status(404).send()
+	// }
+	User.find({
+        email:email
+    }).then((user) => {
+		if (!user) {
+			res.status(404).send()
+		} else {
+			log(user)
+			res.send({ user })
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+
+})
+
 // post a product by product_id for user by id
 app.post('/user/wish_list/:id/:product_id', (req, res) => {
 	// Add code here
@@ -465,6 +488,36 @@ app.patch('/user/comment_history/:id/:comment_id', (req, res) => {
 
 })
 
+app.get('/products', (req, res) => {
+	// Add code here
+	Product.find({}).then((products) => {
+		res.send({ products }) 
+	}, (error) => {
+		res.status(500).send(error)
+	})
+	
+
+})
+
+app.post('/product', (req, res) => {
+	// Add code here
+	
+	const product = new Product({
+		name: req.body.name,
+		description: req.body.description,
+		img_url: req.body.url
+	})
+	
+	
+	product.save().then((result) => {
+		
+		res.send(result)
+	}, (error) => {
+		res.status(400).send(error)
+	})
+
+})
+
 
 //Route for getting the specific product page info 
 app.get('/product/:id', (req, res) => {
@@ -489,6 +542,7 @@ app.get('/product/:id', (req, res) => {
 				user: "Guest"
 			});
 			}
+		}
 		
 	}).catch((error) => {
 		res.status(500).send();

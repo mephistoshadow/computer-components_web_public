@@ -102,13 +102,13 @@ function addThings(index) {
 }
 
 
+
+
 function addcomment(comment_1) {
 	var el = document.querySelector('#clone_comment');
 	var addElement = el.cloneNode(true);
 	addElement.children[0].children[0].innerText = comment_1;
 	comment.appendChild(addElement);
-
-
 }
 
 
@@ -127,7 +127,47 @@ function Checkpage(index) {
 
 
 
+function addproducts(index) {
+	const url = '/user/wish_list/' + email;
+    fetch(url)
+    	.then((res) => { 
+    		//// Do not write any code here
+	        return res.json()
+	        //// Do not write any code here
+	    })
+	    .then((jsonResult) => {
+	    	// This is where the JSON result (jsonResult) from the server can be accessed and used.
+	        console.log('Result:', jsonResult)
+	        information = jsonResult;
+	        for(let i = 0 ; i < information["user"][0]["wish_list"].length; i ++) {
+	        	let product = information["user"][0]["wish_list"][i];
+	        	addcomment(comment);
+	        }
+	        
+	        // Use the JSON to add a script part
+	        // addScriptPart(jsonResult[0], jsonResult[1], jsonResult[2], jsonResult[3])
+	    }).catch((error) => {
+	    	// if an error occured it will be logged to the JavaScript console here.
+	        console.log("An error occured with fetch:", error)
+	    })	
+}
 
+
+
+
+function addproduct(product) {
+	var table=document.getElementById("Wishtable");
+	var row = table.insertRow(-1);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var name= product.name;
+	var description = product.description;
+
+			//Add some text to the new cells:
+	
+	cell1.innerHTML = "<a>" +name+ "/a><a>" + description + "</a>";
+	cell2.innerHTML = "<button class='check_button'>Reviews</button> <button class='delete_button'>Delete</button>";
+}
 
 
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 
-<body>
+<body onload = "showproducts()">
     <div class="navbar">
         <a href="/html/index.html">Home</a>
         <a href="/html/admin.html">Profile</a>
@@ -50,8 +50,14 @@
 				
 			</p>
 			<p>
-				<input type="submit" class="submit_button" placeholder="Creat New Product" onclick="insertRow()">
+				<input id="productimg" placeholder="Product Image Url" type="text">
+				
 			</p>
+			<p>
+				<input type="submit" class="submit_button" placeholder="Creat New Product" onclick="addProduct()">
+			</p>
+			
+			<p id="message"></p> 
 		</form>
 		
 
@@ -64,7 +70,7 @@
                             Products
                         </th>
                         <th>
-                            Manage reviews or Delete Products
+                            Manage Products
                         </th>
                     </tr>
                     <tr>
@@ -139,7 +145,7 @@
         </div>
 		</div>
 
-        <script type="text/javascript" src="../js/admin.js"></script>
+        <script type="text/javascript" src="./js/admin.js"></script>
 
 </body>
 
