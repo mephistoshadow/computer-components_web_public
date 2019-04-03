@@ -467,8 +467,9 @@ app.patch('/user/comment_history/:id/:comment_id', (req, res) => {
 
 
 //Route for getting the specific product page info 
-app.get('/main/product/:id', (req, res) => {
+app.get('/product/:id', (req, res) => {
 	const id = req.params.id;
+	
 	if (!ObjectID.isValid(id)) { //invalid product id ]
 		res.status(404).send() 	
 	}
@@ -476,8 +477,19 @@ app.get('/main/product/:id', (req, res) => {
 		if (!product) {
 			res.status(404).send();
 		} else {
-			res.send(product);
-		}
+			if(req.session.user){
+				res.render("product.hbs",{
+				name: product.name,
+				user: req.session.email
+			});
+			}
+			else{
+				res.render("product.hbs",{
+				name: product.name,
+				user: "Guest"
+			});
+			}
+		
 	}).catch((error) => {
 		res.status(500).send();
 	})
