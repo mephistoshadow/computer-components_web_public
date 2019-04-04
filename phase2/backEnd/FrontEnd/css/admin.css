@@ -241,7 +241,11 @@ a{
 	color:white;
 	z-index: 5;
 }
-
+ 
+li{
+	text-align:center;
+	margin-top: 10px;
+}
 
 #newpform {
 	top: 750px;

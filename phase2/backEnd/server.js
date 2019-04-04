@@ -68,7 +68,7 @@ const authenticate = (req, res, next) => {
 
 const sessionChecker = (req, res, next) => {
 	if (req.session.user) {
-		res.redirect('/mainpage')
+		res.redirect('/main')
 	} else {
 		next();
 	}
@@ -137,7 +137,7 @@ app.get('/user', (req, res) => {
 	 log(req.session);
 })
 
-app.get('/mainpage', (req, res) => {
+app.get('/main', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
 		//res.sendFile(__dirname + '/public/dashboard.html')
@@ -149,6 +149,21 @@ app.get('/mainpage', (req, res) => {
 		res.redirect('/login')
 	 }
 })
+
+app.post('/mainpage', (req, res) => {
+	// check if we have active session cookie
+	var name = req.body.searchname
+	log(name)
+	if (req.session.user) {
+		//res.sendFile(__dirname + '/public/dashboard.html')
+		res.redirect('product/' + name)
+		
+	 } else {
+		res.redirect('/login')
+	 }
+})
+
+
 
 app.get('/admin', (req, res) => {
 	// check if we have active session cookie
@@ -274,10 +289,11 @@ app.get('/logout', (req, res) => {
 		if (error) {
 			res.status(500).send(error)
 		} else {
-			res.redirect('/main')
+			res.redirect('/')
 		}
 	})
 })
+
 
 
 
@@ -568,12 +584,13 @@ app.get('/product/:name', (req, res) => {
 			// product.save();
 			// res.send(product)
 			if(req.session.user){
-				console.log(product)
+				log(product)
+				console.log(product[0]['name'])
 				res.render("product.hbs",{
 				email: req.session.email,
-				name: product.name,
-				description: product.description,
-				url: product.img_url
+				name: product[0]["name"],
+				description: product[0]["description"],
+				url: product[0].img_url
 				
 			});
 			}
