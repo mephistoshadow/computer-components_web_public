@@ -26,16 +26,15 @@
 	// }
 // }
 
-const product_list = document.querySelector('#producttable');
-product_list.addEventListener('click',generaClick);
 
 
-function generaClick(e) {
-	e.preventDefault();
-	let index = e.target.parentElement.parentElement.rowIndex;
-	fromTableToProduct(index);
+
+// function generaClick(e) {
+	// e.preventDefault();
+	// let index = e.target.parentElement.parentElement.rowIndex;
+	// fromTableToProduct(index);
     
-}
+// }
 
 
 
@@ -83,13 +82,18 @@ function addproduct(product) {
 	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
 	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
 	var name= product.name;
+	var desc = product.description;
 	var url = product.img_url;
+	
+	console.log(url)
 
 			//Add some text to the new cells:
 	
-	cell1.innerHTML = "<li><img src=" +url+ "alt='' border=3 height=100 width=100></li><li>"+name+"</li>"
-	cell2.innerHTML = "<button class='check_button'>Check</button>";
+	cell1.innerHTML = "<li><img src='" +url+ "'alt='' border=3 height=100 width=100></li>"
+	cell2.innerHTML =  "<li>"+name+"</li><li>"+desc+"</li>"
+	cell3.innerHTML = "<a href='/product/"+name+ "'>Check</a>";
 }
 
 
@@ -110,28 +114,9 @@ function search(){
 	
 	console.log(item);
 	
-	const url = '/main/product/' + item;
+	const url = 'http://localhost:3000/product/' + item;
 	
-	fetch(url)
-    	.then((res) => { 
-    		//// Do not write any code here
-	        return res.json()
-	        //// Do not write any code here
-	    })
-	    .then((jsonResult) => {
-	    	// This is where the JSON result (jsonResult) from the server can be accessed and used.
-	        console.log('Result:', jsonResult)
-	        var information = jsonResult;
-			console.log(information["products"][0])
-	        
-	        
-	        // Use the JSON to add a script part
-	        // addScriptPart(jsonResult[0], jsonResult[1], jsonResult[2], jsonResult[3])
-	    }).catch((error) => {
-	    	// if an error occured it will be logged to the JavaScript console here.
-	        console.log("An error occured with fetch:", error)
-	    })
-	
+	window.open(url, '_self')
 	
 	
 }
@@ -140,7 +125,7 @@ function fromTableToProduct(index){
 	
 	item = product_list.rows[index].children[0].getElementsByTagName("li")[1].innerText;
 	
-	const url = 'http://localhost:3000/main/product/' + item;
+	const url = 'http://localhost:3000/product/' + item;
 	
 	window.open(url, '_self')
 	
@@ -154,7 +139,7 @@ function fromNaviToProduct(item){
 	
 	console.log(item.innerText);
 	
-	const url = 'http://localhost:3000/main/product/' + item.innerText;
+	const url = 'http://localhost:3000/product/' + item.innerText;
 	
 	window.open(url, '_self')
     	

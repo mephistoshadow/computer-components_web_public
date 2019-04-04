@@ -212,6 +212,8 @@ function addProduct() {
 
 function Deleteuser(index) {
 	var id = comment.rows[index].children[0].children[0].getElementsByTagName("li")[1].innerText;
+	// var id = comment.rows[index].children[0].children[1];
+	console.log(id)
 	
 	console.log(id)
 	const url = '/user/' + id;
@@ -285,14 +287,18 @@ function addproduct(product) {
 	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
 	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
 	var name= product.name;
 	var id = product._id;
 	var url = product.img_url;
+	
+	console.log(url)
 
 			//Add some text to the new cells:
 	
-	cell1.innerHTML = "<ul><li><img src=" +url+ "alt='' border=3 height=100 width=100></li><li>"+name+"</li><li>"+id+"</li></ul>"
-	cell2.innerHTML = "<a href='/product/"+name+ "'></a><button class='delete_button'>Delete</button>";
+	cell1.innerHTML = "<li><img src='" +url+ "'alt='' border=3 height=100 width=100></li>"
+	cell2.innerHTML =  "<li>Name: "+name+"</li><li>ID: "+id+"</li>"
+	cell3.innerHTML = "<button id= 'delete_btn' class='delete_button'>Delete</button>";
 }
 
 
@@ -307,7 +313,7 @@ function changeIt(personinfo) {
 
 function Deleterow(index) {
 	
-	var id = wishList.rows[index].children[0].children[0].getElementsByTagName("li")[2].innerText;
+	var id = wishList.rows[index].children[1].children[1].innerText;
 	
 	console.log(id)
 	
