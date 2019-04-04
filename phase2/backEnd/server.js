@@ -18,8 +18,8 @@ var path = require('path');
 
 // Mongoose
 const { mongoose } = require('./db/mongoose');
-const { Product } = require('./models/product');
-const { User } = require('./models/user')
+//const { Product } = require('./models/product');
+const { User, Product} = require('./models/user')
 
 // Express
 const port = process.env.PORT || 3000
@@ -161,6 +161,26 @@ app.get('/users', (req, res) => {
 	})
 	
 
+})
+
+app.delete('/user/:id', (req, res) => {
+	const id = req.params.id
+
+	// Good practise is to validate the id
+	if (!ObjectID.isValid(id)) {
+		return res.redirect("/error")
+	}
+
+	// Otheriwse, findByIdAndRemove
+	User.findByIdAndRemove(id).then((user) => {
+		if (!user) {
+			res.status(404).send()
+		} else {
+			res.send({ user })
+		}
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
 })
 
 // User login and logout routes
@@ -518,7 +538,7 @@ app.post('/product', (req, res) => {
 })
 
 //Route for posting review to product 
-app.post('/product/:id', (req, res) => {
+app.get('/product/:id', (req, res) => {
 	const id = req.params.id;
 	console.log('Product id...........')
 	if (!ObjectID.isValid(id)) {
@@ -527,11 +547,11 @@ app.post('/product/:id', (req, res) => {
 	// if (!req.session.user) {		//if user is not logged in
 	// 	res.status(401).send();
 	// }
-	const { title, content } = req.body;
-	const revBody = { title, content };
+	// const { title, content } = req.body;
+	// const revBody = { title, content };
 	// revBody.userId = req.user._id;
 	// revBody.username = req.user.username;
-	revBody.time = new Date();
+	// revBody.time = new Date();
 	//const { title, content, userId, time } = req.body;
 	//const revBody = { title, content, userId, time };
 	//must clarify how to send time and userId as part of the request
@@ -540,26 +560,28 @@ app.post('/product/:id', (req, res) => {
 		if (!product) {
 			res.status(404).send();
 		} else {
-			product.reviews.push(revBody);
-			product.save();
-			res.send(product)
+			// product.reviews.push(revBody);
+			// product.save();
+			// res.send(product)
 			if(req.session.user){
 				res.render("product.hbs",{
+				email: req.session.email,
 				name: product.name,
-				user: req.session.email
+				description: product.description,
+				url: product.img_url
+				
 			});
 			}
 			else{
-				res.render("product.hbs",{
-				name: product.name,
-				user: "Guest"
-			});
-			}
+				res.redirect('/login')
+				
+			};
+			
 		}
 	}).catch((error) => {
 		res.status(500).send();
-	})
-})
+	});
+});
 
 
 
@@ -599,7 +621,8 @@ app.get('/product/:id', (req, res) => {
 			if(req.session.user){
 				res.render("product.hbs",{
 				name: product.name,
-				user: req.session.email
+				user: req.session.email,
+				url: product.img_url
 			});
 			}
 			else{

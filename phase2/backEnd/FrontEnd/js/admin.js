@@ -17,7 +17,7 @@ const submit = document.querySelector('#newpform');
 //search.addEventListener('submit', stratSearch);
 submit.addEventListener('submit',createNew);
 wishList.addEventListener('click',generaClick);
-comment.addEventListener('click',commentClick);
+comment.addEventListener('click',generaClick);
 
 
 class personinfo {
@@ -68,16 +68,13 @@ function generaClick(e) {
     else if (e.target.className == 'delete_button'){
     	Deleterow(index);
     }
+	else{
+		Deleteuser(index);
+	}
     
 }
 
-function commentClick(e) {
-	e.preventDefault();
-	let index = e.target.parentElement.parentElement.rowIndex;
-	if (e.target.className == 'jump_button') {
-		comment.deleteRow(index);
-    }
-}
+
 
 
 
@@ -137,11 +134,13 @@ function showusers() {
 	    	// This is where the JSON result (jsonResult) from the server can be accessed and used.
 	        console.log('Result:', jsonResult)
 	        var information = jsonResult;
-			console.log(information["products"][0])
+			console.log(information["users"][0])
 	        for(var i = 0 ; i < information["users"].length; i ++) {
 	        	var user = information["users"][i];
-				
-	        	adduser(user);
+				if(user.role != "admin"){
+					adduser(user);
+				}
+	        	
 	        }
 	        
 	        // Use the JSON to add a script part
@@ -153,19 +152,19 @@ function showusers() {
 }
 
 function adduser(user) {
-	var table=document.getElementById("comment");
+	var table=document.getElementById("comment_history");
 	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
 	var cell2 = row.insertCell(1);
-	var cell3 = row.insertCell(2);
-	var name= user.name;
+	//var cell3 = row.insertCell(2);
+	var name= user.email;
 	var id = user._id;
 
 			//Add some text to the new cells:
 	
-	cell1.innerHTML = "<ul><li><a>"+"Name: "+name+"</a></li><li><a>"+"ID: "+ id+"</a></li></ul>";
-	cell2.innerHTML = "<form id='reset' onsubmit=''><input class='un' type='text' placeholder='User Name'><input class='pw' type='text' placeholder='New password'><input class='change' type='submit' value='Reset Password'></form>"
-	cell3.innerHTML = "<button class='delete_button'>Delete</button>";
+	cell1.innerHTML = "<ul><li>"+"Name: "+name+"</li><li>"+ id+"</li></ul>";
+	//cell2.innerHTML = "<form id='reset' onsubmit=''><input class='un' type='text' placeholder='User Name'><input class='pw' type='text' placeholder='New password'><input class='change' type='submit' value='Reset Password'></form>"
+	cell2.innerHTML = "<button class='jump_button'>Disable</button>";
 }
 
 
@@ -195,12 +194,49 @@ function addProduct() {
             console.log('Added product')
             message.innerText = 'Success: Added a product.';
             message.setAttribute("style", "color: green");
-			console.log(data);
 			addproduct(data)
 			
            
         } else {
             message.innerText = 'Could not add product'
+            message.setAttribute("style", "color: red")
+     
+        }
+        console.log(res)
+        
+    }).catch((error) => {
+        console.log(error)
+    })
+}
+
+function Deleteuser(index) {
+	var id = comment.rows[index].children[0].children[0].getElementsByTagName("li")[1].innerText;
+	
+	console.log(id)
+	const url = '/user/' + id;
+    // The data we are going to send in our request
+    // Create our request constructor with all the parameters we need
+    const request = new Request(url, {
+        method: 'delete', 
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+    });
+    fetch(request)
+    .then(function(res) {
+        // Handle response we get from the API
+        // Usually check the error codes to see what happened
+        const message = document.querySelector('#message')
+        if (res.status === 200) {
+            console.log('Deleted product')
+            message.innerText = 'Success: Deleted a user.';
+            message.setAttribute("style", "color: green");
+			comment.deleteRow(index);
+			
+           
+        } else {
+            message.innerText = 'Could not delete user'
             message.setAttribute("style", "color: red")
      
         }
@@ -254,7 +290,7 @@ function addproduct(product) {
 
 			//Add some text to the new cells:
 	
-	cell1.innerHTML = "<ul><li><img src=" +url+ "alt='' border=3 height=100 width=100></li><li><a>"+name+"</a></li><li><a>"+id+"</a></li></ul>"
+	cell1.innerHTML = "<ul><li><img src=" +url+ "alt='' border=3 height=100 width=100></li><li>"+name+"</li><li>"+id+"</li></ul>"
 	cell2.innerHTML = "<button class='delete_button'>Delete</button>";
 }
 
