@@ -68,7 +68,7 @@ const authenticate = (req, res, next) => {
 
 const sessionChecker = (req, res, next) => {
 	if (req.session.user) {
-		res.redirect('/user')
+		res.redirect('/mainpage')
 	} else {
 		next();
 	}
