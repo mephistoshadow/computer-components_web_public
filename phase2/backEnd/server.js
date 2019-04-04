@@ -427,23 +427,98 @@ app.post('/user/comment_history/:id', (req, res) => {
 
 })
 
-
-// get specific product for specific user in their wish list
-app.get('/user/wish_list/:id/:product_id', (req, res) => {
+app.post('/product/wish_list/:name', (req, res) => {
 	// Add code here
-	const id = req.params.id;
-	const pid = req.params.product_id;
+	const name = req.params.name;
+	log(name);
 	
-	if (!ObjectID.isValid(pid)) {
-		return res.status(404).send()
-	}
-	User.findById(id).then((user) => {
-		var product = user.wish_list.id(pid);
+	Product.find({}, {name: name}).then((product) => {
 		if (!product) {
 			res.status(404).send()
 		} else {
-			res.send({ product })
+			
+	
+			User.findByIdAndUpdate(req.session.user, {$push: {wish_list: product[0]}}, {new: true}).then((user) => {
+				if (!user) {
+					res.status(404).send()
+				} else {
+					log("sucessful")
+					res.send({user})
+				}
+			}).catch((error) => {
+				log("no users found")
+				res.status(500).send(error)
+			})
+			
 		}
+	}).catch((error) => {
+				log("no product fpund")
+				res.status(500).send(error)
+			})
+	
+		
+});
+
+
+// get specific product for specific user in their wish list
+app.post('/product/review/:p_name', (req, res) => {
+	// Add code here
+	const name = req.params.p_name;
+	
+	const review = { 
+		title: req.body.title,
+		time: req.body.time,
+		content: req.body.content, 
+		userID: req.session.user, 
+		username: req.session.email
+		};
+	
+
+	Product.find({name: name}).then((product) => {
+		var p = product[0];
+		log(p)
+		if (!p) {
+			res.status(404).send()
+		} 
+		else {
+			User.findByIdAndUpdate(req.session.user, {$push: {comment_history: review}}, {new: true}).then((rest) => {
+				if (!rest) {
+					res.status(404).send()
+				} else {
+					Product.findByIdAndUpdate(p._id,  {$push: {reviews: review}}, {new: true})
+					res.rend({rest})
+			
+				
+			
+		}
+		}).catch((error) => {
+			res.redirect('/login')
+		})
+		}
+		
+	}).catch((error) => {
+		res.status(500).send(error)
+	})
+	
+
+})
+
+app.get('/product/all_reviews/:p_name', (req, res) => {
+	// Add code here
+	const name = req.params.p_name;
+	
+	
+	Product.find({name: name}).then((product) => {
+		var p = product[0];
+		log(p)
+		if (!p) {
+			res.status(404).send()
+		} 
+		else {
+			res.send({product})
+			
+				
+				}
 		
 	}).catch((error) => {
 		res.status(500).send(error)
@@ -553,7 +628,7 @@ app.get('/products', (req, res) => {
 
 })
 
-app.post('/product', (req, res) => {
+app.post('/product/', (req, res) => {
 	// Add code here
 	
 	const product = new Product({

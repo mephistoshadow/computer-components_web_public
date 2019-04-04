@@ -10,15 +10,16 @@
     <title>Product Page</title>
 
     <link rel="stylesheet" type="text/css" href="../css/product.css">
+	
 </head>
 
-<body>
+<body onload="showreviews()">
     <div class="navbar">
         <a href="/mainpage">Home</a>
         <a href="/profile">profile</a>
 		<div id='login'>
-		<a> Welcome: </a>
-		<a href="/profile">{{email}}</a>
+			<a> Welcome: </a>
+			<a href="/profile">{{email}}</a>
         
 		</div>
     </div>
@@ -31,14 +32,15 @@
         <img id="productPic" src="{{url}}">
 
         <div id = "productNameContainer">
-            <span id = "productNameContent"><strong>{{name}}</strong></span>
+            <span > <a id = "productNameContent">{{name}}</a></span>
         </div>
         <div id = "productDescriptionContainer">
             <span id = "productDescriptionContent">{{description}}</span>
         </div>
         <div class="button">
-            <button onclick='addToWishlist()' type="add">Add to wishlist</button>
+            <button onclick = "addWishlist()">Add to wishlist</button>
         </div>
+		<p id = "message"></p>
 
     </div>
 
@@ -54,17 +56,37 @@
             <textarea id="content" name="content"></textarea>
         </div>
         <div class="button">
-            <button onclick='submitReview()' type="submit">Submit</button>
+            <button onclick='addReview()'>Submit</button>
         </div>
     </form>
+	
+	<table id='comment_table'>
+            
+                <tbody>
+                    <tr>
+                        <th>
+                            User
+                        </th>
+						<th>
+                            Comment
+                        </th>
+						
+                        <th>
+                            Date
+                        </th>
+                    </tr>
+                    
+
+                </tbody>
+     </table>
 
 
 
 
-    </div>
+    
 
 
-
+	<script type="text/javascript" src="../js/product.js"></script>
     
 
 </body>

@@ -4,17 +4,47 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 
 // We'll make this model in a different way
+
+const ReviewSchema = new mongoose.Schema({
+	title: {
+		type: String, 
+		required: true, 
+		minLength: 1
+	},
+	time: String,
+	content: {
+		type: String,
+		required: true,
+		minLength: 1
+	},
+	userId: {
+		type: String
+	},
+	username: String
+
+});
+
+
+const ProductSchema = new mongoose.Schema({    
+	name: {
+		type: String,
+		unique: true
+	},
+	
+	img_url: String, 
+	title_description: String,
+	description: String, 
+	reviews: [ReviewSchema]
+});
+
+
 const UserSchema = new mongoose.Schema({
 	email: {
 		type: String,
 		required: true,
 		minlength: 1,
 		trim: true, // trim whitespace
-		unique: true,
-		validate: {
-			validator: validator.isEmail,
-			message: 'Not valid email'
-		}
+		unique: true
 	},
 	password: {
 		type: String,
@@ -23,9 +53,9 @@ const UserSchema = new mongoose.Schema({
 	},
 	
 	role: String,
-	wish_list : [],
-	comment_history: [],
-	all_product:[]
+	wish_list : [ProductSchema],
+	comment_history: [ProductSchema],
+	all_product:[ProductSchema]
 })
 
 // Our own student finding function 
@@ -66,36 +96,7 @@ UserSchema.pre('save', function(next) {
 
 })
 
-const ReviewSchema = new mongoose.Schema({
-	title: {
-		type: String, 
-		required: true, 
-		minLength: 1
-	},
-	time: String,
-	content: {
-		type: String,
-		required: true,
-		minLength: 1
-	},
-	userId: {
-		type: String
-	},
-	username: String
-});
 
-
-const ProductSchema = new mongoose.Schema({    
-	name: {
-		type: String,
-		unique: true
-	},
-	
-	img_url: String, 
-	title_description: String,
-	description: String, 
-	reviews: [ReviewSchema]
-});
 
 
 const Product = mongoose.model('Product', ProductSchema);

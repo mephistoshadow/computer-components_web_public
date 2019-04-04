@@ -272,8 +272,9 @@ a{
 	background-color: #333;
 	position: absolute;
 	top: 810px;
-	margin-left: 700px;
+	margin-left: 650px;
 	margin-bottom: 50px;
+	margin-right: 50px;
 }
 
 .jump_button {
