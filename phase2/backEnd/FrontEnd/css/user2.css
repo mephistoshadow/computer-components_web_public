@@ -166,6 +166,7 @@ form {
 #profileInfo p{
 	color: white;
 	margin-left: 30px;
+
 }
 
 span{
@@ -175,9 +176,10 @@ span{
 	margin-top: 70px;
 	margin-left: 250px;
 	width: 295px;
-	height: 367px;
+	height: 287px;
 	background-color: #333;
 	border: 3px solid white;
+
 }
 
 
@@ -185,7 +187,7 @@ span{
 	margin-top: 70px;
 	margin-left: 550px;
 	width: 490px;
-	height: 335px;
+	height: 255px;
 }
 
 form div + div {
