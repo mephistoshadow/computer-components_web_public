@@ -13,6 +13,11 @@ a {
  	color: black;
 }
 
+
+#logout{
+	margin-right: 100px;
+	float:right;
+}
 .bannerPic {
 	display: block;
 	width: 100%;
@@ -47,7 +52,7 @@ a {
 	width: 200px;
 	top: 230px;
 	left: 100px;
-
+	height: 200px;
 	border: 3px solid white;
 	margin-left: 200px;
 	margin-top: 30px;
@@ -92,28 +97,27 @@ a {
 }
 #productDescriptionContent{
 		color: white;
+		padding-left: 50px;
+		padding-top: 50px;
+		margin-top: 100px;
+		font-size: 120%;
+		line-height: 130px;	
 }
 
 #title {
 	widows: 1000px;
 }
 
-#reviewContainer {
+
+#generalContainer {
 	width: 600px;
 	left: 100px;
 	border: 3px solid white;
+	overflow: auto;
+	min-height: 100px;
 	margin-left: 200px;
 	margin-top: 30px;
-
 }
-
-
-#search_box{
-	margin-left: 1000px;
-	margin-top: 15px;
-}
-
-
 
 .navbar {
   overflow: hidden;
@@ -168,20 +172,15 @@ label {
 }
 
 input, textarea {
-  /* To make sure that all text fields have the same font settings
-     By default, textareas have a monospace font */
   font: 1em sans-serif;
 
-  /* To give the same size to all text fields */
   width: 500px;
   box-sizing: border-box;
 
-  /* To harmonize the look & feel of text field border */
   border: 1px solid #999;
 }
 
 input:focus, textarea:focus {
-  /* To give a little highlight on active elements */
   border-color: #000;
 }
 
@@ -197,6 +196,7 @@ textarea {
   padding-left: 700px; /* same size as the label elements */
 }
 
+
 button {
   /* This extra margin represent roughly the same space as the space
      between the labels and their text fields */
@@ -204,61 +204,107 @@ button {
   font-size: 16px;
 }
 
-#reviewContainer {
-  /*margin: 0 auto;*/
-  width: 785px;
-  /* To see the outline of the form */
-  position: absolute;
-  margin-left: 100px;
-  padding: 1em;
-  border: 3px solid white;
-  background-color: #333;
-  color: white;
-  top: 800px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  overflow: auto;
+
+table, td {
+	border: 3px solid white;
 }
 
-.review {
-	width: 600px
-	margin-left: 30px;
-	margin-bottom: 30px;
-	border: 2px solid white;
+
+
+
+#newpform {
+	top: 850px;
+}
+
+#Wishtable {
+	margin-top:30px;
+	color: white;
+	top: 1100px;
 	background-color: #333;
-	/*height: 50px;*/
-	overflow: auto;
+	position: absolute; 
+	margin-left: 50px;
+	border:3px solid white;
+	width: 600px;
 }
 
-.reviewUsername {
-	display: inline-block;
-	/*border: 2px solid white;*/
-	/*height: 50px;*/
-	width: 200px;
-	margin-right: 50px;
-	line-height: 50px;	
-	text-align: center;	
-	height: 100%;
-	/*display: block;*/
-	/*overflow: */
+#comment_history {
+/*	margin-left: 200px;
+	/*position: absolute;*/
+	width: 600px;
+	color: white;
+	background-color: #333;
+	border: 3px solid white;
+	position: absolute;
+	top: 1130px;
+	margin-left: 700px;
 }
 
-.reviewTitle {
-	display: inline block;
-	padding: 30px;
+.jump_button {
+	text-align: center;
+	margin-left:86px;
 }
 
-.reviewContent {
-	/*padding: 50px;*/
-	/*display: inline-block;*/
-	/*position: relative;*/
-	padding: 30px;
+.disableTd {
+	max-width: 130px;
 }
 
-.deleteButton {
-	padding-left: 700px;
+/*#reset {
+	margin-top:30px;
+	color: white;
+	top: 1100px;
+	background-color: #333;
+	position: absolute; 
+	margin-left: 50px;
+	border:3px solid white;
+	width: 600px;
+}*/
+
+
+
+
+li {
+	color:white;
+	list-style: none;
+	padding-bottom: 10px;
+}
+
+ul {
+	margin-left: 20px
+}
+
+td {
+	max-width: 300px
+}
+
+
+.delete_button {
+/*	margin-left: 700px;
 	margin-left: .50em;
 	font-size: 16px;
-	margin-bottom: 10px;
+	margin-bottom: 10px;*/
+	margin-left:60px;
+	text-align: center;
 }
+
+
+.wrapper {
+	overflow: auto;
+	padding: 5px;
+	margin-left: 200px;
+	width: 833px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

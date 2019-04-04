@@ -1,7 +1,7 @@
 
 
 body {
-	background-image: url("../../image/user.jpg");
+	background-image: url("../image/user.jpg");
 	background-position: center;
 	background-color: #e6ecf0;
 	margin: 0;
@@ -17,7 +17,7 @@ a {
 	display: block;
 	width: 100%;
 	flex-shrink: 0;
-
+	display: block;
 	/* Add properties below */
 	height: 300px;
 	
@@ -38,6 +38,76 @@ a {
 
 }
 
+
+#productContainer {
+	padding-bottom: 30px;
+	/*margin-bottom: 100px;*/
+}
+#productPic {
+	width: 200px;
+	top: 230px;
+	left: 100px;
+
+	border: 3px solid white;
+	margin-left: 200px;
+	margin-top: 30px;
+}
+
+
+#productNameContainer {
+	width: 600px;
+	top:330px;
+	left:420px;
+	position: absolute;
+	background-color: #333;
+	border: 3px solid grey;
+	font-size: 200%;
+	/*text-indent: 50em;*/
+	/*align: center;*/
+	color: white;
+}
+
+#productNameContent {
+	color: white;
+	font-size: 120%;
+	margin-left: 50px;
+}
+
+/*#productName text {
+	padding-left: 200px;
+	text-align: center;
+}
+*/
+
+#productDescriptionContainer{
+	width: 600px;
+	top:380px;
+	left:420px;
+	height: 147px;
+	position: absolute;
+	background-color: #333;
+	border: 3px solid grey;
+	color: white;
+
+}
+#productDescriptionContent{
+		color: white;
+}
+
+#title {
+	widows: 1000px;
+}
+
+#reviewContainer {
+	width: 600px;
+	left: 100px;
+	border: 3px solid white;
+	margin-left: 200px;
+	margin-top: 30px;
+
+}
+
+
 #search_box{
 	margin-left: 1000px;
 	margin-top: 15px;
@@ -51,6 +121,7 @@ a {
   position: fixed; 
   top: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .navbar a {
@@ -68,4 +139,126 @@ a {
   color: black;
 }
 
+
+
+
+form {
+  /* Just to center the form on the page */
+  margin: 0 auto;
+  width: 785px;
+  /* To see the outline of the form */
+  position: absolute;
+  margin-left: 200px;
+  padding: 1em;
+  border: 3px solid white;
+  background-color: #333;
+  color: white;
+  /*padding-top: 400px;*/
+}
+
+form div + div {
+  margin-top: 1em;
+}
+
+label {
+  /* To make sure that all labels have the same size and are properly aligned */
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
+
+input, textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* To give the same size to all text fields */
+  width: 500px;
+  box-sizing: border-box;
+
+  /* To harmonize the look & feel of text field border */
+  border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+  /* To give a little highlight on active elements */
+  border-color: #000;
+}
+
+textarea {
+  /* To properly align multiline text fields with their labels */
+  vertical-align: top;
+  /* To give enough room to type some text */
+  height: 5em;
+}
+
+.button {
+  /* To position the buttons to the same position of the text fields */
+  padding-left: 700px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: .5em;
+  font-size: 16px;
+}
+
+#reviewContainer {
+  /*margin: 0 auto;*/
+  width: 785px;
+  /* To see the outline of the form */
+  position: absolute;
+  margin-left: 100px;
+  padding: 1em;
+  border: 3px solid white;
+  background-color: #333;
+  color: white;
+  top: 800px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  overflow: auto;
+}
+
+.review {
+	width: 600px
+	margin-left: 30px;
+	margin-bottom: 30px;
+	border: 2px solid white;
+	background-color: #333;
+	/*height: 50px;*/
+	overflow: auto;
+}
+
+.reviewUsername {
+	display: inline-block;
+	/*border: 2px solid white;*/
+	/*height: 50px;*/
+	width: 200px;
+	margin-right: 50px;
+	line-height: 50px;	
+	text-align: center;	
+	height: 100%;
+	/*display: block;*/
+	/*overflow: */
+}
+
+.reviewTitle {
+	display: inline block;
+	padding: 30px;
+}
+
+.reviewContent {
+	/*padding: 50px;*/
+	/*display: inline-block;*/
+	/*position: relative;*/
+	padding: 30px;
+}
+
+.deleteButton {
+	padding-left: 700px;
+	margin-left: .50em;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
 
