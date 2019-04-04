@@ -86,7 +86,11 @@ const ReviewSchema = new mongoose.Schema({
 
 
 const ProductSchema = new mongoose.Schema({    
-	name: String,
+	name: {
+		type: String,
+		unique: true
+	},
+	
 	img_url: String, 
 	title_description: String,
 	description: String, 

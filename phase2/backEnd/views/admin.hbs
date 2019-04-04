@@ -8,11 +8,11 @@
     <link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 
-<body onload = "showproducts(); showusers()">
+<body onload = "showproducts();showusers();">
     <div class="navbar">
-        <a href="/html/index.html">Home</a>
-        <a href="/html/admin.html">Profile</a>
-        <a id = "logout" href="admin.html">Logout</a>
+        <a href="/mainpage">Home</a>
+        <a href="">Profile</a>
+        <a id = "logout" href="/logout">Logout</a>
     </div>
 	
 	<div id= "bigdiv">
@@ -24,6 +24,14 @@
         <div class="slide" id="slide-1"> <img src="Userimage/Userbanner.jpg" class="bannerPic"></div>
         <div class="slide" id="slide-2"><img src="Userimage/Userbanner.jpg" class="bannerPic"></div>
     </div> -->
+	
+		 <form id="profileStats">
+            <label><p> Change the Admin password</p></label>
+            <input id='oldpw' type="text" placeholder="Old Password">
+            <input id='newpw' type="text" placeholder="New Password">
+            <input id='newpw1' type="text" placeholder="Re New Password">
+            <input class="change" type="submit" value="Change">
+		</form>
     
 
         <div id="profileInfo">
@@ -32,13 +40,7 @@
             <p><strong>Description: <span>Admin of this website</span></strong></p>
             
         </div>
-        <form id="profileStats">
-            <label><p> Change the Admin password</p>></label>
-            <input id='oldpw' type="text" placeholder="Old Password">
-            <input id='newpw' type="text" placeholder="New Password">
-            <input id='newpw1' type="text" placeholder="Re New Password">
-            <input class="change" type="submit" value="Change">
-    </form>
+       
 
 		<form id = "newpform" onsubmit="return false">
 			<h2>Create New Product</h2>
@@ -70,48 +72,10 @@
                             Products
                         </th>
                         <th>
-                            Manage Products
+                            Delete Products
                         </th>
                     </tr>
-                    <tr>
-                        <td>
-							<ul>
-							<li>
-                            <img src="../image/image2.jpg" alt="" border=3 height=100 width=100>
-							</li>
-							<li>
-							<a>RXT 2070</a>
-							</li>
-							<li>
-							<a>ID</a>
-							</li>
-							</ul>
-                        </td>
-                        <td>
-                            <button class="check_button">Reviews</button>
-                            <button class="delete_button">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../image/image3.jpg" alt="" border=3 height=100 width=100>
-							<a>Lenovo M710s</a>
-                        </td>
-                        <td>
-                            <button class="check_button">Reviews</button>
-                            <button class="delete_button">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../image/image1.jpg" alt="" border=3 height=100 width=100>
-							<a>APC BR1500MS</a>
-                        </td>
-                        <td>
-                            <button class="check_button">Reviews</button>
-                            <button class="delete_button">Delete</button>
-                        </td>
-                    </tr>
+                    
 
                 </tbody>
             </table>
@@ -125,24 +89,16 @@
                         <th>
                             Users
                         </th>
+                        
                         <th>
-                            Reset password
-                        </th>
-                        <th>
-                            Enable/Disable
+                            Disable
                         </th>
                     </tr>
                     <tr>
                         <td>
-							
+							<a> user</a>
                         </td>
-                        <td>
-                            <form id="reset" onsubmit="">
-								<input class='un' type="text" placeholder="User Name">
-								<input class='pw' type="text" placeholder="New password">
-								<input class="change" type="submit" value="Reset-PW">
-							</form>
-                        </td>
+                        
                         <td>
                             <button class="jump_button">Disable</button>
                         </td>

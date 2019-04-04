@@ -98,9 +98,7 @@ app.post('/users', (req, res) => {
 
 })
 
-app.get('/', sessionChecker, (req, res) => {
-	res.redirect('/main')
-})
+
 
 // route for login
 app.route('/login')
@@ -115,9 +113,9 @@ app.route('/signup')
 	})
 
 // route for main
-app.route('/main')
+app.route('/')
 	.get(sessionChecker, (req, res) => {
-		res.sendFile(__dirname + '/FrontEnd/html/mainpage.html')
+		res.sendFile(__dirname + '/FrontEnd/html/index.html')
 	})
 
 app.route("/error").get(sessionChecker, (req, res) => {
@@ -139,6 +137,19 @@ app.get('/user', (req, res) => {
 	 log(req.session);
 })
 
+app.get('/mainpage', (req, res) => {
+	// check if we have active session cookie
+	if (req.session.user) {
+		//res.sendFile(__dirname + '/public/dashboard.html')
+		res.render('mainpage.hbs', {
+			email: req.session.email
+		})
+		
+	 } else {
+		res.redirect('/login')
+	 }
+})
+
 app.get('/admin', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
@@ -151,6 +162,23 @@ app.get('/admin', (req, res) => {
 		res.redirect('/login')
 	 }
 })
+
+app.get('/profile', (req, res) => {
+	// check if we have active session cookie
+	if (req.session.user) {
+		//res.sendFile(__dirname + '/public/dashboard.html')
+		if(req.session.role == "admin"){
+			res.redirect("/admin")
+		}
+		else{
+			res.redirect("/user")
+		}
+		
+	 } else {
+		res.redirect('/login')
+	 }
+})
+
 
 app.get('/users', (req, res) => {
 	// Add code here
@@ -241,7 +269,7 @@ app.post('/signup', (req, res) => {
 
 //user logout
 
-app.get('/users/logout', (req, res) => {
+app.get('/logout', (req, res) => {
 	req.session.destroy((error) => {
 		if (error) {
 			res.status(500).send(error)
@@ -251,17 +279,7 @@ app.get('/users/logout', (req, res) => {
 	})
 })
 
-// admin logout
 
-app.get('/admin/logout', (req, res) => {
-	req.session.destroy((error) => {
-		if (error) {
-			res.status(500).send(error)
-		} else {
-			res.redirect('/')
-		}
-	})
-})
 
 
 // get all products in wish_list for user by id
@@ -536,6 +554,41 @@ app.post('/product', (req, res) => {
 		res.status(400).send(error)
 	})
 })
+
+app.get('/product/:name', (req, res) => {
+	const name = req.params.name;
+	console.log(name)
+	
+	Product.find({ name: name }).then((product) => {
+		if (product.length==0) {
+			console.log("no matching")
+			res.status(404).send();
+		} else {
+			// product.reviews.push(revBody);
+			// product.save();
+			// res.send(product)
+			if(req.session.user){
+				console.log(product)
+				res.render("product.hbs",{
+				email: req.session.email,
+				name: product.name,
+				description: product.description,
+				url: product.img_url
+				
+			});
+			}
+			else{
+				console.log("find not logged")
+				res.redirect('/login')
+				
+			};
+			
+		}
+	}).catch((error) => {
+		console.log("error!")
+		res.status(500).send();
+	});
+});
 
 //Route for posting review to product 
 app.get('/product/:id', (req, res) => {

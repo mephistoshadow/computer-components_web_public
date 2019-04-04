@@ -59,7 +59,7 @@ a {
 	max-width: 1080px;
 	margin: auto;
 	background: white;
-	padding: 10px;
+	padding: 0px;
 	height:100%；
 }
 
@@ -82,11 +82,11 @@ a {
 
 #banner {
 	margin-top: 0px;
-	height:500px;
+	height:300px;
 	max-width: 1080px;
 	margin: auto;
 	background: white;
-	padding: 10px;
+	padding: 0px;
 	
 }
 #searchbar {
@@ -145,11 +145,22 @@ a {
     width: 35px;  
     height: 30px;  
 } 
+.collapse ul li{
+	list-style:none;
+	margin-top: 10px;
+	
+}
+
+
+.nav-item{
+	list-style: none;
+}
 
 #sidenavi {
 	float:right;
-	height:680px;
+	height:600px;
 	background-color:#333;
+	width: 210px;
 }
 
 #profilepic{
@@ -176,9 +187,9 @@ a {
 }
 
 #bigcontainer {
-	float:right;
-	margin-right:5px;
-	width: 630px;
+	float:left;
+	padding:1px;
+	width: 658px;
 	
 	
 }
@@ -206,8 +217,8 @@ a {
 }
 
 #video {
-	position:relative;
-	width: 630px;
+	float:right;
+	width: 655px;
 	height: 300px;
 	top: -890px;
 	left: 5px;
@@ -218,6 +229,7 @@ a {
 	background-color: #333;
 	width:210px;
 	height: 300px;
+	float: left;
 
 	
 }
@@ -226,6 +238,7 @@ a {
 	color:white;
 	display: block;
 	left: 10px;
+	
 	
 }
 
@@ -263,11 +276,32 @@ a {
 
 }
 
+th{
+	color: white;
+	font-size: 130%;
+	
+}
+
+td{
+	text-align:center;
+}
+td a{
+	color: white;
+}
+
+li{
+	list-style: none;
+	color:white;
+}
+
+#producttable{
+	width: 640px;
+}
+
 #ads {
-	position: relative;
+	float:left;
 	width:210px;
 	height:250px;
-	top: 0px;
 	
 }
 
@@ -292,9 +326,9 @@ a {
 }
 
 #ads2{
-	position:relative;
-	width: 620px;
-	height: 300px;
+	float: left;
+	width: 450px;
+	height: 250px;
 	left: 220px;
 	top: -300px;
 }
@@ -309,6 +343,10 @@ a {
 	height:50px;
 }
 
+.navbar-header{
+	margin-top: 10px;
+}
+
 .hambar{
 	width: 50px;
 	height: 50px;
@@ -318,6 +356,8 @@ a {
 
 .timelineHeader h4{
 	margin-top: 20px;
+	margin-left: 50px;
+	font-size: 150%;
 	color: white;
 }
 

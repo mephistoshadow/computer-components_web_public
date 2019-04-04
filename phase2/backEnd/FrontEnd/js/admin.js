@@ -66,6 +66,7 @@ function generaClick(e) {
 		Checkpage(index);
     }
     else if (e.target.className == 'delete_button'){
+		console.log("delete button")
     	Deleterow(index);
     }
 	else{
@@ -84,10 +85,10 @@ function generaClick(e) {
 
 /////////////////DOM
 
-function deleterow(btn) {
-  var row = btn.parentNode.parentNode;
-  row.parentNode.removeChild(row);
-}
+// function deleterow(btn) {
+  // var row = btn.parentNode.parentNode;
+  // row.parentNode.removeChild(row);
+// 
 
 
 // function insertRow(){
@@ -291,34 +292,10 @@ function addproduct(product) {
 			//Add some text to the new cells:
 	
 	cell1.innerHTML = "<ul><li><img src=" +url+ "alt='' border=3 height=100 width=100></li><li>"+name+"</li><li>"+id+"</li></ul>"
-	cell2.innerHTML = "<button class='delete_button'>Delete</button>";
+	cell2.innerHTML = "<a href='/product/"+name+ "'></a><button class='delete_button'>Delete</button>";
 }
 
-function viewAll(){
-	
-	// var email = document.getElementById("email").value;
-	
-	// User.findOne({email: email}).then((user) => {
-		
-	Product.find({}).then((products) => {
-		
-		for(var i = 0; i < products.length; i++){
-			var table=document.getElementById("Wishtable");
-			var row = table.insertRow(-1);
-			var cell1 = row.insertCell(0);
-			var cell2 = row.insertCell(1);
-			var name= products[i].name;
-			var url = products[i].img_url;
 
-			// Add some text to the new cells:
-	
-			cell1.innerHTML = "<img src=" +url+ " alt='' border=3 height=100 width=100><a>"+name+"</a>"
-			cell2.innerHTML = "<button class='check_button'>Reviews</button> <button class='delete_button'>Delete</button>";
-		}
-	})
-	
-	
-}
 
 
 function changeIt(personinfo) {
@@ -329,7 +306,10 @@ function changeIt(personinfo) {
 
 
 function Deleterow(index) {
+	
 	var id = wishList.rows[index].children[0].children[0].getElementsByTagName("li")[2].innerText;
+	
+	console.log(id)
 	
 	const url = '/product/' + id;
     // The data we are going to send in our request
