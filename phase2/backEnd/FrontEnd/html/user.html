@@ -5,99 +5,122 @@
     <meta charset="utf-8">
     <title>User pages</title>
     <!-- <link rel="stylesheet" type="text/css" href="user.css"> -->
-    <link rel="stylesheet" type="text/css" href="/css/user.css">
+    <link rel="stylesheet" type="text/css" href="../css/user2.css">
 </head>
 
 <body>
-
     <div class="navbar">
-        <a href="/html/index.html">Home</a>
-        <a href="/html/user.html">profile</a>
+        <a href="index.html">Home</a>
+        <a href="/html/user.html">Profile</a>
         <a id = "logout" href="/html/index.html">Logout</a>
     </div>
 	
+    <div id ='bigdiv'>
     <div id="banner">
-        <img src="/image/Userbanner.jpg" class="bannerPic">
+        <img src="../image/techbanner.jpg" class="bannerPic">
     </div>
+
      <form id="profileStats">
-            <input id='oldpw' type="text" placeholder="Old Password">
-            <input id='newpw' type="text" placeholder="New Password">
-            <input id = "changePw"class="change" type="submit" value="Change Password">
-            <br>
-            <input id='Nickname' type="text" placeholder="Type new Nickname">
-            <input id='Description' type="text" placeholder="Type the description">
-            <input id = "changeprofile" type="submit" value="Change information">
+            <h2>Change Your Password</h2>
+            <p><input id='oldpw' type="password" placeholder="Old Password"></p>
+            <p><input id='newpw' type="password" placeholder="New Password"></p>
+            <p><input type="password" placeholder="Confirm New Password"></p>
+            <p><input id = "changePw"class="change" type="submit" value="Change Password"></p>
+            <h2>Change Your Description</h2>
+            <p><input id='Description' type="text" placeholder="Type the description"></p>
+            <p><input id = "changeprofile" type="submit" value="Change Description"></p>
     </form>
         <div id="profileInfo">
-            <img class='img-circle' src="/image/icon.jpg" />
-            <p><strong>Nick Name: <span>Pikachu</span></strong></p>
+            <img class='img-circle' src="../image/reg_user.jpg" />
+            <p><strong>Username: <span>reguser123</span></strong></p>
             <p><strong>Description: <span>Want to build a gaming computer!</span></strong></p>
         </div>
-       <!--  <div id='Wishlist'> -->
-            <table id='Wishtable' bgcolor="#ffecd2">
-                 <caption><Strong>Wish List</Strong></caption>
-                <tbody>
-                    <tr>
-                        <th>
-                            Wish product
-                        </th>
-                        <th>
-                            detail
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="/image/image2.jpg" alt="" border=3 height=100 width=100>
-                        </td>
-                        <td>
-                            <button class="check_button">Check</button>
-                            <button class="delete_button">delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="/image/image3.jpg" alt="" border=3 height=100 width=100>
-                        </td>
-                        <td>
-                            <button class="check_button">Check</button>
-                            <button class="delete_button">delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="/image/image1.jpg" alt="" border=3 height=100 width=100>
-                        </td>
-                        <td>
-                            <button class="check_button">Check</button>
-                            <button class="delete_button">delete</button>
-                        </td>
-                    </tr>
 
-                </tbody>
-            </table>
-     <!--    </div> -->
+
+
+    <table id='Wishtable'>
+        <tbody>
+            <tr>
+                <th><h2>Wished Products</h2></th>
+                <th><h2>Delete</h2></th>
+            </tr>
+            <tr>
+                <td>
+                        <li><img src="../image/image2.jpg" alt="" border=3 height=150 width=150></li>
+                        <li text-align: center>RXT 2070</li>
+                </td>
+                <td><button class="delete_button">Delete</button></td>
+            </tr>
+            <!-- <tr>
+                <td>
+                        <li><img src="../image/image3.jpg" alt="" border=3 height=100 width=100></li>
+                        <li>Lenovo M710s</i>
+                </td>
+                <td><button class="delete_button">Delete</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li><img src="../image/image3.jpg" alt="" border=3 height=100 width=100></li>
+                        <li>Lenovo M710s</i>
+                    </ul>
+                </td>
+                <td><button class="delete_button">Delete</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li><img src="../image/image3.jpg" alt="" border=3 height=100 width=100></li>
+                        <li>Lenovo M710s</i>
+                    </ul>
+                </td>
+                <td><button class="delete_button">Delete</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li><img src="../image/image3.jpg" alt="" border=3 height=100 width=100></li>
+                        <li>Lenovo M710s</i>
+                    </ul>
+                </td>
+                <td><button class="delete_button">Delete</button></td>
+            </tr> -->
+        </tbody>
+    </table>
+
+
+
+
 
         <div id='Comment'>
             <table id='comment_history' bgcolor="#ffecd2">
-              <caption><Strong>Comment history</Strong></caption>
                 <tbody>
                     <tr>
-                        <th>
-                            Product
-                        </th>
-                        <th>
-                            comment
-                        </th>
-                        <th>
-                            Junp to that page
-                        </th>
+                        <th><h2>Product</h2></th>
+                        <th><h2>Comment</h2></th>
+                        <th><h2>Jump to page</h2></th>
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/image2.jpg" alt="" border=3 height=100 width=100>
+                            <li><img src="../image/image2.jpg" alt="" border=3 height=150 width=150></li>
+                            <li>Ut enim ad mi</li>
                         </td>
                         <td>
-                            <a>This product is what i want</a>
+                            <li>
+                                Ntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? 
+                            </li>
+                        </td>
+                        <td><button class="jump_button">Jump</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <li><img src="../image/image1.jpg" alt="" border=3 height=150 width=150></li>
+                            <li>Itaque earum</li>
+                        </td>
+                        <td>
+                            <li>
+                                Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo.
+                            </li>
                         </td>
                         <td>
                             <button class="jump_button">Jump</button>
@@ -105,21 +128,11 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="../image/image3.jpg" alt="" border=3 height=100 width=100>
-                        </td>
+                            <li><img src="../image/image2.jpg" alt="" border=3 height=150 width=150></li>
+                            <li>Nam libero</li>
+                        </td>\
                         <td>
-                            <a>This product is what i want,his product is what i want,his product is what i want</a>
-                        </td>
-                        <td>
-                            <button class="jump_button">Jump</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../image/image1.jpg" alt="" border=3 height=100 width=100>
-                        </td>
-                        <td>
-                            <a>This product is what i want,his product is what i want,his product is what i want</a>
+                            <li>Sed ut perspiciatis unde omnis iste.</li>
                         </td>
                         <td>
                             <button class="jump_button">Jump</button>
@@ -129,7 +142,7 @@
                 </tbody>
             </table>
         </div>
-
+    </div>
         <script type="text/javascript" src="/js/user.js"></script>
 
 </body>
