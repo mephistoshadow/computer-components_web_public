@@ -54,7 +54,7 @@ const UserSchema = new mongoose.Schema({
 	
 	role: String,
 	wish_list : [ProductSchema],
-	comment_history: [ProductSchema],
+	comment_history: [ReviewSchema],
 	all_product:[ProductSchema]
 })
 
