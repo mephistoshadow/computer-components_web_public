@@ -21,6 +21,17 @@ a {
 	margin-right: 30px;
 }
 
+#comment_table {
+	margin-top:30px;
+	color: white;
+	top: 900px;
+	background-color: #333;
+	position: absolute; 
+	margin-left: 200px;
+	border:3px solid white;
+	width: 825px;
+}
+
 .bannerPic {
 	display: block;
 	width: 100%;
