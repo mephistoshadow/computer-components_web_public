@@ -105,6 +105,7 @@ function addWishlist(){
 	
 	var name = document.querySelector('#productNameContent').innerHTML;
 	
+	console.log(name)
 	const url = "/product/wish_list/" + name;
 	
 	const request = new Request(url, {
@@ -121,7 +122,7 @@ function addWishlist(){
             message.innerText = 'Success: Added to wish list.';
             message.setAttribute("style", "color: green");
 		} else if(res.status === 300) {
-            message.innerText = 'Already in wish list'
+            message.innerText = 'Already in wish list!'
             message.setAttribute("style", "color: red")
      	
 			

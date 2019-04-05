@@ -69,6 +69,11 @@ function generaClick(e) {
 		console.log("delete button")
     	Deleterow(index);
     }
+	else if (e.target.className == 'check_product_button'){
+		viewProduct(index);
+		
+		
+	}
 	else{
 		
 	}
@@ -121,6 +126,19 @@ function generaClick(e) {
 	
 	
 // }
+
+
+function viewProduct(index) {
+	
+	var id = wishList.rows[index].children[1].children[0].innerText;
+	
+	console.log(id)
+	
+	const url = '/product/' + id;
+    // The data we are going to send in our request
+    // Create our request constructor with all the parameters we need
+    window.open(url, '_self');
+}
 
 function showusers() {
 	
@@ -297,8 +315,8 @@ function addproduct(product) {
 			//Add some text to the new cells:
 	
 	cell1.innerHTML = "<li><img src='" +url+ "'alt='' border=3 height=100 width=100></li>"
-	cell2.innerHTML =  "<li>Name: "+name+"</li><li>"+id+"</li>"
-	cell3.innerHTML = "<button id= 'delete_btn' class='delete_button'>Delete</button>";
+	cell2.innerHTML =  "<li>"+name+"</li><li>"+id+"</li>"
+	cell3.innerHTML = "<button class='check_product_button'>Jump</button><button id= 'delete_btn' class='delete_button'>Delete</button>";
 }
 
 
