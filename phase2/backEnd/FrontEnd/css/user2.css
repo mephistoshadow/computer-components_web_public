@@ -1,4 +1,6 @@
-
+#p_id {
+	overflow: hidden;
+}
 
 body {
 	background-image: url("../image/user.jpg");

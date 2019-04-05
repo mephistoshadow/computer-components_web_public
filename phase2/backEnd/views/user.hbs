@@ -10,9 +10,9 @@
 
 <body onload = "addThings()">
     <div class="navbar">
-        <a href="index.html">Home</a>
+        <a href="/html/mainpage.html">Home</a>
         <a href="/html/user.html">Profile</a>
-        <a id = "logout" href="/html/index.html">Logout</a>
+        <a id = "logout" href="/html/mainpage.html">Logout</a>
     </div>
     
     <div id ='bigdiv'>
@@ -39,10 +39,12 @@
                 <th><h2>Wished Products</h2></th>
                 <th><h2>Delete</h2></th>
             </tr>
-            <tr>
+            <tr id = "clone_product">
                 <td>
-                        <li><img src="../image/image2.jpg" alt="" border=3 height=150 width=150></li>
-                        <li text-align: center>RXT 2070</li>
+                        
+                        <li id = "name" text-align: center>RXT 2070</li>
+                        <li id = "description">description</li>
+                        <li hidden id = "p_id"> id<li>
                 </td>
                 <td><button class="delete_button">delete</button></td>
             </tr>
