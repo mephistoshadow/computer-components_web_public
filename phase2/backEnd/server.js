@@ -427,28 +427,47 @@ app.post('/user/comment_history/:id', (req, res) => {
 
 })
 
+
+//add product to user wish list
 app.post('/product/wish_list/:name', (req, res) => {
 	// Add code here
 	const name = req.params.name;
 	log(name);
 	
-	Product.find({}, {name: name}).then((product) => {
+	Product.find( {name: name}).then((product) => {
 		if (!product) {
 			res.status(404).send()
 		} else {
 			
-	
+			log(product[0])
+			var p = {
+				name: product[0].name,
+				url: product[0].img_url
+			}
+			
+		User.findById(req.session.user).then((user) => {
+		var resv = user.wish_list.id(product[0]._id);
+		if (!resv) {
 			User.findByIdAndUpdate(req.session.user, {$push: {wish_list: product[0]}}, {new: true}).then((user) => {
 				if (!user) {
 					res.status(404).send()
 				} else {
 					log("sucessful")
+					log(p)
 					res.send({user})
 				}
 			}).catch((error) => {
 				log("no users found")
 				res.status(500).send(error)
 			})
+		} else {
+			log("already in wish list!")
+			res.status(300).send(error)
+		}
+	
+		}).catch((error) => {
+		res.status(300).send(error)
+	})	
 			
 		}
 	}).catch((error) => {

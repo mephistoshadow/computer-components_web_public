@@ -110,10 +110,13 @@ function addWishlist(){
         // Usually check the error codes to see what happened
         const message = document.querySelector('#message')
         if (res.status === 200) {
-            console.log('Added review')
+            
             message.innerText = 'Success: Added to wish list.';
             message.setAttribute("style", "color: green");
-			addproduct(data)
+		} else if(res.status === 300) {
+            message.innerText = 'Already in wish list'
+            message.setAttribute("style", "color: red")
+     	
 			
            
         } else {
