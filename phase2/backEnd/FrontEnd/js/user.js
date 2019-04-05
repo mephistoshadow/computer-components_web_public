@@ -177,33 +177,7 @@ function addproducts(index) {
 	    })	
 }
 
-function showproducts() {
-	
-	const url = '/products';
-    fetch(url)
-    	.then((res) => { 
-    		//// Do not write any code here
-	        return res.json()
-	        //// Do not write any code here
-	    })
-	    .then((jsonResult) => {
-	    	// This is where the JSON result (jsonResult) from the server can be accessed and used.
-	        console.log('Result:', jsonResult)
-	        var information = jsonResult;
-			console.log(information["products"][0])
-	        for(var i = 0 ; i < information["products"].length; i ++) {
-	        	var product = information["products"][i];
-				
-	        	addproduct(product);
-	        }
-	        
-	        // Use the JSON to add a script part
-	        // addScriptPart(jsonResult[0], jsonResult[1], jsonResult[2], jsonResult[3])
-	    }).catch((error) => {
-	    	// if an error occured it will be logged to the JavaScript console here.
-	        console.log("An error occured with fetch:", error)
-	    })	
-}
+
 
 
 function addproduct(product) {
