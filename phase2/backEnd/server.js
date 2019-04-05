@@ -403,21 +403,23 @@ app.get('/user/comment_history/:id', (req, res) => {
 app.post('/user/comment_history/:id', (req, res) => {
 	// Add code here
 	const id = req.params.id;
-	
-	var comment = {
+	var review = {
 		time : req.body.time,
-		review : req.body.review
+		title : req.body.title,
+		content : req.body.review,
+		userId : id,
+		username : req.body.uderId
 	}
 	
 	if (!ObjectID.isValid(id)) {
 		return res.status(404).send()
 	}
-	User.findByIdAndUpdate(id, {$push: {comment_history: comment}}, {new: true}).then((user) => {
+	User.findByIdAndUpdate(id, {$push: {comment_history: review}}, {new: true}).then((user) => {
 		if (!user) {
 			res.status(404).send()
 		} else {
 			
-			res.send({"Comment" : comment, "User" : user })
+			res.send({"Comment" : review, "User" : user })
 		}
 		
 	}).catch((error) => {
@@ -599,6 +601,50 @@ app.delete('/user/wish_list/:id/:product_id', (req, res) => {
 	}).catch((error) => {
 		res.status(500).send(error)
 	})
+
+})
+
+
+app.post('/changePW/:email', (req, res) => {
+	// Add code here
+	const email = req.params.email;
+	const newPW = req.body.password;
+	// User.find({
+ //        email:email
+ //    }).then((user) => {
+	// 	if (!user) {
+	// 		res.status(404).send()
+	// 	} else {
+	// 		log(user);
+	// 		log(user[0].password);
+	// 		user[0].password = newPW;
+	// 		const id = user[0]["_id"];
+	// 		User.findByIdAndUpdate(id, {$set: user}, {new: true}).then((user) => {
+	// 	if (!user) {
+	// 		res.status(404).send()
+	// 	} else {
+	// 		res.send({ user })
+	// 	}
+	// }).catch((error) => {
+	// 	res.status(400).send(error)
+	// })
+	// 		}
+		
+	// }).catch((error) => {
+	// 	res.status(500).send(error)
+	// })
+	// try {
+	// 	User.findOneAndUpdate(
+ //   			{ "email" : email },
+ //   			{ $set: {"password": newPW} }
+ //   			send()
+	// );
+	// }
+	// catch (e){
+ //   		print(e);
+	// }
+	
+	
 
 })
 
