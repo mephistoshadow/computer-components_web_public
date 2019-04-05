@@ -62,7 +62,7 @@ function chaneInfo(e) {
 function generaClick(e) {
 	e.preventDefault();
 	let index = e.target.parentElement.parentElement.rowIndex;
-	if (e.target.className == 'check_button') {
+	if (e.target.className == 'j_button') {
 		Deleteuser(index);
     }
     else if (e.target.className == 'delete_button'){
@@ -165,7 +165,7 @@ function adduser(user) {
 	
 	cell1.innerHTML = "<ul><li>"+"Name: "+name+"</li><li>"+ id+"</li></ul>";
 	//cell2.innerHTML = "<form id='reset' onsubmit=''><input class='un' type='text' placeholder='User Name'><input class='pw' type='text' placeholder='New password'><input class='change' type='submit' value='Reset Password'></form>"
-	cell2.innerHTML = "<button class='check_button'>Disable</button>";
+	cell2.innerHTML = "<button class='j_button'>Disable</button>";
 }
 
 
@@ -297,7 +297,7 @@ function addproduct(product) {
 			//Add some text to the new cells:
 	
 	cell1.innerHTML = "<li><img src='" +url+ "'alt='' border=3 height=100 width=100></li>"
-	cell2.innerHTML =  "<li>Name: "+name+"</li><li>ID: "+id+"</li>"
+	cell2.innerHTML =  "<li>Name: "+name+"</li><li>"+id+"</li>"
 	cell3.innerHTML = "<button id= 'delete_btn' class='delete_button'>Delete</button>";
 }
 

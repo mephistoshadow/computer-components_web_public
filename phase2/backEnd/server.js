@@ -284,6 +284,28 @@ app.post('/signup', (req, res) => {
 
 //user logout
 
+app.post('/admin_signup', (req, res) => {
+	const email = req.body.email
+	const password = req.body.password
+	log(email, password)
+	
+	const user = new User({
+		email: email,
+		password: password,
+		role:"admin"
+	})
+	
+	user.save().then((result) => {
+		req.session.user = result._id;
+		req.session.email = result.email;
+		
+		res.redirect("/admin")
+		
+	}, (error) => {
+		res.status(400).send(error)
+	})
+})
+
 app.get('/logout', (req, res) => {
 	req.session.destroy((error) => {
 		if (error) {
