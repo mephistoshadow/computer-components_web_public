@@ -20,7 +20,8 @@ const ReviewSchema = new mongoose.Schema({
 	userId: {
 		type: String
 	},
-	username: String
+	username: String,
+	ProductName: String
 
 });
 
