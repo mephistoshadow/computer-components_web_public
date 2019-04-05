@@ -119,8 +119,10 @@ function addThings(index) {
 	        console.log('Result:', jsonResult)
 	        information = jsonResult;
 	        for(let i = 0 ; i < information["user"][0]["comment_history"].length; i ++) {
-	        	let comment = information["user"][0]["comment_history"][i]["review"];
-	        	addcomment(comment);
+	        	let comment = information["user"][0]["comment_history"][i]["content"];
+	        	let time = information["user"][0]["comment_history"][i]["time"];
+	        	let title = information["user"][0]["comment_history"][i]["title"];
+	        	addcomment(time,title,comment);
 	        	
 	        }
 	        for(let i = 0 ; i < information["user"][0]["wish_list"].length; i ++) {
@@ -141,10 +143,10 @@ function addThings(index) {
 
 
 
-function addcomment(comment_1) {
+function addcomment(time,title,content) {
 	var el = document.querySelector('#clone_comment');
 	var addElement = el.cloneNode(true);
-	addElement.children[0].children[0].innerText = comment_1;
+	addElement.children[0].children[0].innerText =  title + '\n'  +time + '\n' + content;
 	comment.appendChild(addElement);
 }
 
