@@ -73,32 +73,13 @@ function generaClick(e) {
 		Checkpage(index);
     }
     else if (e.target.className == 'delete_button'){
-    	Deleterow(index);
-    	url = '/user/wish_list/' + information["user"][0]["_id"] + '/' + e.target.parentElement.parentElement.children[0].children[2].innerText;
+    	// Deleterow(index);
+    	url = e.target.parentElement.parentElement.children[0].children[0].innerText;
 	// console.log(newPW);
 	console.log(e.target.parentElement.parentElement.children[0].children[2].innerText);
-	data = {
-
-	}
-	const request = new Request(url, {
-        method: 'post', 
-        body: JSON.stringify(data),
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
-        },
-    });
-    fetch(request)
-    .then(function(res) {
-        // Handle response we get from the API
-        // Usually check the error codes to see what happened
-
-        
-    }).catch((error) => {
-        console.log(error)
-    })
-
-    }
+	search(url);
+}
+	
     
 }
 
@@ -145,8 +126,7 @@ function addThings(index) {
 	        for(let i = 0 ; i < information["user"][0]["wish_list"].length; i ++) {
 	        	let name_p = information["user"][0]["wish_list"][i]["name"];
 	        	let description_p = information["user"][0]["wish_list"][i]["description"];
-	        	let id = information["user"][0]["wish_list"][i]["_id"];
-	        	
+	        	let id = information["user"][0]["wish_list"][i]["_id"];	
 	        	addProduct(name_p,description_p,id);
 	        }
 	        
@@ -193,6 +173,17 @@ function Checkpage(index) {
 }
 
 
+function search(name){
+	
+	
+	const url = 'http://localhost:3000/product/' + name;
+	
+	window.open(url, '_self')
+	
+	
+}
+
+
 
 // function addproducts(index) {
 // 	const url = '/user/wish_list/' + email;
@@ -235,9 +226,4 @@ function Checkpage(index) {
 // 	cell1.innerHTML = "<a>" +name+ "/a><a>" + description + "</a>";
 // 	cell2.innerHTML = "<button class='check_button'>Reviews</button> <button class='delete_button'>Delete</button>";
 // }
-
-
-
-
-
 
