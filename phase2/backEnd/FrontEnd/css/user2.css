@@ -271,7 +271,7 @@ a{
 
 #comment_history {
 	border: 3px solid white;
-	width: auto;
+	width: 500px;
 	color: white;
 	background-color: #333;
 	position: absolute;
