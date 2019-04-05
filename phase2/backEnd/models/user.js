@@ -28,8 +28,9 @@ const ReviewSchema = new mongoose.Schema({
 
 const ProductSchema = new mongoose.Schema({    
 	name: {
-		type: String,
-		// unique: true
+
+		type: String
+
 	},
 	
 	img_url: String, 
@@ -37,6 +38,7 @@ const ProductSchema = new mongoose.Schema({
 	description: String, 
 	reviews: [ReviewSchema]
 });
+
 
 
 const UserSchema = new mongoose.Schema({
@@ -54,10 +56,12 @@ const UserSchema = new mongoose.Schema({
 	},
 	
 	role: String,
-	wish_list : [ProductSchema],
+	wish_list : [],
 	comment_history: [ReviewSchema],
-	all_product:[ProductSchema]
+	all_product:[]
 })
+
+
 
 // Our own student finding function 
 UserSchema.statics.findByEmailPassword = function(email, password) {

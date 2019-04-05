@@ -91,10 +91,10 @@ li{
 #productNameContainer {
 	width: 600px;
 	top:330px;
-	left:420px;
+	left:780px;
 	position: absolute;
 	background-color: #333;
-	border: 3px solid grey;
+	border: 3px solid white;
 	font-size: 200%;
 	/*text-indent: 50em;*/
 	/*align: center;*/
@@ -116,11 +116,11 @@ li{
 #productDescriptionContainer{
 	width: 600px;
 	top:380px;
-	left:420px;
+	left:780px;
 	height: 147px;
 	position: absolute;
 	background-color: #333;
-	border: 3px solid grey;
+	border: 3px solid white;
 	color: white;
 
 }
@@ -229,6 +229,14 @@ textarea {
 .button {
   /* To position the buttons to the same position of the text fields */
   padding-left: 700px; /* same size as the label elements */
+}
+
+.bigbody{
+	max-width: 1080px;
+	margin: auto;
+
+	padding: 0px;
+	height:100%；
 }
 
 p{	
