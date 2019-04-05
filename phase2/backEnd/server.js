@@ -492,7 +492,8 @@ app.post('/product/review/:p_name', (req, res) => {
 		time: req.body.time,
 		content: req.body.content, 
 		userID: req.session.user, 
-		username: req.session.email
+		username: req.session.email,
+		ProductName: req.params.p_name
 		};
 	
 	

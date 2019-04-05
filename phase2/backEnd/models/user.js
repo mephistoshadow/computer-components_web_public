@@ -20,14 +20,17 @@ const ReviewSchema = new mongoose.Schema({
 	userId: {
 		type: String
 	},
-	username: String
+	username: String,
+	ProductName: String
 
 });
 
 
 const ProductSchema = new mongoose.Schema({    
 	name: {
+
 		type: String
+
 	},
 	
 	img_url: String, 

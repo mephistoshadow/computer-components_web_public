@@ -85,10 +85,12 @@ function generaClick(e) {
 
 function commentClick(e) {
 	e.preventDefault();
-	let index = e.target.parentElement.parentElement.rowIndex;
-	if (e.target.className == 'delete_button') {
-		DeleterowComment(index);
-    }
+	// let index = e.target.parentElement.parentElement.rowIndex;
+	const url = e.target.parentElement.children[1].innerText;
+	console.log(e.target)
+	console.log(url)
+	window.open(url, '_self');
+
 }
 
 
@@ -122,13 +124,17 @@ function addThings(index) {
 	        	let comment = information["user"][0]["comment_history"][i]["content"];
 	        	let time = information["user"][0]["comment_history"][i]["time"];
 	        	let title = information["user"][0]["comment_history"][i]["title"];
-	        	addcomment(time,title,comment);
+	        	let p_name = information["user"][0]["comment_history"][i]["ProductName"];	
+	        	console.log(p_name);
+	        	addcomment(time,title,comment,p_name);
 	        	
 	        }
 	        for(let i = 0 ; i < information["user"][0]["wish_list"].length; i ++) {
 	        	let name_p = information["user"][0]["wish_list"][i]["name"];
 	        	let description_p = information["user"][0]["wish_list"][i]["description"];
 	        	let id = information["user"][0]["wish_list"][i]["_id"];	
+	        	
+	        	
 	        	addProduct(name_p,description_p,id);
 	        }
 	        
@@ -143,10 +149,14 @@ function addThings(index) {
 
 
 
-function addcomment(time,title,content) {
+function addcomment(time,title,content,p_name) {
 	var el = document.querySelector('#clone_comment');
 	var addElement = el.cloneNode(true);
+	const url = 'http://localhost:3000/product/' + p_name;
+	console.log(url);
+	addElement.setAttribute('href', url);
 	addElement.children[0].children[0].innerText =  title + '\n'  +time + '\n' + content;
+	addElement.children[0].children[1].innerText =  url;
 	comment.appendChild(addElement);
 }
 
@@ -175,14 +185,10 @@ function Checkpage(index) {
 }
 
 
+
 function search(name){
-	
-	
 	const url = 'http://localhost:3000/product/' + name;
-	
 	window.open(url, '_self')
-	
-	
 }
 
 
