@@ -485,6 +485,7 @@ app.post('/product/wish_list/:name', (req, res) => {
 app.post('/product/review/:p_name', (req, res) => {
 	// Add code here
 	const name = req.params.p_name;
+	log(req.body)
 	
 	const review = { 
 		title: req.body.title,
@@ -494,6 +495,8 @@ app.post('/product/review/:p_name', (req, res) => {
 		username: req.session.email
 		};
 	
+	log(review)
+	
 
 	Product.find({name: name}).then((product) => {
 		var p = product[0];
@@ -502,17 +505,28 @@ app.post('/product/review/:p_name', (req, res) => {
 			res.status(404).send()
 		} 
 		else {
-			User.findByIdAndUpdate(req.session.user, {$push: {comment_history: review}}, {new: true}).then((rest) => {
-				if (!rest) {
+			User.findByIdAndUpdate(req.session.user, {$push: {comment_history: review}}, {new: true}).then((user) => {
+				if (!user) {
 					res.status(404).send()
 				} else {
-					Product.findByIdAndUpdate(p._id,  {$push: {reviews: review}}, {new: true})
-					res.rend({rest})
+					
+					Product.findByIdAndUpdate(p._id,  {$push: {reviews: review}}, {new: true}).then((product) => {
+				if (!product) {
+					res.status(404).send()
+				} else {
+					
+					res.send({review})
+				}
 			
-				
+			}).catch((error) => {
+				log(error)
+				log("not found product")
+				res.status(500).send(error)
+			})	
 			
 		}
 		}).catch((error) => {
+			log("not found user")
 			res.redirect('/login')
 		})
 		}

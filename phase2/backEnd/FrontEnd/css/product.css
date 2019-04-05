@@ -12,6 +12,18 @@ a {
  	text-decoration: none;
  	color: black;
 }
+.butn{
+
+	margin-left:500px;
+}
+
+table, td {
+	border: 3px solid white;
+}
+
+li{
+	list-style: none;
+}
 
 #login {
 	position:absolute;
@@ -64,10 +76,9 @@ a {
 }
 #productPic {
 	width: 200px;
-<<<<<<< HEAD
+
 	height: 200px;
-=======
->>>>>>> df0f3a84bd049ac08e359ba36af1b41f65f8cee2
+
 	top: 230px;
 	left: 100px;
 
@@ -223,7 +234,8 @@ textarea {
 button {
   /* This extra margin represent roughly the same space as the space
      between the labels and their text fields */
-  margin-left: .5em;
+	 margin-top: 20px;
+  margin-left: 200px;
   font-size: 16px;
 }
 

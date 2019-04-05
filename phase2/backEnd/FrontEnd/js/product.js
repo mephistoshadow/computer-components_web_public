@@ -50,11 +50,15 @@ function showreviews() {
 function addReview() {
 	
 	var name = document.querySelector('#productNameContent').innerHTML;
+	console.log(name)
 	const url = '/product/review/' + name;
     // The data we are going to send in our request
+	
+	
+	
     let data = {
-        title: document.querySelector('#title').innerHTML,
-        content: document.querySelector('#content').innerHTML,
+        title: document.querySelector('#title').value,
+        content: document.querySelector('#content').value,
 		time: new Date()
 		
     }
@@ -78,7 +82,8 @@ function addReview() {
             console.log('Added review')
             message.innerText = 'Success: Added a product.';
             message.setAttribute("style", "color: green");
-			addproduct(data)
+			console.log(data)
+			addcomment(data)
 			
            
         } else {
@@ -86,12 +91,14 @@ function addReview() {
             message.setAttribute("style", "color: red")
      
         }
-        console.log(res)
+        
         
     }).catch((error) => {
         console.log(error)
     })
 }
+
+
 
 
 function addWishlist(){
@@ -133,6 +140,8 @@ function addWishlist(){
 }
 
 function addcomment(review) {
+	
+	console.log(review.username)
 	var table=document.getElementById("comment_table");
 	var row = table.insertRow(-1);
 	var cell1 = row.insertCell(0);
@@ -140,13 +149,14 @@ function addcomment(review) {
 	var cell3 = row.insertCell(2);
 	var name= review.username;
 	var content = review.content;
+	
 	var date = review.time;
 
 			//Add some text to the new cells:
 	
-	cell1.innerHTML = "<li>"+"User name: "+name+"</li>";
+	cell1.innerHTML = "<li>"+"name: "+name+"</li>";
 	cell2.innerHTML = "<li>"+content+"</li>";
-	cell2.innerHTML = "<li>"+date+"</li>";
+	cell3.innerHTML = "<li>"+date+"</li>";
 }
 
 
