@@ -4,8 +4,10 @@ const wishList = document.querySelector('#Wishtable');
 const comment = document.querySelector('#comment_history');
 const profile = document.querySelector('#changeprofile');
 const password = document.querySelector('#changePw');
+
 const email = document.getElementById('email').innerText;
-const id = document.getElementById('id').innerText;
+
+
 let information = {};
 
 
@@ -13,7 +15,7 @@ let information = {};
 
 
 
-profile.addEventListener('click',chaneInfo);
+// profile.addEventListener('click',chaneInfo);
 password.addEventListener('click',changePw);
 wishList.addEventListener('click',generaClick);
 comment.addEventListener('click',commentClick);
@@ -29,6 +31,29 @@ class personinfo {
 
 function changePw(e) {
 	e.preventDefault();
+	url = '/changePW/' + email;
+	const newPW = document.getElementById('pass').value;
+	let data = {
+		password : newPW
+	}
+	// console.log(newPW);
+	const request = new Request(url, {
+        method: 'post', 
+        body: JSON.stringify(data),
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+        },
+    });
+    fetch(request)
+    .then(function(res) {
+        // Handle response we get from the API
+        // Usually check the error codes to see what happened
+
+        
+    }).catch((error) => {
+        console.log(error)
+    })
 
 }
 
