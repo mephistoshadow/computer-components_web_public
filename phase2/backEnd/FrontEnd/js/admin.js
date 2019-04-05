@@ -63,14 +63,14 @@ function generaClick(e) {
 	e.preventDefault();
 	let index = e.target.parentElement.parentElement.rowIndex;
 	if (e.target.className == 'check_button') {
-		Checkpage(index);
+		Deleteuser(index);
     }
     else if (e.target.className == 'delete_button'){
 		console.log("delete button")
     	Deleterow(index);
     }
 	else{
-		Deleteuser(index);
+		
 	}
     
 }
@@ -165,7 +165,7 @@ function adduser(user) {
 	
 	cell1.innerHTML = "<ul><li>"+"Name: "+name+"</li><li>"+ id+"</li></ul>";
 	//cell2.innerHTML = "<form id='reset' onsubmit=''><input class='un' type='text' placeholder='User Name'><input class='pw' type='text' placeholder='New password'><input class='change' type='submit' value='Reset Password'></form>"
-	cell2.innerHTML = "<button class='jump_button'>Disable</button>";
+	cell2.innerHTML = "<button class='check_button'>Disable</button>";
 }
 
 

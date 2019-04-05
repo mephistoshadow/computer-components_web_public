@@ -112,6 +112,11 @@ function search(){
 	
 	item = document.getElementById("searchname").value;
 	
+	if(item == ''){
+		alert("please give a name")
+		return false
+	}
+	
 	console.log(item);
 	
 	const url = 'http://localhost:3000/product/' + item;

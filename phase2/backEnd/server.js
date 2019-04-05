@@ -181,6 +181,7 @@ app.get('/admin', (req, res) => {
 app.get('/profile', (req, res) => {
 	// check if we have active session cookie
 	if (req.session.user) {
+		log(req.session.role)
 		//res.sendFile(__dirname + '/public/dashboard.html')
 		if(req.session.role == "admin"){
 			res.redirect("/admin")
@@ -267,8 +268,7 @@ app.post('/signup', (req, res) => {
 	
 	const user = new User({
 		email: email,
-		password: password,
-		role: "user"
+		password: password
 	})
 	
 	user.save().then((result) => {
@@ -346,35 +346,35 @@ app.get('/admin/product_list/:email', (req, res) => {
 })
 
 // post a product by product_id for user by id
-app.post('/user/wish_list/:id/:product_id', (req, res) => {
-	// Add code here
-	const id = req.params.id;
-	const pid = req.params.product_id;
+// app.post('/user/wish_list/:id/:product_id', (req, res) => {
+
+	// const id = req.params.id;
+	// const pid = req.params.product_id;
 	
-	if (!ObjectID.isValid(pid)) {
-		return res.status(404).send()
-	}
+	// if (!ObjectID.isValid(pid)) {
+		// return res.status(404).send()
+	// }
 	
 	
-	if (!ObjectID.isValid(id)) {
-		return res.status(404).send()
-	}
-	var product = Product.findById(pid);
+	// if (!ObjectID.isValid(id)) {
+		// return res.status(404).send()
+	// }
+	// var product = Product.findById(pid);
 	
-	User.findByIdAndUpdate(id, {$push: {wish_list: product}}, {new: true}).then((user) => {
-		if (!user) {
-			res.status(404).send()
-		} else {
+	// User.findByIdAndUpdate(id, {$push: {wish_list: product}}, {new: true}).then((user) => {
+		// if (!user) {
+			// res.status(404).send()
+		// } else {
 			
-			res.send({"Product" : product, "User" : user })
-		}
+			// res.send({"Product" : product, "User" : user })
+		// }
 		
-	}).catch((error) => {
-		res.status(500).send(error)
-	})
+	// }).catch((error) => {
+		// res.status(500).send(error)
+	// })
 	
 
-})
+// })
 
 
 
@@ -450,7 +450,7 @@ app.post('/product/wish_list/:name', (req, res) => {
 		User.findById(req.session.user).then((user) => {
 		var resv = user.wish_list.id(product[0]._id);
 		if (!resv) {
-			User.findByIdAndUpdate(req.session.user, {$push: {wish_list: product[0]}}, {new: true}).then((user) => {
+			User.findByIdAndUpdate(req.session.user, {$push: {wish_list: p}}, {new: true}).then((user) => {
 				if (!user) {
 					res.status(404).send()
 				} else {
@@ -483,7 +483,7 @@ app.post('/product/wish_list/:name', (req, res) => {
 
 // get specific product for specific user in their wish list
 app.post('/product/review/:p_name', (req, res) => {
-	// Add code here
+	
 	const name = req.params.p_name;
 	log(req.body)
 	
@@ -716,13 +716,22 @@ app.post('/product/', (req, res) => {
 		img_url: req.body.url
 	})
 	
-	
-	product.save().then((result) => {
+	Product.find({name: req.body.name}).then((products) => {
+		if(products.length == 0){
+			product.save().then((result) => {
+			res.send({ result }) 
+			}).catch((error) => {
+				console.log("error!")
+				res.status(500).send();
+			});
+		}
 		
-		res.send(result)
-	}, (error) => {
-		res.status(400).send(error)
-	})
+	}).catch((error) => {
+		console.log("error!")
+		res.status(500).send();
+	});
+	
+	
 })
 
 app.get('/product/:name', (req, res) => {

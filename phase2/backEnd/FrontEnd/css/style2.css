@@ -36,6 +36,11 @@ a {
 
 }
 
+.submit_btn{
+	float: right;
+	margin-top: 15px;
+	margin-right: 15px;
+}
 
 
 .nav-bar a{
