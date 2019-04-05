@@ -231,6 +231,12 @@ textarea {
   padding-left: 700px; /* same size as the label elements */
 }
 
+p{	
+	position: absolute;
+	margin-left: 500px;
+	font-size: 120%;
+}
+
 button {
   /* This extra margin represent roughly the same space as the space
      between the labels and their text fields */
