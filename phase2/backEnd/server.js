@@ -853,6 +853,7 @@ app.delete('/product/:id', (req, res) => {
 	// Otheriwse, findByIdAndRemove
 	Product.findByIdAndRemove(id).then((product) => {
 		if (!product) {
+			log(no)
 			res.status(404).send()
 		} else {
 			res.send({ product })
@@ -917,7 +918,6 @@ app.delete('/main/:id/:rev_id', (req, res) => {
 		}
 	})
 })
-
 
 
 

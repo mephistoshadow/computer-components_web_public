@@ -130,7 +130,7 @@ function search(){
 		return false;
 	}
 	else if(product == null){
-		window.open("working.html")
+		window.open("working.html");
 		return false;
 	}
 	else{
