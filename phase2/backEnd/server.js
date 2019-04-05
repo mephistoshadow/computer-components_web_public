@@ -455,7 +455,7 @@ app.post('/product/wish_list/:name', (req, res) => {
 					res.status(404).send()
 				} else {
 					log("sucessful")
-					log(p)
+					log(user)
 					res.send({user})
 				}
 			}).catch((error) => {
@@ -496,7 +496,6 @@ app.post('/product/review/:p_name', (req, res) => {
 		ProductName: req.params.p_name
 		};
 	
-	log(review)
 	
 
 	Product.find({name: name}).then((product) => {
@@ -506,11 +505,12 @@ app.post('/product/review/:p_name', (req, res) => {
 			res.status(404).send()
 		} 
 		else {
+			log(review)
 			User.findByIdAndUpdate(req.session.user, {$push: {comment_history: review}}, {new: true}).then((user) => {
 				if (!user) {
 					res.status(404).send()
 				} else {
-					
+					log(user)
 					Product.findByIdAndUpdate(p._id,  {$push: {reviews: review}}, {new: true}).then((product) => {
 				if (!product) {
 					res.status(404).send()
