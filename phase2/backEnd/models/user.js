@@ -29,7 +29,7 @@ const ReviewSchema = new mongoose.Schema({
 const ProductSchema = new mongoose.Schema({    
 	name: {
 		type: String,
-		unique: true
+		// unique: true
 	},
 	
 	img_url: String, 
